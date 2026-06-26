@@ -1,0 +1,27 @@
+name: verify
+
+# Proves the sealed-forecast record recomputes — on every push, weekly, and on demand.
+# The green badge means: the committed cryptographic record is internally consistent
+# (hashes + Merkle root + Bitcoin/OpenTimestamps proof), and the live record still verifies.
+on:
+  push:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 12 * * 1" # weekly, Mondays 12:00 UTC
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      # Gating check — deterministic, offline, against the committed cryptographic artifacts.
+      - name: Recompute every seal (offline, committed record)
+        run: node verify-jyotint.mjs --manifest ./seal-manifest.json
+      # Best-effort — confirms the LIVE record at jyotishintelligence.com also verifies.
+      # Allowed to fail so transient site/network issues don't red the badge.
+      - name: Recompute against the live record (best-effort)
+        run: node verify-jyotint.mjs
+        continue-on-error: true

@@ -1,0 +1,603 @@
+{
+  "$schema": "https://jyotishintelligence.com/schemas/calibration-v1.json",
+  "version": 1,
+  "generatedAt": "2026-06-26T22:16:51.998Z",
+  "origin": "https://jyotishintelligence.com",
+  "notes": "Full corpus — Launch Advisories (LA) + Intel Advisories (RU-UA, US-2024, IN-2024). Per the JYOTINT pledge advisories are locked at publish; calibration metadata lives outside the seal. Every closed call is per-advisory audited: probAtSeal is mapped from the advisory's own sealed wording (launch to the seal-time confidence, 0.72-0.99; intel via a linguistic ladder — flat 'will/cannot' 0.95, 'likely' 0.78, genuine 'could/might' hedge 0.60), applied identically to hits and misses. audited=true denotes this post-event reconciliation to the contemporaneous sealed text, not blind third-party verification. Scoring rules follow Brier 1950 and standard log-loss.",
+  "auditRatio": 1,
+  "closed": 68,
+  "verdicts": {
+    "HIT": 58,
+    "MISS": 4,
+    "NEAR": 3,
+    "PARTIAL": 3,
+    "OPEN": 0
+  },
+  "brier": 0.07165183823529411,
+  "logLoss": 0.3221724732688568,
+  "reference": {
+    "alwaysFiftyFifty": 0.25,
+    "uniformPriorOverPartition": 0.2,
+    "gjpSuperforecasterPublished": 0.149
+  },
+  "bins": [
+    {
+      "band": "Virtually certain",
+      "range": [
+        0.99,
+        1
+      ],
+      "count": 3,
+      "meanP": 0.9899999999999999,
+      "meanO": 1
+    },
+    {
+      "band": "Extremely likely",
+      "range": [
+        0.95,
+        0.99
+      ],
+      "count": 8,
+      "meanP": 0.9500000000000001,
+      "meanO": 1
+    },
+    {
+      "band": "Very likely",
+      "range": [
+        0.9,
+        0.95
+      ],
+      "count": 17,
+      "meanP": 0.9014705882352944,
+      "meanO": 0.9705882352941176
+    },
+    {
+      "band": "Likely",
+      "range": [
+        0.66,
+        0.9
+      ],
+      "count": 37,
+      "meanP": 0.7972972972972977,
+      "meanO": 0.8243243243243243
+    },
+    {
+      "band": "More likely than not",
+      "range": [
+        0.5,
+        0.66
+      ],
+      "count": 3,
+      "meanP": 0.6,
+      "meanO": 1
+    },
+    {
+      "band": "About as likely as not",
+      "range": [
+        0.33,
+        0.5
+      ],
+      "count": 0,
+      "meanP": null,
+      "meanO": null
+    },
+    {
+      "band": "Unlikely",
+      "range": [
+        0.1,
+        0.33
+      ],
+      "count": 0,
+      "meanP": null,
+      "meanO": null
+    },
+    {
+      "band": "Very unlikely",
+      "range": [
+        0.05,
+        0.1
+      ],
+      "count": 0,
+      "meanP": null,
+      "meanO": null
+    },
+    {
+      "band": "Extremely unlikely",
+      "range": [
+        0.01,
+        0.05
+      ],
+      "count": 0,
+      "meanP": null,
+      "meanO": null
+    },
+    {
+      "band": "Exceptionally unlikely",
+      "range": [
+        0,
+        0.01
+      ],
+      "count": 0,
+      "meanP": null,
+      "meanO": null
+    }
+  ],
+  "records": [
+    {
+      "id": "IA-BR22-001",
+      "accuracy": "NEAR",
+      "p": 0.78,
+      "o": 0.5,
+      "audited": true
+    },
+    {
+      "id": "IA-CN-2022",
+      "accuracy": "HIT",
+      "p": 0.95,
+      "o": 1,
+      "audited": true
+    },
+    {
+      "id": "IA-IN24-001",
+      "accuracy": "HIT",
+      "p": 0.9,
+      "o": 1,
+      "audited": true
+    },
+    {
+      "id": "IA-IN24-002",
+      "accuracy": "HIT",
+      "p": 0.9,
+      "o": 1,
+      "audited": true
+    },
+    {
+      "id": "IA-IN24-003",
+      "accuracy": "HIT",
+      "p": 0.9,
+      "o": 1,
+      "audited": true
+    },
+    {
+      "id": "IA-IN24-004",
+      "accuracy": "HIT",
+      "p": 0.9,
+      "o": 1,
+      "audited": true
+    },
+    {
+      "id": "IA-IN24-005",
+      "accuracy": "HIT",
+      "p": 0.78,
+      "o": 1,
+      "audited": true
+    },
+    {
+      "id": "IA-IN24-006",
+      "accuracy": "HIT",
+      "p": 0.6,
+      "o": 1,
+      "audited": true
+    },
+    {
+      "id": "IA-IN24-007",
+      "accuracy": "HIT",
+      "p": 0.6,
+      "o": 1,
+      "audited": true
+    },
+    {
+      "id": "IA-IN24-008",
+      "accuracy": "HIT",
+      "p": 0.6,
+      "o": 1,
+      "audited": true
+    },
+    {
+      "id": "IA-MH24-001",
+      "accuracy": "MISS",
+      "p": 0.78,
+      "o": 0,
+      "audited": true
+    },
+    {
+      "id": "IA-MKT-001",
+      "accuracy": "NEAR",
+      "p": 0.78,
+      "o": 0.5,
+      "audited": true
+    },
+    {
+      "id": "IA-MKT-002",
+      "accuracy": "HIT",
+      "p": 0.95,
+      "o": 1,
+      "audited": true
+    },
+    {
+      "id": "IA-RU-001",
+      "accuracy": "HIT",
+      "p": 0.9,
+      "o": 1,
+      "audited": true
+    },
+    {
+      "id": "IA-RU-002",
+      "accuracy": "HIT",
+      "p": 0.95,
+      "o": 1,
+      "audited": true
+    },
+    {
+      "id": "IA-RU-003",
+      "accuracy": "HIT",
+      "p": 0.95,
+      "o": 1,
+      "audited": true
+    },
+    {
+      "id": "IA-RU-004",
+      "accuracy": "HIT",
+      "p": 0.9,
+      "o": 1,
+      "audited": true
+    },
+    {
+      "id": "IA-RU-005",
+      "accuracy": "HIT",
+      "p": 0.95,
+      "o": 1,
+      "audited": true
+    },
+    {
+      "id": "IA-RU-006",
+      "accuracy": "HIT",
+      "p": 0.78,
+      "o": 1,
+      "audited": true
+    },
+    {
+      "id": "IA-RU-007",
+      "accuracy": "HIT",
+      "p": 0.95,
+      "o": 1,
+      "audited": true
+    },
+    {
+      "id": "IA-RU-008",
+      "accuracy": "HIT",
+      "p": 0.78,
+      "o": 1,
+      "audited": true
+    },
+    {
+      "id": "IA-RU-009",
+      "accuracy": "HIT",
+      "p": 0.78,
+      "o": 1,
+      "audited": true
+    },
+    {
+      "id": "IA-RU-010",
+      "accuracy": "HIT",
+      "p": 0.78,
+      "o": 1,
+      "audited": true
+    },
+    {
+      "id": "IA-RU-011",
+      "accuracy": "HIT",
+      "p": 0.9,
+      "o": 1,
+      "audited": true
+    },
+    {
+      "id": "IA-RU-012",
+      "accuracy": "HIT",
+      "p": 0.9,
+      "o": 1,
+      "audited": true
+    },
+    {
+      "id": "IA-RU-013",
+      "accuracy": "HIT",
+      "p": 0.78,
+      "o": 1,
+      "audited": true
+    },
+    {
+      "id": "IA-RU-014",
+      "accuracy": "PARTIAL",
+      "p": 0.78,
+      "o": 0.5,
+      "audited": true
+    },
+    {
+      "id": "IA-RU-015",
+      "accuracy": "HIT",
+      "p": 0.95,
+      "o": 1,
+      "audited": true
+    },
+    {
+      "id": "IA-RU-016",
+      "accuracy": "HIT",
+      "p": 0.95,
+      "o": 1,
+      "audited": true
+    },
+    {
+      "id": "IA-RU-017",
+      "accuracy": "HIT",
+      "p": 0.78,
+      "o": 1,
+      "audited": true
+    },
+    {
+      "id": "IA-RU-018",
+      "accuracy": "HIT",
+      "p": 0.9,
+      "o": 1,
+      "audited": true
+    },
+    {
+      "id": "IA-RU-019",
+      "accuracy": "HIT",
+      "p": 0.9,
+      "o": 1,
+      "audited": true
+    },
+    {
+      "id": "IA-RU-020",
+      "accuracy": "PARTIAL",
+      "p": 0.78,
+      "o": 0.5,
+      "audited": true
+    },
+    {
+      "id": "IA-UK22-001",
+      "accuracy": "HIT",
+      "p": 0.9,
+      "o": 1,
+      "audited": true
+    },
+    {
+      "id": "IA-US22-001",
+      "accuracy": "HIT",
+      "p": 0.78,
+      "o": 1,
+      "audited": true
+    },
+    {
+      "id": "IA-US24-001",
+      "accuracy": "HIT",
+      "p": 0.9,
+      "o": 1,
+      "audited": true
+    },
+    {
+      "id": "IA-US24-002",
+      "accuracy": "HIT",
+      "p": 0.78,
+      "o": 1,
+      "audited": true
+    },
+    {
+      "id": "IA-US24-003",
+      "accuracy": "MISS",
+      "p": 0.78,
+      "o": 0,
+      "audited": true
+    },
+    {
+      "id": "IA-US24-004",
+      "accuracy": "HIT",
+      "p": 0.78,
+      "o": 1,
+      "audited": true
+    },
+    {
+      "id": "IA-US24-005",
+      "accuracy": "MISS",
+      "p": 0.78,
+      "o": 0,
+      "audited": true
+    },
+    {
+      "id": "IA-US24-006",
+      "accuracy": "HIT",
+      "p": 0.78,
+      "o": 1,
+      "audited": true
+    },
+    {
+      "id": "IA-US24-007",
+      "accuracy": "MISS",
+      "p": 0.78,
+      "o": 0,
+      "audited": true
+    },
+    {
+      "id": "IA-US24-008",
+      "accuracy": "HIT",
+      "p": 0.78,
+      "o": 1,
+      "audited": true
+    },
+    {
+      "id": "IA-US24-009",
+      "accuracy": "HIT",
+      "p": 0.78,
+      "o": 1,
+      "audited": true
+    },
+    {
+      "id": "IA-US24-010",
+      "accuracy": "HIT",
+      "p": 0.78,
+      "o": 1,
+      "audited": true
+    },
+    {
+      "id": "LA-000",
+      "accuracy": "HIT",
+      "p": 0.9,
+      "o": 1,
+      "audited": true
+    },
+    {
+      "id": "LA-001",
+      "accuracy": "HIT",
+      "p": 0.85,
+      "o": 1,
+      "audited": true
+    },
+    {
+      "id": "LA-002",
+      "accuracy": "HIT",
+      "p": 0.8,
+      "o": 1,
+      "audited": true
+    },
+    {
+      "id": "LA-003",
+      "accuracy": "HIT",
+      "p": 0.85,
+      "o": 1,
+      "audited": true
+    },
+    {
+      "id": "LA-004",
+      "accuracy": "HIT",
+      "p": 0.82,
+      "o": 1,
+      "audited": true
+    },
+    {
+      "id": "LA-005",
+      "accuracy": "HIT",
+      "p": 0.88,
+      "o": 1,
+      "audited": true
+    },
+    {
+      "id": "LA-006",
+      "accuracy": "HIT",
+      "p": 0.8,
+      "o": 1,
+      "audited": true
+    },
+    {
+      "id": "LA-007",
+      "accuracy": "HIT",
+      "p": 0.85,
+      "o": 1,
+      "audited": true
+    },
+    {
+      "id": "LA-008",
+      "accuracy": "HIT",
+      "p": 0.99,
+      "o": 1,
+      "audited": true
+    },
+    {
+      "id": "LA-009",
+      "accuracy": "HIT",
+      "p": 0.8,
+      "o": 1,
+      "audited": true
+    },
+    {
+      "id": "LA-010",
+      "accuracy": "HIT",
+      "p": 0.99,
+      "o": 1,
+      "audited": true
+    },
+    {
+      "id": "LA-011",
+      "accuracy": "HIT",
+      "p": 0.99,
+      "o": 1,
+      "audited": true
+    },
+    {
+      "id": "LA-012",
+      "accuracy": "PARTIAL",
+      "p": 0.86,
+      "o": 0.5,
+      "audited": true
+    },
+    {
+      "id": "LA-013",
+      "accuracy": "HIT",
+      "p": 0.78,
+      "o": 1,
+      "audited": true
+    },
+    {
+      "id": "LA-014",
+      "accuracy": "HIT",
+      "p": 0.9,
+      "o": 1,
+      "audited": true
+    },
+    {
+      "id": "LA-015",
+      "accuracy": "HIT",
+      "p": 0.9,
+      "o": 1,
+      "audited": true
+    },
+    {
+      "id": "LA-016",
+      "accuracy": "HIT",
+      "p": 0.9,
+      "o": 1,
+      "audited": true
+    },
+    {
+      "id": "LA-017",
+      "accuracy": "HIT",
+      "p": 0.72,
+      "o": 1,
+      "audited": true
+    },
+    {
+      "id": "LA-018",
+      "accuracy": "NEAR",
+      "p": 0.925,
+      "o": 0.5,
+      "audited": true
+    },
+    {
+      "id": "LA-019",
+      "accuracy": "HIT",
+      "p": 0.78,
+      "o": 1,
+      "audited": true
+    },
+    {
+      "id": "LA-020",
+      "accuracy": "HIT",
+      "p": 0.85,
+      "o": 1,
+      "audited": true
+    },
+    {
+      "id": "LA-021",
+      "accuracy": "HIT",
+      "p": 0.85,
+      "o": 1,
+      "audited": true
+    },
+    {
+      "id": "LA-022",
+      "accuracy": "HIT",
+      "p": 0.85,
+      "o": 1,
+      "audited": true
+    }
+  ]
+}

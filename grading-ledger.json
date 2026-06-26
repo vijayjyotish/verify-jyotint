@@ -1,0 +1,631 @@
+{
+  "$schema": "https://jyotishintelligence.com/schemas/grading-ledger-v1.json",
+  "version": 1,
+  "generatedAt": "2026-06-17T00:46:53.049Z",
+  "origin": "https://jyotishintelligence.com",
+  "algorithm": "sha256",
+  "ledgerHashInput": "sha256(JSON.stringify(entries)) — canonical JSON of the id-sorted entries array",
+  "gradingRule": "outcomeValue: HIT=1 · NEAR=0.5 · PARTIAL=0.5 · MISS=0. brierTerm = (probAtSeal − outcomeValue)^2. brier = mean(brierTerm) over all entries. probAtSeal is read from each advisory's sealed confidence wording mapped onto the IPCC AR6 band ladder, applied identically to hits and misses; outcome is graded after the event against the claim sealed in seal-manifest.json.",
+  "sealManifest": {
+    "file": "https://jyotishintelligence.com/seal-manifest.json",
+    "note": "Claim-anteriority proof — separate artifact, separate OTS anchor (block 952785), never moved by a re-grade."
+  },
+  "count": 68,
+  "brier": 0.0717,
+  "brierFromLedger": 0.0717,
+  "ledgerHash": "ad86370537ab4ed11481cfecca34ec57f5877f3f1cd6a593477b8dcaf5601842",
+  "entries": [
+    {
+      "id": "IA-BR22-001",
+      "probAtSeal": 0.78,
+      "ipccBand": "Likely",
+      "audited": true,
+      "outcome": "NEAR",
+      "outcomeValue": 0.5,
+      "brierTerm": 0.0784
+    },
+    {
+      "id": "IA-CN-2022",
+      "probAtSeal": 0.95,
+      "ipccBand": "Extremely likely",
+      "audited": true,
+      "outcome": "HIT",
+      "outcomeValue": 1,
+      "brierTerm": 0.0025
+    },
+    {
+      "id": "IA-IN24-001",
+      "probAtSeal": 0.9,
+      "ipccBand": "Very likely",
+      "audited": true,
+      "outcome": "HIT",
+      "outcomeValue": 1,
+      "brierTerm": 0.01
+    },
+    {
+      "id": "IA-IN24-002",
+      "probAtSeal": 0.9,
+      "ipccBand": "Very likely",
+      "audited": true,
+      "outcome": "HIT",
+      "outcomeValue": 1,
+      "brierTerm": 0.01
+    },
+    {
+      "id": "IA-IN24-003",
+      "probAtSeal": 0.9,
+      "ipccBand": "Very likely",
+      "audited": true,
+      "outcome": "HIT",
+      "outcomeValue": 1,
+      "brierTerm": 0.01
+    },
+    {
+      "id": "IA-IN24-004",
+      "probAtSeal": 0.9,
+      "ipccBand": "Very likely",
+      "audited": true,
+      "outcome": "HIT",
+      "outcomeValue": 1,
+      "brierTerm": 0.01
+    },
+    {
+      "id": "IA-IN24-005",
+      "probAtSeal": 0.78,
+      "ipccBand": "Likely",
+      "audited": true,
+      "outcome": "HIT",
+      "outcomeValue": 1,
+      "brierTerm": 0.0484
+    },
+    {
+      "id": "IA-IN24-006",
+      "probAtSeal": 0.6,
+      "ipccBand": "More likely than not",
+      "audited": true,
+      "outcome": "HIT",
+      "outcomeValue": 1,
+      "brierTerm": 0.16
+    },
+    {
+      "id": "IA-IN24-007",
+      "probAtSeal": 0.6,
+      "ipccBand": "More likely than not",
+      "audited": true,
+      "outcome": "HIT",
+      "outcomeValue": 1,
+      "brierTerm": 0.16
+    },
+    {
+      "id": "IA-IN24-008",
+      "probAtSeal": 0.6,
+      "ipccBand": "More likely than not",
+      "audited": true,
+      "outcome": "HIT",
+      "outcomeValue": 1,
+      "brierTerm": 0.16
+    },
+    {
+      "id": "IA-MH24-001",
+      "probAtSeal": 0.78,
+      "ipccBand": "Likely",
+      "audited": true,
+      "outcome": "MISS",
+      "outcomeValue": 0,
+      "brierTerm": 0.6084
+    },
+    {
+      "id": "IA-MKT-001",
+      "probAtSeal": 0.78,
+      "ipccBand": "Likely",
+      "audited": true,
+      "outcome": "NEAR",
+      "outcomeValue": 0.5,
+      "brierTerm": 0.0784
+    },
+    {
+      "id": "IA-MKT-002",
+      "probAtSeal": 0.95,
+      "ipccBand": "Extremely likely",
+      "audited": true,
+      "outcome": "HIT",
+      "outcomeValue": 1,
+      "brierTerm": 0.0025
+    },
+    {
+      "id": "IA-RU-001",
+      "probAtSeal": 0.9,
+      "ipccBand": "Very likely",
+      "audited": true,
+      "outcome": "HIT",
+      "outcomeValue": 1,
+      "brierTerm": 0.01
+    },
+    {
+      "id": "IA-RU-002",
+      "probAtSeal": 0.95,
+      "ipccBand": "Extremely likely",
+      "audited": true,
+      "outcome": "HIT",
+      "outcomeValue": 1,
+      "brierTerm": 0.0025
+    },
+    {
+      "id": "IA-RU-003",
+      "probAtSeal": 0.95,
+      "ipccBand": "Extremely likely",
+      "audited": true,
+      "outcome": "HIT",
+      "outcomeValue": 1,
+      "brierTerm": 0.0025
+    },
+    {
+      "id": "IA-RU-004",
+      "probAtSeal": 0.9,
+      "ipccBand": "Very likely",
+      "audited": true,
+      "outcome": "HIT",
+      "outcomeValue": 1,
+      "brierTerm": 0.01
+    },
+    {
+      "id": "IA-RU-005",
+      "probAtSeal": 0.95,
+      "ipccBand": "Extremely likely",
+      "audited": true,
+      "outcome": "HIT",
+      "outcomeValue": 1,
+      "brierTerm": 0.0025
+    },
+    {
+      "id": "IA-RU-006",
+      "probAtSeal": 0.78,
+      "ipccBand": "Likely",
+      "audited": true,
+      "outcome": "HIT",
+      "outcomeValue": 1,
+      "brierTerm": 0.0484
+    },
+    {
+      "id": "IA-RU-007",
+      "probAtSeal": 0.95,
+      "ipccBand": "Extremely likely",
+      "audited": true,
+      "outcome": "HIT",
+      "outcomeValue": 1,
+      "brierTerm": 0.0025
+    },
+    {
+      "id": "IA-RU-008",
+      "probAtSeal": 0.78,
+      "ipccBand": "Likely",
+      "audited": true,
+      "outcome": "HIT",
+      "outcomeValue": 1,
+      "brierTerm": 0.0484
+    },
+    {
+      "id": "IA-RU-009",
+      "probAtSeal": 0.78,
+      "ipccBand": "Likely",
+      "audited": true,
+      "outcome": "HIT",
+      "outcomeValue": 1,
+      "brierTerm": 0.0484
+    },
+    {
+      "id": "IA-RU-010",
+      "probAtSeal": 0.78,
+      "ipccBand": "Likely",
+      "audited": true,
+      "outcome": "HIT",
+      "outcomeValue": 1,
+      "brierTerm": 0.0484
+    },
+    {
+      "id": "IA-RU-011",
+      "probAtSeal": 0.9,
+      "ipccBand": "Very likely",
+      "audited": true,
+      "outcome": "HIT",
+      "outcomeValue": 1,
+      "brierTerm": 0.01
+    },
+    {
+      "id": "IA-RU-012",
+      "probAtSeal": 0.9,
+      "ipccBand": "Very likely",
+      "audited": true,
+      "outcome": "HIT",
+      "outcomeValue": 1,
+      "brierTerm": 0.01
+    },
+    {
+      "id": "IA-RU-013",
+      "probAtSeal": 0.78,
+      "ipccBand": "Likely",
+      "audited": true,
+      "outcome": "HIT",
+      "outcomeValue": 1,
+      "brierTerm": 0.0484
+    },
+    {
+      "id": "IA-RU-014",
+      "probAtSeal": 0.78,
+      "ipccBand": "Likely",
+      "audited": true,
+      "outcome": "PARTIAL",
+      "outcomeValue": 0.5,
+      "brierTerm": 0.0784
+    },
+    {
+      "id": "IA-RU-015",
+      "probAtSeal": 0.95,
+      "ipccBand": "Extremely likely",
+      "audited": true,
+      "outcome": "HIT",
+      "outcomeValue": 1,
+      "brierTerm": 0.0025
+    },
+    {
+      "id": "IA-RU-016",
+      "probAtSeal": 0.95,
+      "ipccBand": "Extremely likely",
+      "audited": true,
+      "outcome": "HIT",
+      "outcomeValue": 1,
+      "brierTerm": 0.0025
+    },
+    {
+      "id": "IA-RU-017",
+      "probAtSeal": 0.78,
+      "ipccBand": "Likely",
+      "audited": true,
+      "outcome": "HIT",
+      "outcomeValue": 1,
+      "brierTerm": 0.0484
+    },
+    {
+      "id": "IA-RU-018",
+      "probAtSeal": 0.9,
+      "ipccBand": "Very likely",
+      "audited": true,
+      "outcome": "HIT",
+      "outcomeValue": 1,
+      "brierTerm": 0.01
+    },
+    {
+      "id": "IA-RU-019",
+      "probAtSeal": 0.9,
+      "ipccBand": "Very likely",
+      "audited": true,
+      "outcome": "HIT",
+      "outcomeValue": 1,
+      "brierTerm": 0.01
+    },
+    {
+      "id": "IA-RU-020",
+      "probAtSeal": 0.78,
+      "ipccBand": "Likely",
+      "audited": true,
+      "outcome": "PARTIAL",
+      "outcomeValue": 0.5,
+      "brierTerm": 0.0784
+    },
+    {
+      "id": "IA-UK22-001",
+      "probAtSeal": 0.9,
+      "ipccBand": "Very likely",
+      "audited": true,
+      "outcome": "HIT",
+      "outcomeValue": 1,
+      "brierTerm": 0.01
+    },
+    {
+      "id": "IA-US22-001",
+      "probAtSeal": 0.78,
+      "ipccBand": "Likely",
+      "audited": true,
+      "outcome": "HIT",
+      "outcomeValue": 1,
+      "brierTerm": 0.0484
+    },
+    {
+      "id": "IA-US24-001",
+      "probAtSeal": 0.9,
+      "ipccBand": "Very likely",
+      "audited": true,
+      "outcome": "HIT",
+      "outcomeValue": 1,
+      "brierTerm": 0.01
+    },
+    {
+      "id": "IA-US24-002",
+      "probAtSeal": 0.78,
+      "ipccBand": "Likely",
+      "audited": true,
+      "outcome": "HIT",
+      "outcomeValue": 1,
+      "brierTerm": 0.0484
+    },
+    {
+      "id": "IA-US24-003",
+      "probAtSeal": 0.78,
+      "ipccBand": "Likely",
+      "audited": true,
+      "outcome": "MISS",
+      "outcomeValue": 0,
+      "brierTerm": 0.6084
+    },
+    {
+      "id": "IA-US24-004",
+      "probAtSeal": 0.78,
+      "ipccBand": "Likely",
+      "audited": true,
+      "outcome": "HIT",
+      "outcomeValue": 1,
+      "brierTerm": 0.0484
+    },
+    {
+      "id": "IA-US24-005",
+      "probAtSeal": 0.78,
+      "ipccBand": "Likely",
+      "audited": true,
+      "outcome": "MISS",
+      "outcomeValue": 0,
+      "brierTerm": 0.6084
+    },
+    {
+      "id": "IA-US24-006",
+      "probAtSeal": 0.78,
+      "ipccBand": "Likely",
+      "audited": true,
+      "outcome": "HIT",
+      "outcomeValue": 1,
+      "brierTerm": 0.0484
+    },
+    {
+      "id": "IA-US24-007",
+      "probAtSeal": 0.78,
+      "ipccBand": "Likely",
+      "audited": true,
+      "outcome": "MISS",
+      "outcomeValue": 0,
+      "brierTerm": 0.6084
+    },
+    {
+      "id": "IA-US24-008",
+      "probAtSeal": 0.78,
+      "ipccBand": "Likely",
+      "audited": true,
+      "outcome": "HIT",
+      "outcomeValue": 1,
+      "brierTerm": 0.0484
+    },
+    {
+      "id": "IA-US24-009",
+      "probAtSeal": 0.78,
+      "ipccBand": "Likely",
+      "audited": true,
+      "outcome": "HIT",
+      "outcomeValue": 1,
+      "brierTerm": 0.0484
+    },
+    {
+      "id": "IA-US24-010",
+      "probAtSeal": 0.78,
+      "ipccBand": "Likely",
+      "audited": true,
+      "outcome": "HIT",
+      "outcomeValue": 1,
+      "brierTerm": 0.0484
+    },
+    {
+      "id": "LA-000",
+      "probAtSeal": 0.9,
+      "ipccBand": "Very likely",
+      "audited": true,
+      "outcome": "HIT",
+      "outcomeValue": 1,
+      "brierTerm": 0.01
+    },
+    {
+      "id": "LA-001",
+      "probAtSeal": 0.85,
+      "ipccBand": "Likely",
+      "audited": true,
+      "outcome": "HIT",
+      "outcomeValue": 1,
+      "brierTerm": 0.0225
+    },
+    {
+      "id": "LA-002",
+      "probAtSeal": 0.8,
+      "ipccBand": "Likely",
+      "audited": true,
+      "outcome": "HIT",
+      "outcomeValue": 1,
+      "brierTerm": 0.04
+    },
+    {
+      "id": "LA-003",
+      "probAtSeal": 0.85,
+      "ipccBand": "Likely",
+      "audited": true,
+      "outcome": "HIT",
+      "outcomeValue": 1,
+      "brierTerm": 0.0225
+    },
+    {
+      "id": "LA-004",
+      "probAtSeal": 0.82,
+      "ipccBand": "Likely",
+      "audited": true,
+      "outcome": "HIT",
+      "outcomeValue": 1,
+      "brierTerm": 0.0324
+    },
+    {
+      "id": "LA-005",
+      "probAtSeal": 0.88,
+      "ipccBand": "Likely",
+      "audited": true,
+      "outcome": "HIT",
+      "outcomeValue": 1,
+      "brierTerm": 0.0144
+    },
+    {
+      "id": "LA-006",
+      "probAtSeal": 0.8,
+      "ipccBand": "Likely",
+      "audited": true,
+      "outcome": "HIT",
+      "outcomeValue": 1,
+      "brierTerm": 0.04
+    },
+    {
+      "id": "LA-007",
+      "probAtSeal": 0.85,
+      "ipccBand": "Likely",
+      "audited": true,
+      "outcome": "HIT",
+      "outcomeValue": 1,
+      "brierTerm": 0.0225
+    },
+    {
+      "id": "LA-008",
+      "probAtSeal": 0.99,
+      "ipccBand": "Virtually certain",
+      "audited": true,
+      "outcome": "HIT",
+      "outcomeValue": 1,
+      "brierTerm": 0.0001
+    },
+    {
+      "id": "LA-009",
+      "probAtSeal": 0.8,
+      "ipccBand": "Likely",
+      "audited": true,
+      "outcome": "HIT",
+      "outcomeValue": 1,
+      "brierTerm": 0.04
+    },
+    {
+      "id": "LA-010",
+      "probAtSeal": 0.99,
+      "ipccBand": "Virtually certain",
+      "audited": true,
+      "outcome": "HIT",
+      "outcomeValue": 1,
+      "brierTerm": 0.0001
+    },
+    {
+      "id": "LA-011",
+      "probAtSeal": 0.99,
+      "ipccBand": "Virtually certain",
+      "audited": true,
+      "outcome": "HIT",
+      "outcomeValue": 1,
+      "brierTerm": 0.0001
+    },
+    {
+      "id": "LA-012",
+      "probAtSeal": 0.86,
+      "ipccBand": "Likely",
+      "audited": true,
+      "outcome": "PARTIAL",
+      "outcomeValue": 0.5,
+      "brierTerm": 0.1296
+    },
+    {
+      "id": "LA-013",
+      "probAtSeal": 0.78,
+      "ipccBand": "Likely",
+      "audited": true,
+      "outcome": "HIT",
+      "outcomeValue": 1,
+      "brierTerm": 0.0484
+    },
+    {
+      "id": "LA-014",
+      "probAtSeal": 0.9,
+      "ipccBand": "Very likely",
+      "audited": true,
+      "outcome": "HIT",
+      "outcomeValue": 1,
+      "brierTerm": 0.01
+    },
+    {
+      "id": "LA-015",
+      "probAtSeal": 0.9,
+      "ipccBand": "Very likely",
+      "audited": true,
+      "outcome": "HIT",
+      "outcomeValue": 1,
+      "brierTerm": 0.01
+    },
+    {
+      "id": "LA-016",
+      "probAtSeal": 0.9,
+      "ipccBand": "Very likely",
+      "audited": true,
+      "outcome": "HIT",
+      "outcomeValue": 1,
+      "brierTerm": 0.01
+    },
+    {
+      "id": "LA-017",
+      "probAtSeal": 0.72,
+      "ipccBand": "Likely",
+      "audited": true,
+      "outcome": "HIT",
+      "outcomeValue": 1,
+      "brierTerm": 0.0784
+    },
+    {
+      "id": "LA-018",
+      "probAtSeal": 0.925,
+      "ipccBand": "Very likely",
+      "audited": true,
+      "outcome": "NEAR",
+      "outcomeValue": 0.5,
+      "brierTerm": 0.180625
+    },
+    {
+      "id": "LA-019",
+      "probAtSeal": 0.78,
+      "ipccBand": "Likely",
+      "audited": true,
+      "outcome": "HIT",
+      "outcomeValue": 1,
+      "brierTerm": 0.0484
+    },
+    {
+      "id": "LA-020",
+      "probAtSeal": 0.85,
+      "ipccBand": "Likely",
+      "audited": true,
+      "outcome": "HIT",
+      "outcomeValue": 1,
+      "brierTerm": 0.0225
+    },
+    {
+      "id": "LA-021",
+      "probAtSeal": 0.85,
+      "ipccBand": "Likely",
+      "audited": true,
+      "outcome": "HIT",
+      "outcomeValue": 1,
+      "brierTerm": 0.0225
+    },
+    {
+      "id": "LA-022",
+      "probAtSeal": 0.85,
+      "ipccBand": "Likely",
+      "audited": true,
+      "outcome": "HIT",
+      "outcomeValue": 1,
+      "brierTerm": 0.0225
+    }
+  ]
+}
