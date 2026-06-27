@@ -1,4 +1,4 @@
-# JYOTINT — Sealed-Forecast Record
+# JYOTINT™ — Sealed-Forecast Record
 
 > A tamper-evident, Bitcoin-anchored, publicly-graded forecasting record on space launches and great-power events — **that you can verify yourself, without trusting anyone.**
 
@@ -57,3 +57,7 @@ Before each event, the exact forecast text is SHA-256-hashed and timestamped on 
 ## License
 
 Corpus and record: **CC-BY-4.0** (see `LICENSE`). The verifier script may be reused freely.
+
+---
+
+*JYOTINT™ is a trademark of Vijay Jyotish LLC (U.S. trademark application pending, USPTO).*
