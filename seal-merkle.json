@@ -1,7 +1,7 @@
 {
   "$schema": "https://jyotishintelligence.com/seal-merkle.schema.json",
   "version": 1,
-  "generatedAt": "2026-06-26T22:16:51.721Z",
+  "generatedAt": "2026-06-17T00:46:52.886Z",
   "origin": "https://jyotishintelligence.com",
   "algorithm": "SHA-256",
   "construction": "leaf = record.hash (lowercase hex), records sorted by id; parent = SHA256(utf8(leftHex+rightHex)); odd row duplicates its last node.",
