@@ -3,6 +3,81 @@
   "generator": "scripts/gen-regrade-inputs.mjs",
   "count": 68,
   "hash_input_template": "objectId|dateIssued|title|claim",
+  "recipes_usage": "One-step stress tests — no per-call entry. CLI: `node verify-jyotint.mjs --regrade --policy <name>`. In an LLM: apply a recipe's declarative ops to `rows` and recompute Brier = mean((p-o)^2). Conservative recipes lower the calibration Brier by design (conceded — calibration ties a base rate); the surviving skill is named-mechanism specificity, which a base rate scores 0 on.",
+  "recipes": [
+    {
+      "name": "harsh-verdicts",
+      "label": "Only flawless HITs count",
+      "desc": "Keep the operator's probabilities; downgrade every NEAR and PARTIAL to MISS. No partial credit.",
+      "p": "keep",
+      "verdict": "harsh",
+      "include": "all",
+      "drop": 0
+    },
+    {
+      "name": "external-only",
+      "label": "Externally-adjudicated only",
+      "desc": "Include only calls whose outcome was corroborated by a named external source — drop anything resting on the operator's own outcome read. (If the count is unchanged, every call carries an external source.)",
+      "p": "keep",
+      "verdict": "keep",
+      "include": "external",
+      "drop": 0
+    },
+    {
+      "name": "drop-favorable",
+      "label": "Strip the highlight reel",
+      "desc": "Drop the five most-favorable calls before scoring (anti-cherry-pick).",
+      "p": "keep",
+      "verdict": "keep",
+      "include": "all",
+      "drop": 5
+    },
+    {
+      "name": "coin-flip",
+      "label": "Confidence-robustness contrast",
+      "desc": "Replace every stated probability with 50/50. If the Brier RISES versus the operator's actual run, the operator's stated confidence carried real information a coin flip lacks. (A contrast test, not a conservative grade.)",
+      "p": "coin",
+      "verdict": "keep",
+      "include": "all",
+      "drop": 0
+    },
+    {
+      "name": "analytic-integrity",
+      "label": "Analytic-integrity standard (ICD-203-style)",
+      "desc": "Externally-adjudicated only + no partial credit — the posture of formal analytic tradecraft (sourced, no over-claim). Named for the principle, not an affiliation or endorsement.",
+      "p": "keep",
+      "verdict": "harsh",
+      "include": "external",
+      "drop": 0
+    },
+    {
+      "name": "multi-source",
+      "label": "Multi-source corroboration (Five-Eyes-style)",
+      "desc": "Include only calls with external corroboration AND a named mechanism (4+ of the 5W1H vectors), no partial credit — multi-source-or-it-didn't-happen. Named for the principle, not an affiliation or endorsement.",
+      "p": "keep",
+      "verdict": "harsh",
+      "include": "external-mechanism",
+      "drop": 0
+    },
+    {
+      "name": "estimative-worst-case",
+      "label": "Estimative worst-case (NIE-style)",
+      "desc": "Every conservative GRADING assumption stacked: externally-adjudicated only, no partial credit, and the five best dropped — the operator's own probabilities kept throughout. Survive this and you survive anything. Named for the principle, not an affiliation or endorsement.",
+      "p": "keep",
+      "verdict": "harsh",
+      "include": "external",
+      "drop": 5
+    },
+    {
+      "name": "mission-assurance",
+      "label": "Mission-assurance standard (NESC/FRR-style)",
+      "desc": "Only the reality-adjudicated launch calls (scored by NASA/FAA/the provider), no partial credit — the flight-readiness evidentiary bar.",
+      "p": "keep",
+      "verdict": "harsh",
+      "include": "launch-external",
+      "drop": 0
+    }
+  ],
   "rows": [
     {
       "id": "IA-BR22-001",

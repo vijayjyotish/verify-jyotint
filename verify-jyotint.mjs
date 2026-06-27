@@ -59,6 +59,7 @@ const opts = {
   regrade: argv.includes("--regrade"),
   regradeFile: argv.includes("--regrade") ? argv[argv.indexOf("--regrade") + 1] : null,
   inputs: argv.includes("--inputs") ? argv[argv.indexOf("--inputs") + 1] : null,
+  policy: argv.includes("--policy") ? argv[argv.indexOf("--policy") + 1] : null,
 };
 
 function recompute({ objectId, videoId, dateIssued, title, claim }) {
@@ -184,8 +185,39 @@ if (opts.regrade) {
     process.exit(3);
   }
   const rows = kit.rows || kit;
+  const recipes = kit.recipes || [];
   let overrides = {};
-  if (opts.regradeFile && !opts.regradeFile.startsWith("--")) {
+  let policyLabel = null;
+  if (opts.policy) {
+    if (opts.policy === "list") {
+      console.log("\nstress-test recipes (--policy <name>):");
+      for (const r of recipes) console.log(`  ${r.name.padEnd(22)} ${r.label}\n${" ".repeat(24)}${r.desc}`);
+      console.log("");
+      process.exit(0);
+    }
+    const recipe = recipes.find((r) => r.name === opts.policy);
+    if (!recipe) { console.error(`regrade: unknown --policy "${opts.policy}". Run --regrade --policy list.`); process.exit(3); }
+    policyLabel = recipe.label;
+    const hasExt = (r) => Array.isArray(r.evidence_sources) && r.evidence_sources.length > 0;
+    const included = (r) => recipe.include === "all" ? true
+      : recipe.include === "external" ? hasExt(r)
+      : recipe.include === "external-mechanism" ? (hasExt(r) && (r.operator_named_vector_count ?? 0) >= 4)
+      : recipe.include === "launch-external" ? (/^LA-/i.test(r.id) && hasExt(r))
+      : true;
+    // drop the N most-favorable (smallest Brier term) among the still-included rows
+    const dropIds = new Set();
+    if (recipe.drop > 0) {
+      [...rows].filter(included)
+        .sort((a, b) => ((a.operator_p - a.outcome_o) ** 2) - ((b.operator_p - b.outcome_o) ** 2))
+        .slice(0, recipe.drop).forEach((r) => dropIds.add(r.id));
+    }
+    for (const r of rows) {
+      const o = recipe.verdict === "harsh" && (r.operator_verdict === "NEAR" || r.operator_verdict === "PARTIAL") ? 0 : r.outcome_o;
+      const p = recipe.p === "base-rate" ? (r.base_rate_floor ?? r.operator_p)
+        : recipe.p === "coin" ? 0.5 : r.operator_p;
+      overrides[r.id] = { p, o, include: included(r) && !dropIds.has(r.id) };
+    }
+  } else if (opts.regradeFile && !opts.regradeFile.startsWith("--")) {
     try { overrides = JSON.parse(readFileSync(opts.regradeFile, "utf8")); }
     catch (e) { console.error("regrade: could not read overrides file.", e.message); process.exit(3); }
   }
@@ -197,14 +229,26 @@ if (opts.regrade) {
   const oBar = mean(yours.map((x) => x.o));
   const baseRate = mean(yours.map((x) => (oBar - x.o) ** 2));
   const yb = br(yours);
-  console.log(`\nregrade · ${yours.length} calls included${Object.keys(overrides).length ? ` · ${Object.keys(overrides).length} overrides applied` : " · operator's own values (override with a JSON file)"}`);
+  console.log(`\nregrade · ${yours.length} calls included${policyLabel ? ` · policy: ${policyLabel}` : Object.keys(overrides).length ? ` · ${Object.keys(overrides).length} overrides applied` : " · operator's own values (override with a JSON file or --policy)"}`);
   console.log(`  operator's Brier:        ${br(ops).toFixed(4)}`);
   console.log(`  YOUR Brier:              ${yb.toFixed(4)}`);
   console.log(`  base-rate baseline:      ${baseRate.toFixed(4)}   (predict the outcome frequency every time)`);
   console.log(`  YOUR Brier-skill score:  ${baseRate > 0 ? (1 - yb / baseRate).toFixed(3) : "—"}   (>0 beats the base rate)`);
-  console.log(`\n  Calibration ties a base rate by design — that is NOT where the skill is.`);
-  console.log(`  The skill axis a base rate cannot touch is named-mechanism specificity:`);
-  console.log(`  grade that yourself from each row's \`claim\` vs \`outcome\` at https://jyotishintelligence.com/regrade\n`);
+  // ── SKILL axis under the SAME policy: a named, specific, pre-event mechanism
+  // that matched. Counted over the included+post-harsh rows; a base-rate
+  // forecaster names zero mechanisms by construction, so this is the axis a
+  // base rate cannot touch. Same recipe, both axes.
+  const inclRows = rows.filter((r) => overrides[r.id]?.include !== false);
+  const oOf = (r) => overrides[r.id]?.o ?? r.outcome_o;
+  const matchedHits = inclRows.filter((r) => oOf(r) === 1);
+  const namedMech = matchedHits.filter((r) => (r.operator_named_vector_count ?? 0) >= 4);
+  console.log(`\n  ── SKILL axis (same policy) ─────────────────────────────────`);
+  console.log(`  named-mechanism specificity: ${namedMech.length} of ${inclRows.length} included calls`);
+  console.log(`    named >=4 of the 5W1H+recommendation vectors AND verified a HIT under this policy.`);
+  console.log(`  a base-rate / coin-flip forecaster names ZERO specific mechanisms — so this`);
+  console.log(`  count is the skill a base rate cannot reach. Re-count any row yourself from`);
+  console.log(`  \`claim\` vs \`outcome\`. Calibration ties a base rate by design; specificity does not.`);
+  console.log(`  Grade it interactively: https://jyotishintelligence.com/regrade\n`);
   process.exit(0);
 }
 
