@@ -56,6 +56,9 @@ const opts = {
   noOts: argv.includes("--no-ots"),
   id: argv.includes("--id") ? argv[argv.indexOf("--id") + 1] : null,
   json: argv.includes("--json"),
+  regrade: argv.includes("--regrade"),
+  regradeFile: argv.includes("--regrade") ? argv[argv.indexOf("--regrade") + 1] : null,
+  inputs: argv.includes("--inputs") ? argv[argv.indexOf("--inputs") + 1] : null,
 };
 
 function recompute({ objectId, videoId, dateIssued, title, claim }) {
@@ -162,6 +165,47 @@ function report(name, ok, detail) {
   const line = `[${tag}] ${name}${detail ? ` · ${detail}` : ""}`;
   if (!opts.json) console.log(line);
   return { name, ok, detail };
+}
+
+// ── --regrade: recompute the Brier from YOUR OWN values. "Self-graded" dies the
+// moment you become the grader. Baseline = the public regrade-inputs.json
+// (operator's p/o); overrides = an optional JSON { "ID": { "p", "o", "include" } }.
+if (opts.regrade) {
+  let kit;
+  try {
+    const path = opts.inputs || "regrade-inputs.json";
+    try { kit = JSON.parse(readFileSync(path, "utf8")); }
+    catch {
+      const res = await fetch("https://jyotishintelligence.com/dataset/jyotint-sealed-corpus/regrade-inputs.json");
+      kit = await res.json();
+    }
+  } catch (e) {
+    console.error("regrade: could not load regrade-inputs.json — pass --inputs <path> or run online.", e.message);
+    process.exit(3);
+  }
+  const rows = kit.rows || kit;
+  let overrides = {};
+  if (opts.regradeFile && !opts.regradeFile.startsWith("--")) {
+    try { overrides = JSON.parse(readFileSync(opts.regradeFile, "utf8")); }
+    catch (e) { console.error("regrade: could not read overrides file.", e.message); process.exit(3); }
+  }
+  const mean = (a) => (a.length ? a.reduce((s, x) => s + x, 0) / a.length : 0);
+  const br = (a) => mean(a.map((x) => (x.p - x.o) ** 2));
+  const incl = rows.filter((r) => overrides[r.id]?.include !== false);
+  const yours = incl.map((r) => ({ p: overrides[r.id]?.p ?? r.operator_p, o: overrides[r.id]?.o ?? r.outcome_o }));
+  const ops = incl.map((r) => ({ p: r.operator_p, o: r.outcome_o }));
+  const oBar = mean(yours.map((x) => x.o));
+  const baseRate = mean(yours.map((x) => (oBar - x.o) ** 2));
+  const yb = br(yours);
+  console.log(`\nregrade · ${yours.length} calls included${Object.keys(overrides).length ? ` · ${Object.keys(overrides).length} overrides applied` : " · operator's own values (override with a JSON file)"}`);
+  console.log(`  operator's Brier:        ${br(ops).toFixed(4)}`);
+  console.log(`  YOUR Brier:              ${yb.toFixed(4)}`);
+  console.log(`  base-rate baseline:      ${baseRate.toFixed(4)}   (predict the outcome frequency every time)`);
+  console.log(`  YOUR Brier-skill score:  ${baseRate > 0 ? (1 - yb / baseRate).toFixed(3) : "—"}   (>0 beats the base rate)`);
+  console.log(`\n  Calibration ties a base rate by design — that is NOT where the skill is.`);
+  console.log(`  The skill axis a base rate cannot touch is named-mechanism specificity:`);
+  console.log(`  grade that yourself from each row's \`claim\` vs \`outcome\` at https://jyotishintelligence.com/regrade\n`);
+  process.exit(0);
 }
 
 try {
