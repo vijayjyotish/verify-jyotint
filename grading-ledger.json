@@ -8,7 +8,7 @@
   "gradingRule": "outcomeValue: HIT=1 · NEAR=0.5 · PARTIAL=0.5 · MISS=0. brierTerm = (probAtSeal − outcomeValue)^2. brier = mean(brierTerm) over all entries. probAtSeal is read from each advisory's sealed confidence wording mapped onto the IPCC AR6 band ladder, applied identically to hits and misses; outcome is graded after the event against the claim sealed in seal-manifest.json.",
   "sealManifest": {
     "file": "https://jyotishintelligence.com/seal-manifest.json",
-    "note": "Claim-anteriority proof — separate artifact, separate OTS anchor (block 954125), never moved by a re-grade."
+    "note": "Claim-anteriority proof — separate artifact, separate OTS anchor (block 956011), never moved by a re-grade."
   },
   "count": 68,
   "brier": 0.0717,

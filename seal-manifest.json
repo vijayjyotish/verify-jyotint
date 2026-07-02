@@ -1,11 +1,11 @@
 {
   "$schema": "https://jyotishintelligence.com/schemas/seal-manifest-v1.json",
   "version": 1,
-  "generatedAt": "2026-06-17T00:46:52.886Z",
+  "generatedAt": "2026-06-30T01:45:55.186Z",
   "origin": "https://jyotishintelligence.com",
   "algorithm": "sha256",
   "hashInputTemplate": "objectId|dateIssued|title|claim",
-  "manifestHash": "8589328931f1f968927cbac643aa516b053165ae82c65b9c616115da8d9058fd",
+  "manifestHash": "14b4c12e6a75f0e76521ed0762ca2caa45deda571546eda905b70f0861486545",
   "count": 78,
   "records": [
     {
@@ -388,12 +388,12 @@
       "id": "IA-RU-015",
       "title": "German Leopard tanks — the “god-tank” that crawled",
       "dateIssued": "2023-05-01",
-      "videoUrl": "https://x.com/vijayjyotish/status/1652910719459905538",
+      "videoUrl": "https://x.com/vijayjyotish/status/1652910733007396866",
       "videoId": null,
-      "objectId": "1652910719459905538",
+      "objectId": "1652910733007396866",
       "objectType": "x",
       "claim": "It appears that the German Leopard tanks will run into issues. The delivery might be delayed & they are unlikely to deliver a decisive impact on the battlefield. The entire experience is likely to be frustrating for the Ukrainian army and it will slow them down to a crawl. (Sealed May 1 2023, T11/25.)",
-      "hash": "e2b48ca48082013525194f782870fe743d960d46268ee00f38bc13db0389899d",
+      "hash": "0c2b0a95e261257255a2de1e26c044de4180f04c20e435b5941650b3388e1958",
       "url": "https://jyotishintelligence.com/intel/advisory/IA-RU-015"
     },
     {
@@ -933,13 +933,13 @@
     {
       "id": "LA-021",
       "title": "New Glenn NG-3 — 18 Apr Day-Wide No-Go & Hot-Fire Stand-Down",
-      "dateIssued": "2026-04-17",
+      "dateIssued": "2026-04-15",
       "videoUrl": "https://youtu.be/UwyEuxAukAU",
       "videoId": "UwyEuxAukAU",
       "objectId": "UwyEuxAukAU",
       "objectType": "youtube",
       "claim": "Treat the entire 18 Apr 06:45–09:43 EDT NG-3 launch day as no-go. Eleven-window segmentation with firm no-go on Window 1 and overall scrub probability exceeding 70%.",
-      "hash": "7505f29aaa3944b8a14213800efc58fa65d1d297443e48433a7a1f3037c75565",
+      "hash": "55863d3a5605937e2e149395e9821420bdfef55753f7d4ed72fa39d2fd11f1c8",
       "url": "https://jyotishintelligence.com/advisory/LA-021"
     },
     {

@@ -248,6 +248,26 @@ if (opts.regrade) {
   console.log(`  a base-rate / coin-flip forecaster names ZERO specific mechanisms — so this`);
   console.log(`  count is the skill a base rate cannot reach. Re-count any row yourself from`);
   console.log(`  \`claim\` vs \`outcome\`. Calibration ties a base rate by design; specificity does not.`);
+  // ── INFORMATION YIELD axis under the SAME policy: bits of surprise-if-true,
+  // earned only against the (possibly regraded) verdict. surprise_bits is the
+  // per-call content (unchanged by verdict); earned = surprise_bits × outcome
+  // credit o. A base rate / consensus-follower scores 0 bits by construction.
+  const iyRows = inclRows.filter((r) => r.surprise_bits != null);
+  const median = (a) => {
+    if (!a.length) return 0;
+    const s = [...a].sort((x, y) => x - y);
+    const m = s.length >> 1;
+    return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2;
+  };
+  const medianBits = median(iyRows.map((r) => r.surprise_bits));
+  const earnedSum = iyRows.reduce((s, r) => s + r.surprise_bits * oOf(r), 0);
+  const totalSum = iyRows.reduce((s, r) => s + r.surprise_bits, 0);
+  const pctEarned = totalSum > 0 ? Math.round(100 * earnedSum / totalSum) : 0;
+  console.log(`\n  ── INFORMATION YIELD axis (same policy) ─────────────────────`);
+  console.log(`  median surprise_bits:        ${medianBits.toFixed(2)} bits   (per-call content, unchanged by verdict)`);
+  console.log(`  bits earned (× outcome o):   ${pctEarned}%   of ${totalSum.toFixed(1)} bits over ${iyRows.length} included calls`);
+  console.log(`  a base rate / consensus-follower scores 0 bits by construction — IY survives`);
+  console.log(`  the harsh regrade the Brier does not.`);
   console.log(`  Grade it interactively: https://jyotishintelligence.com/regrade\n`);
   process.exit(0);
 }

@@ -1,9 +1,9 @@
 {
-  "$comment": "Grade-it-yourself + pull-the-evidence kit. Per closed call: the verbatim CLAIM (anteriorly sealed, the prediction — grade THIS, not the title), the verbatim OUTCOME, the operator's p and verdict (override them), the published base-rate floor, the operator's named 5W1H+recommendation vectors (re-count yourself), and the EVIDENCE — sealed_post_url + seal_hash_sha256 (anteriority) and evidence_sources (outcome corroboration). Recompute the Brier with your own p/o (node verify-jyotint.mjs --regrade), or grade the specificity yourself: the skill axis a base-rate baseline cannot touch is a named, specific, pre-event mechanism that matched — count those from `claim` vs `outcome` and the base rate scores 0 by construction.",
+  "$comment": "Grade-it-yourself + pull-the-evidence kit. Per closed call: the verbatim CLAIM (anteriorly sealed, the prediction — grade THIS, not the title), the verbatim OUTCOME, the operator's p and verdict (override them), the published base-rate floor, the 1-in-N prior + its surprise-in-bits, the operator's named 5W1H+recommendation vectors (re-count yourself), and the EVIDENCE — sealed_post_url + seal_hash_sha256 (anteriority) and evidence_sources (outcome corroboration). THREE axes are recomputable from these inputs under YOUR OWN verdicts: (1) the Brier (calibration) — `node verify-jyotint.mjs --regrade`; (2) named-mechanism SPECIFICITY — count matched 5W1H vectors from `claim` vs `outcome`; (3) INFORMATION YIELD — bits = surprise_bits, earned = surprise_bits × outcome_o (HIT 1 / NEAR|PARTIAL 0.5 / MISS 0). The base rate scores 0 on specificity AND 0 bits on IY by construction. SITA's two COMPUTED axes are here too (Specificity = the vectors; Improbability = improbability_one_in_n); its two rubric-judged axes (impacT, Actionability) are protected editorial opinion, not skeptic-overridable, and the full SITA distribution is at /api/v1/sita.json.",
   "generator": "scripts/gen-regrade-inputs.mjs",
   "count": 68,
   "hash_input_template": "objectId|dateIssued|title|claim",
-  "recipes_usage": "One-step stress tests — no per-call entry. CLI: `node verify-jyotint.mjs --regrade --policy <name>`. In an LLM: apply a recipe's declarative ops to `rows` and recompute Brier = mean((p-o)^2). Conservative recipes lower the calibration Brier by design (conceded — calibration ties a base rate); the surviving skill is named-mechanism specificity, which a base rate scores 0 on.",
+  "recipes_usage": "One-step stress tests — no per-call entry. CLI: `node verify-jyotint.mjs --regrade --policy <name>` (reports the regraded Brier AND the recomputed Information Yield). In an LLM: apply a recipe's declarative ops to `rows`, then recompute Brier = mean((p-o)^2) and IY = median(surprise_bits) + %earned = Σ(surprise_bits×o)/Σ(surprise_bits). Conservative recipes lower the calibration Brier by design (conceded — calibration ties a base rate); what SURVIVES is named-mechanism specificity and the per-call bits of surprise — a base rate scores 0 on both.",
   "recipes": [
     {
       "name": "harsh-verdicts",
@@ -93,6 +93,7 @@
       "operator_verdict": "NEAR",
       "outcome_o": 0.5,
       "lead": "41 days",
+      "announce_window_days": null,
       "base_rate_floor": 0.14,
       "base_rate_basis": "Partition floor ≈ 1 in 7 — round-one order + a sub-1-point runoff + surrounding dynamics (winner inverted; NEAR).",
       "named_vectors": {
@@ -106,6 +107,8 @@
       },
       "operator_named_vector_count": 7,
       "specificity_source": "claim (Sept 19 2022 + Nov 8 2022 threads); claimLong; rubric; intel-advisory-ia-br22-001 deliverable note (NEAR: wrong winner, right dynamics)",
+      "improbability_one_in_n": 107.14285714285714,
+      "surprise_bits": 6.743391863325639,
       "evidence_sources": [
         "https://en.wikipedia.org/wiki/2022_Brazilian_general_election",
         "https://www.npr.org/2022/10/02/1126461515/lula-bolsonaro-runoff-election-brazil"
@@ -125,6 +128,7 @@
       "operator_verdict": "HIT",
       "outcome_o": 1,
       "lead": "29 days",
+      "announce_window_days": null,
       "base_rate_floor": 0.7,
       "base_rate_basis": "A 'no-removal' call with GENUINE seal-time uncertainty — NOT a high-base-rate freebie. Xi had been unseen for days, the rumor was amplified by a credible former Union Minister (Subramanian Swamy), and top-level CCP upheaval is demonstrably real — former President Hu Jintao was physically escorted from that same 20th Congress, seated beside Xi. Floor ≈ 0.70 prices removal/instability as a live ~30% tail at the panic's peak, crediting real contrarian skill while staying conservative (we do not claim removal was likely).",
       "named_vectors": {
@@ -138,6 +142,8 @@
       },
       "operator_named_vector_count": 5,
       "specificity_source": "claim ('Based on #Astrology #Prasna ... the rumors ... are FALSE'); intel-advisory-ia-cn-2022-xi-coup.ts why/context; ops-board.ts anatomy",
+      "improbability_one_in_n": 10.714285714285714,
+      "surprise_bits": 3.4214637684382767,
       "evidence_sources": [
         "https://www.snopes.com/fact-check/xi-jinping-house-arrest-coup/",
         "https://www.politifact.com/factchecks/2022/sep/28/facebook-posts/china-president-xi-jinping-still-power-despite-cou/"
@@ -157,6 +163,7 @@
       "operator_verdict": "HIT",
       "outcome_o": 1,
       "lead": "299 days",
+      "announce_window_days": null,
       "base_rate_floor": 0.0109,
       "base_rate_basis": "statDefense.floor.value 0.0109 (seat-ceiling).",
       "named_vectors": {
@@ -170,6 +177,8 @@
       },
       "operator_named_vector_count": 6,
       "specificity_source": "claim (T3/T4/T19 of 55); claimLong; outcome/outcomeLong; rubric.effect",
+      "improbability_one_in_n": 4400,
+      "surprise_bits": 12.103287808412022,
       "evidence_sources": [
         "https://youtu.be/ImFjr7eh-7U",
         "https://www.npr.org/2024/06/09/nx-s1-4997678/india-prime-minister-narendra-modi-third-term"
@@ -189,6 +198,7 @@
       "operator_verdict": "HIT",
       "outcome_o": 1,
       "lead": "299 days",
+      "announce_window_days": null,
       "base_rate_floor": 0.2,
       "base_rate_basis": "statDefense.floor.value 0.20.",
       "named_vectors": {
@@ -202,6 +212,8 @@
       },
       "operator_named_vector_count": 6,
       "specificity_source": "claim (19/55 + May 4 2024 sharpening); intel-advisory-iaIN24-002-seat-ceiling.ts why/outcome",
+      "improbability_one_in_n": 150,
+      "surprise_bits": 7.22881869049588,
       "evidence_sources": [
         "https://www.businesstoday.in/india/story/poll-of-exit-polls-2024-nda-india-bloc-bjp-congress-seat-count-axis-my-india-cvoter-todays-chanakya-431785-2024-06-01",
         "https://www.wionews.com/india-election-2024/zee-ai-exit-poll-leaves-mark-of-precision-as-all-others-get-elections-wrong-728940"
@@ -221,6 +233,7 @@
       "operator_verdict": "HIT",
       "outcome_o": 1,
       "lead": "299 days",
+      "announce_window_days": null,
       "base_rate_floor": 0.1,
       "base_rate_basis": "statDefense.floor.value 0.10.",
       "named_vectors": {
@@ -234,6 +247,8 @@
       },
       "operator_named_vector_count": 5,
       "specificity_source": "claim (12/55); intel-advisory-iaIN24-003-kerala-south.ts why/claimLong/outcomeLong",
+      "improbability_one_in_n": 120,
+      "surprise_bits": 6.906890595608519,
       "evidence_sources": [
         "https://theprint.in/politics/bjp-gets-first-lok-sabha-seat-in-kerala-as-suresh-gopi-wins-thrissur-with-over-70000-votes/2116063/",
         "https://www.thenewsminute.com/telangana/analysis-how-bjp-gained-ground-in-telanganas-lok-sabha-elections"
@@ -253,6 +268,7 @@
       "operator_verdict": "HIT",
       "outcome_o": 1,
       "lead": "299 days",
+      "announce_window_days": null,
       "base_rate_floor": 0.125,
       "base_rate_basis": "statDefense.floor.value 0.125.",
       "named_vectors": {
@@ -266,6 +282,8 @@
       },
       "operator_named_vector_count": 7,
       "specificity_source": "claim (sealed T13 + 30 May 2024 sharpening); outcome/outcomeLong (SP 37, BJP 62→~33, Faizabad lost)",
+      "improbability_one_in_n": 128,
+      "surprise_bits": 7,
       "evidence_sources": [
         "https://www.aljazeera.com/news/2024/6/4/india-election-results-big-wins-losses-and-surprises",
         "https://en.wikipedia.org/wiki/Results_of_the_2024_Indian_general_election"
@@ -285,6 +303,7 @@
       "operator_verdict": "HIT",
       "outcome_o": 1,
       "lead": "304 days",
+      "announce_window_days": null,
       "base_rate_floor": 0.125,
       "base_rate_basis": "statDefense.floor.value 0.125 (Reasi).",
       "named_vectors": {
@@ -298,6 +317,8 @@
       },
       "operator_named_vector_count": 7,
       "specificity_source": "claim (T48-50); rubric.actor; outcomeLong (Reasi attack, TRF/LeT); advisories.ts why",
+      "improbability_one_in_n": 48,
+      "surprise_bits": 5.584962500721156,
       "evidence_sources": [
         "https://www.aljazeera.com/news/2024/6/9/at-least-nine-killed-after-attack-on-bus-in-indian-administered-kashmir",
         "https://www.cbsnews.com/news/india-terror-attack-bus-kashmir-reasi-hindu-pilgrims-killed/"
@@ -317,6 +338,7 @@
       "operator_verdict": "HIT",
       "outcome_o": 1,
       "lead": "143 days",
+      "announce_window_days": null,
       "base_rate_floor": 0.25,
       "base_rate_basis": "statDefense.floor.value 0.25.",
       "named_vectors": {
@@ -330,6 +352,8 @@
       },
       "operator_named_vector_count": 7,
       "specificity_source": "claim (T43-44/55); rubric.actor; outcome/outcomeLong; smokingGun (BSF Punjab year-end data)",
+      "improbability_one_in_n": 16,
+      "surprise_bits": 4,
       "evidence_sources": [
         "https://aninews.in/news/national/general-news/bsf-punjab-frontier-captured-107-drones-seized-442-kg-heroin-and-3-pakistan-intruders-in-202320231231222353/",
         "https://www.orfonline.org/research/countering-hostile-drone-activity-on-the-india-pakistan-border"
@@ -349,6 +373,7 @@
       "operator_verdict": "HIT",
       "outcome_o": 1,
       "lead": "260 days",
+      "announce_window_days": null,
       "base_rate_floor": 0.167,
       "base_rate_basis": "statDefense.floor.value 0.167.",
       "named_vectors": {
@@ -362,6 +387,8 @@
       },
       "operator_named_vector_count": 7,
       "specificity_source": "claim (42/55); rubric.actor; outcomeLong; outcome_summary (Prajwal Revanna scandal; Bharuch ISI honey-trap)",
+      "improbability_one_in_n": 36,
+      "surprise_bits": 5.169925001442312,
       "evidence_sources": [
         "https://www.aljazeera.com/news/2024/5/1/in-indias-election-a-flash-drive-sex-abuse-videos-and-a-missing",
         "https://www.cbsnews.com/news/prajwal-revanna-videos-india-politician-accused-sexual-assault-blackmail/"
@@ -381,6 +408,7 @@
       "operator_verdict": "HIT",
       "outcome_o": 1,
       "lead": "189 days",
+      "announce_window_days": null,
       "base_rate_floor": 0.111,
       "base_rate_basis": "statDefense.floor.value 0.111.",
       "named_vectors": {
@@ -394,6 +422,8 @@
       },
       "operator_named_vector_count": 6,
       "specificity_source": "claim (T38-39/55); intel-advisory-iaIN24-008-electoral-bonds.ts why/outcomeLong/rubric; corpus outcome_summary",
+      "improbability_one_in_n": 72,
+      "surprise_bits": 6.169925001442312,
       "evidence_sources": [
         "https://www.aljazeera.com/news/2024/2/15/indias-supreme-court-scraps-electoral-bonds-calls-it-unconstitutional",
         "https://www.jurist.org/news/2024/02/india-supreme-court-strikes-down-electoral-bonds-scheme/"
@@ -413,6 +443,7 @@
       "operator_verdict": "MISS",
       "outcome_o": 0,
       "lead": "12 days",
+      "announce_window_days": null,
       "base_rate_floor": 0.5,
       "base_rate_basis": "No partition stated — conservative coin-flip default (the published MISS).",
       "named_vectors": {
@@ -426,6 +457,8 @@
       },
       "operator_named_vector_count": 6,
       "specificity_source": "claim; why field; calibrationNotes; reportAnalysis (intel-advisory-ia-mh24-001) — owned MISS, seat-by-seat falsifiability noted as context not mitigation",
+      "improbability_one_in_n": 7.999999999999999,
+      "surprise_bits": 3,
       "evidence_sources": [
         "https://en.wikipedia.org/wiki/2024_Maharashtra_Legislative_Assembly_election",
         "https://www.etvbharat.com/en/!bharat/maharashtra-assembly-election-2024-counting-mahayuti-mva-bjp-shiv-sena-ubt-ncp-congress-enn24112205094"
@@ -445,6 +478,7 @@
       "operator_verdict": "NEAR",
       "outcome_o": 0.5,
       "lead": "471 days",
+      "announce_window_days": null,
       "base_rate_floor": 0.1,
       "base_rate_basis": "Partition floor ≈ 1 in 10 — a dated recovery call (Adani turns Mar 2023) at the bottom of a fraud-allegation collapse, against consensus (NEAR).",
       "named_vectors": {
@@ -458,6 +492,8 @@
       },
       "operator_named_vector_count": 5,
       "specificity_source": "claim; intel-advisory-ia-mkt-001-adani.ts why/rubric/claimLong (explicitly 'not investment advice' — recommendation left null)",
+      "improbability_one_in_n": 60,
+      "surprise_bits": 5.906890595608519,
       "evidence_sources": [
         "https://www.business-standard.com/companies/news/adani-enterprises-recovers-all-stock-mkt-losses-sparked-by-hindenburg-124052400374_1.html",
         "https://www.businesstoday.in/markets/company-stock/story/adani-enterprises-shares-erase-hindenburg-losses-stock-price-target-at-rs-4338-says-a-broker-430762-2024-05-24"
@@ -477,6 +513,7 @@
       "operator_verdict": "HIT",
       "outcome_o": 1,
       "lead": "86 days",
+      "announce_window_days": null,
       "base_rate_floor": 0.2,
       "base_rate_basis": "Partition floor ≈ 1 in 5 — calling no-recession AND a boom against a documented 60–65% recession consensus, at the tariff-crash bottom.",
       "named_vectors": {
@@ -490,6 +527,8 @@
       },
       "operator_named_vector_count": 7,
       "specificity_source": "claim; claimLong; outcomeLong; axisMatrix (three legs); calibrationNotes",
+      "improbability_one_in_n": 30.00000000000001,
+      "surprise_bits": 4.906890595608519,
       "evidence_sources": [
         "https://finance.yahoo.com/news/jpmorgan-becomes-the-first-wall-street-bank-to-forecast-a-us-recession-following-trumps-tariffs-222019272.html",
         "https://www.bloomberg.com/news/articles/2025-04-09/goldman-sachs-sees-65-chance-of-us-recession-in-next-12-months"
@@ -509,6 +548,7 @@
       "operator_verdict": "HIT",
       "outcome_o": 1,
       "lead": "792 days",
+      "announce_window_days": null,
       "base_rate_floor": 0.1,
       "base_rate_basis": "Partition floor ≈ 1 in 10 — multi-axis macro call (sanctions-fail × named-partner substitution × ruble stabilization × re-emergence) against the contemporaneous policy consensus.",
       "named_vectors": {
@@ -522,6 +562,8 @@
       },
       "operator_named_vector_count": 6,
       "specificity_source": "claim; intel-advisory-ia-ru-001-sanctions.ts claimLong/why (Nov 19 2022 + Apr 30 2023 elaborations)",
+      "improbability_one_in_n": 1650,
+      "surprise_bits": 10.688250309133178,
       "evidence_sources": [
         "https://t.me/vijayjyotish/26",
         "https://www.atlanticcouncil.org/blogs/econographics/russia-sanctions-database/"
@@ -541,6 +583,7 @@
       "operator_verdict": "HIT",
       "outcome_o": 1,
       "lead": "16 days",
+      "announce_window_days": null,
       "base_rate_floor": 0.2,
       "base_rate_basis": "Partition floor ≈ 1 in 5 — naming a specific APT actor (Nobelium/APT29) and a revival campaign against named target classes, ahead of attribution.",
       "named_vectors": {
@@ -554,6 +597,8 @@
       },
       "operator_named_vector_count": 6,
       "specificity_source": "claim (22/31, 23/31); intel-advisory-ia-ru-002-cyber.ts why",
+      "improbability_one_in_n": 27.500000000000014,
+      "surprise_bits": 4.78135971352466,
       "evidence_sources": [
         "https://msrc.microsoft.com/blog/2024/01/microsoft-actions-following-attack-by-nation-state-actor-midnight-blizzard/",
         "https://blogs.blackberry.com/en/2023/03/nobelium-targets-eu-governments-assisting-ukraine"
@@ -573,6 +618,7 @@
       "operator_verdict": "HIT",
       "outcome_o": 1,
       "lead": "25 days",
+      "announce_window_days": null,
       "base_rate_floor": 0.14,
       "base_rate_basis": "Partition floor ≈ 1 in 7 — calling the collapse of the war's most prominent PMC and the regular army's takeover, before the mutiny.",
       "named_vectors": {
@@ -586,6 +632,8 @@
       },
       "operator_named_vector_count": 6,
       "specificity_source": "claim (T9 9/25); intel-advisory-ia-ru-003 why/outcome/rubric",
+      "improbability_one_in_n": 535.7142857142856,
+      "surprise_bits": 9.065319958213001,
       "evidence_sources": [
         "https://www.reuters.com/world/europe/wagners-prigozhin-says-russias-military-leadership-must-be-stopped-2023-06-23/",
         "https://www.bbc.com/news/world-europe-66607069"
@@ -605,6 +653,7 @@
       "operator_verdict": "HIT",
       "outcome_o": 1,
       "lead": "116 days",
+      "announce_window_days": null,
       "base_rate_floor": 0.2,
       "base_rate_basis": "Partition floor ≈ 1 in 5 — a specific operational pattern (symbolic amphibious raids for prestige) on a contested coast.",
       "named_vectors": {
@@ -618,6 +667,8 @@
       },
       "operator_named_vector_count": 7,
       "specificity_source": "claim (T12); rubric.actor; adversaryReceipts; outcomeLong (Cape Tarkhankut raid)",
+      "improbability_one_in_n": 375,
+      "surprise_bits": 8.550746785383243,
       "evidence_sources": [
         "https://www.bbc.com/news/world-europe-66607451",
         "https://www.reuters.com/world/europe/ukraine-launches-massive-missile-strike-black-sea-fleet-headquarters-2023-09-22/"
@@ -637,6 +688,7 @@
       "operator_verdict": "HIT",
       "outcome_o": 1,
       "lead": "110 days",
+      "announce_window_days": null,
       "base_rate_floor": 0.1,
       "base_rate_basis": "Partition floor ≈ 1 in 10 — a regime-stability shock (coup/assassination attempt) against a sitting head of state within the horizon.",
       "named_vectors": {
@@ -650,6 +702,8 @@
       },
       "operator_named_vector_count": 6,
       "specificity_source": "claim (Mar 6 2023 sealed window + live Jun 24 2023 post); why; rubric; axisMatrix/honestyLadder (4 HIT)",
+      "improbability_one_in_n": 1874.9999999999998,
+      "surprise_bits": 10.872674880270605,
       "evidence_sources": [
         "https://www.bbc.com/news/world-europe-66005006",
         "https://www.bbc.com/news/world-europe-66607069"
@@ -669,6 +723,7 @@
       "operator_verdict": "HIT",
       "outcome_o": 1,
       "lead": "83 days",
+      "announce_window_days": null,
       "base_rate_floor": 0.02,
       "base_rate_basis": "Partition floor ≈ 1 in 50 — a record storm devastating this exact target (Crimean coast + Black Sea Fleet) within the horizon, conservatively floored; 83-day lead is beyond any weather-forecast horizon. Attribution mechanism not scored.",
       "named_vectors": {
@@ -682,6 +737,8 @@
       },
       "operator_named_vector_count": 7,
       "specificity_source": "claim (corpus.jsonl)",
+      "improbability_one_in_n": 375,
+      "surprise_bits": 8.550746785383243,
       "evidence_sources": [
         "https://www.nytimes.com/2023/06/16/world/europe/ukraine-kakhovka-dam-collapse.html",
         "https://www.reuters.com/world/europe/ukraine-says-it-struck-russian-warship-occupied-crimea-2023-12-26/"
@@ -701,6 +758,7 @@
       "operator_verdict": "HIT",
       "outcome_o": 1,
       "lead": "4 days",
+      "announce_window_days": null,
       "base_rate_floor": 0.14,
       "base_rate_basis": "Partition floor ≈ 1 in 7 — naming the specific pipelines (TurkStream/Blue Stream) and the alibi mechanism as the next sabotage target.",
       "named_vectors": {
@@ -714,6 +772,8 @@
       },
       "operator_named_vector_count": 6,
       "specificity_source": "claim (T47/59); intel-advisory-ia-ru-007-pipeline-sabotage.ts why/rubric/calibrationNotes; corpus outcome_summary",
+      "improbability_one_in_n": 334.82142857142867,
+      "surprise_bits": 8.387248053100365,
       "evidence_sources": [
         "https://www.themoscowtimes.com/2023/09/08/russia-says-it-prevented-acts-of-sabotage-against-turkstream-pipeline-a82380",
         "https://tass.com/politics/1675319"
@@ -723,7 +783,7 @@
       "id": "IA-RU-008",
       "title": "Crocus City Hall — Moscow public-gatherings terror attack March-April 2024",
       "claim": "37/59 Terrorist attacks on public gatherings are possible in Moscow in March and April in an attempt to sow panic amongst the general public of Russia, who have been well-insulated from the harsh realities of this conflict.",
-      "outcome": "ISIS-K gunmen attacked the sold-out Crocus City Hall concert venue near Moscow — 145 killed, 600+ injured — hitting every sealed axis.",
+      "outcome": "ISIS-K gunmen attacked the sold-out Crocus City Hall concert venue near Moscow — 145+ killed, 600+ injured — hitting every sealed axis.",
       "date_issued": "2023-09-04",
       "seal_hash_sha256": "36bb84d3b0aa2de6c0aefc16f36fa194e12f172c37327909944a879dcd99bd4e",
       "sealed_post_url": "https://x.com/vijayjyotish/status/1698760248033476914",
@@ -733,6 +793,7 @@
       "operator_verdict": "HIT",
       "outcome_o": 1,
       "lead": "200 days",
+      "announce_window_days": null,
       "base_rate_floor": 0.02,
       "base_rate_basis": "Partition floor ≈ 1 in 50 — a named city (Moscow) × target-class (public gatherings) × two-month window (Mar–Apr) against the space of plausible non-events; conservatively floored, mass-casualty public-gathering attacks on Moscow recur roughly once a decade (Nord-Ost 2002, Crocus 2024).",
       "named_vectors": {
@@ -746,6 +807,8 @@
       },
       "operator_named_vector_count": 6,
       "specificity_source": "claim; claimLong; rubric; axisMatrix; convergenceLadder (intel-advisory-ia-ru-008-crocus) — 200-day lead; Putin dismissed Western warnings 3 days prior",
+      "improbability_one_in_n": 419.9999999999999,
+      "surprise_bits": 8.714245517666122,
       "evidence_sources": [
         "https://www.reuters.com/world/europe/russia-says-many-killed-shooting-moscow-concert-hall-2024-03-22/",
         "https://ru.usembassy.gov/security-alert-u-s-embassy-moscow-march-7-2024/"
@@ -765,6 +828,7 @@
       "operator_verdict": "HIT",
       "outcome_o": 1,
       "lead": "260 days",
+      "announce_window_days": null,
       "base_rate_floor": 0.2,
       "base_rate_basis": "Partition floor ≈ 1 in 5 — a named two-week window (May 15–31 2024) for nuclear-posture escalation signaling (HIT — graded on the full consider-then-rule-out claim).",
       "named_vectors": {
@@ -778,6 +842,8 @@
       },
       "operator_named_vector_count": 5,
       "specificity_source": "claim (43/59); corpus outcome_summary; ops-board.ts anatomy",
+      "improbability_one_in_n": 105.00000000000004,
+      "surprise_bits": 6.714245517666123,
       "evidence_sources": [
         "https://www.reuters.com/world/europe/russia-plans-drills-with-tactical-nuclear-weapons-defence-ministry-2024-05-06/",
         "https://www.reuters.com/world/europe/russia-begins-tactical-nuclear-weapons-drills-2024-05-21/"
@@ -797,6 +863,7 @@
       "operator_verdict": "HIT",
       "outcome_o": 1,
       "lead": "301 days",
+      "announce_window_days": null,
       "base_rate_floor": 0.05,
       "base_rate_basis": "Partition floor ≈ 1 in 20 — naming the specific airbase (Starokostiantyniv) as both F-16 site and Russian strike target, ahead of either.",
       "named_vectors": {
@@ -810,6 +877,8 @@
       },
       "operator_named_vector_count": 6,
       "specificity_source": "claim (T5-T8/59); claimLong; outcomeLong; axisMatrix; rubric; smokingGun",
+      "improbability_one_in_n": 1500.0000000000005,
+      "surprise_bits": 10.550746785383243,
       "evidence_sources": [
         "https://www.reuters.com/world/europe/ukraine-receives-first-batch-f-16-fighter-jets-2024-07-31/",
         "https://www.reuters.com/world/europe/russia-launches-massive-air-attack-ukraine-2024-08-26/"
@@ -829,6 +898,7 @@
       "operator_verdict": "HIT",
       "outcome_o": 1,
       "lead": "752 days",
+      "announce_window_days": null,
       "base_rate_floor": 0.1,
       "base_rate_basis": "Partition floor ≈ 1 in 10 — a multi-axis settlement call (new-POTUS freeze × dated ceasefire window × framing meta-prediction) two years out.",
       "named_vectors": {
@@ -842,6 +912,8 @@
       },
       "operator_named_vector_count": 6,
       "specificity_source": "claim (T28/T29 Feb 26 2023 + T57/T58 Sept 4 2023); intel-advisory-ia-ru-011-new-potus-ceasefire.ts why/claimLong",
+      "improbability_one_in_n": 660.0000000000001,
+      "surprise_bits": 9.366322214245816,
       "evidence_sources": [
         "https://www.bbc.com/news/articles/c0kj4j5e7mxo",
         "https://www.reuters.com/world/europe/trump-putin-call-energy-infrastructure-ceasefire-2025-03-18/"
@@ -861,6 +933,7 @@
       "operator_verdict": "HIT",
       "outcome_o": 1,
       "lead": "249 days",
+      "announce_window_days": null,
       "base_rate_floor": 0.1,
       "base_rate_basis": "Partition floor ≈ 1 in 10 — naming the specific test site (Novaya Zemlya), directorate, and signaling mode within a dated window.",
       "named_vectors": {
@@ -874,6 +947,8 @@
       },
       "operator_named_vector_count": 6,
       "specificity_source": "claim (12/31); intel-advisory-ia-ru-012-novaya-zemlya.ts why",
+      "improbability_one_in_n": 210.0000000000001,
+      "surprise_bits": 7.714245517666123,
       "evidence_sources": [
         "https://www.reuters.com/world/europe/putin-signs-law-revoking-ratification-nuclear-test-ban-treaty-2023-11-02/",
         "https://nonproliferation.org/"
@@ -893,6 +968,7 @@
       "operator_verdict": "HIT",
       "outcome_o": 1,
       "lead": "187 days",
+      "announce_window_days": null,
       "base_rate_floor": 0.2,
       "base_rate_basis": "Partition floor ≈ 1 in 5 — calling a specific strategic-system activation (SARMAT combat duty) plus a readiness-demo cluster.",
       "named_vectors": {
@@ -906,6 +982,8 @@
       },
       "operator_named_vector_count": 6,
       "specificity_source": "claim (T21); intel-advisory-ia-ru-013 why/rubric.actor/outcome",
+      "improbability_one_in_n": 93.74999999999997,
+      "surprise_bits": 6.550746785383243,
       "evidence_sources": [
         "https://www.reuters.com/world/europe/russia-puts-sarmat-intercontinental-missile-system-combat-duty-tass-2023-09-01/",
         "https://www.aljazeera.com/news/2023/9/2/russia-puts-advanced-sarmat-nuclear-missile-system-on-combat-duty"
@@ -925,6 +1003,7 @@
       "operator_verdict": "PARTIAL",
       "outcome_o": 0.5,
       "lead": "304 days",
+      "announce_window_days": null,
       "base_rate_floor": 0.25,
       "base_rate_basis": "Partition floor ≈ 1 in 4 — a dated reputational-decline call (Zelensky by Sept 2023) against a strong prevailing narrative.",
       "named_vectors": {
@@ -938,6 +1017,8 @@
       },
       "operator_named_vector_count": 6,
       "specificity_source": "claim (T15-17); rubric; outcomeLong; honestyLadder",
+      "improbability_one_in_n": 75.00000000000001,
+      "surprise_bits": 6.228818690495881,
       "evidence_sources": [
         "https://www.reuters.com/world/europe/poland-no-longer-arming-ukraine-amid-grain-row-pm-says-2023-09-20/",
         "https://apnews.com/"
@@ -947,16 +1028,17 @@
       "id": "IA-RU-015",
       "title": "German Leopard tanks — the “god-tank” that crawled",
       "claim": "It appears that the German Leopard tanks will run into issues. The delivery might be delayed & they are unlikely to deliver a decisive impact on the battlefield. The entire experience is likely to be frustrating for the Ukrainian army and it will slow them down to a crawl. (Sealed May 1 2023, T11/25.)",
-      "outcome": "Offensive launched June 4; the vaunted Leopards bunched behind mine-clearing and were neutralized by Ka-52/Vikhr standoff fire; by Sept 2023 UA forces had advanced <17 km, primary objectives (Tokmak, Melitopol, Sea of Azov) unachieved, and Zaluzhnyi publicly conceded stalemate.",
+      "outcome": "Committed in early June, the vaunted Leopards bunched behind mine-clearing in Gerasimov's forward security zone and were shredded by Ka-52/Vikhr standoff fire — ~14–15 Leopards and numerous Bradleys destroyed. Ukraine abandoned mass armour for dismounted infantry; no decisive battlefield impact.",
       "date_issued": "2023-05-01",
-      "seal_hash_sha256": "e2b48ca48082013525194f782870fe743d960d46268ee00f38bc13db0389899d",
-      "sealed_post_url": "https://x.com/vijayjyotish/status/1652910719459905538",
+      "seal_hash_sha256": "0c2b0a95e261257255a2de1e26c044de4180f04c20e435b5941650b3388e1958",
+      "sealed_post_url": "https://x.com/vijayjyotish/status/1652910733007396866",
       "advisory_url": "https://jyotishintelligence.com/intel/advisory/IA-RU-015",
       "operator_p": 0.95,
       "operator_band": "Extremely likely",
       "operator_verdict": "HIT",
       "outcome_o": 1,
       "lead": "38 days",
+      "announce_window_days": null,
       "base_rate_floor": 0.2,
       "base_rate_basis": "Partition floor ≈ 1 in 5 — calling the failure of a heavily-resourced offensive (Surovikin line absorbs the 2023 counter-offensive) against the dominant expectation.",
       "named_vectors": {
@@ -970,9 +1052,11 @@
       },
       "operator_named_vector_count": 6,
       "specificity_source": "claim (T11/T13/T15); why + outcome (kill mechanism); rubric; topCallout/outcomeLong",
+      "improbability_one_in_n": 375,
+      "surprise_bits": 8.550746785383243,
       "evidence_sources": [
-        "https://www.economist.com/europe/2023/11/01/ukraines-commander-in-chief-on-the-breakthrough-he-needs-to-beat-russia",
-        "https://www.osw.waw.pl/en/publikacje/analyses/2023-11-03/ukraine-confirms-its-counter-offensive-has-failed-day-617-war"
+        "https://www.oryxspioenkop.com/2022/02/attack-on-europe-documenting-ukrainian.html",
+        "https://en.wikipedia.org/wiki/Battle_of_Mala_Tokmachka"
       ]
     },
     {
@@ -989,6 +1073,7 @@
       "operator_verdict": "HIT",
       "outcome_o": 1,
       "lead": "220 days",
+      "announce_window_days": null,
       "base_rate_floor": 0.05,
       "base_rate_basis": "Partition floor ≈ 1 in 20 — naming a 3-day escalation window (Apr 10–12 2024) 220 days out that resolved on its middle day (Trypilska).",
       "named_vectors": {
@@ -1002,6 +1087,8 @@
       },
       "operator_named_vector_count": 7,
       "specificity_source": "claim (T32); rubric.actor; outcomeLong; smokingGun (Apr 11 strike package)",
+      "improbability_one_in_n": 1500.0000000000005,
+      "surprise_bits": 10.550746785383243,
       "evidence_sources": [
         "https://www.kyivpost.com/post/30877",
         "https://kyivindependent.com/"
@@ -1021,6 +1108,7 @@
       "operator_verdict": "HIT",
       "outcome_o": 1,
       "lead": "460 days",
+      "announce_window_days": null,
       "base_rate_floor": 0.2,
       "base_rate_basis": "Partition floor ≈ 1 in 5 — naming both the individual outcome (Gershkovich release) and the mechanism (multi-party swap) over a year out.",
       "named_vectors": {
@@ -1034,6 +1122,8 @@
       },
       "operator_named_vector_count": 7,
       "specificity_source": "claim (T18-19/25); intel-advisory-ia-ru-017-gershkovich.ts why/claimLong/outcomeLong/rubric; corpus outcome_summary",
+      "improbability_one_in_n": 330.00000000000006,
+      "surprise_bits": 8.366322214245816,
       "evidence_sources": [
         "https://www.wsj.com/articles/evan-gershkovich-freed-russia-prisoner-swap-1bcd6a4a",
         "https://www.cnn.com/2023/05/11/politics/prisoner-swap-russian-spies-biden-administration/index.html"
@@ -1053,6 +1143,7 @@
       "operator_verdict": "HIT",
       "outcome_o": 1,
       "lead": "310 days",
+      "announce_window_days": null,
       "base_rate_floor": 0.25,
       "base_rate_basis": "Partition floor ≈ 1 in 4 — a multi-axis geopolitical-alignment call (India neutrality × trade expansion × BRICS architecture).",
       "named_vectors": {
@@ -1066,9 +1157,11 @@
       },
       "operator_named_vector_count": 6,
       "specificity_source": "claim (Feb 26 + Apr 30 2023 T20); claimLong; axisMatrix; rubric (intel-advisory-ia-ru-018-india-brics) — dual-vector convergence; India-Russia oil pivot ledger",
+      "improbability_one_in_n": 26.400000000000013,
+      "surprise_bits": 4.722466024471092,
       "evidence_sources": [
         "https://www.reuters.com/world/brics-bloc-invites-six-countries-join-2023-08-24/",
-        "https://www.reuters.com/world/asia-pacific/modi-putin-meet-moscow-2024-07-09/"
+        "https://www.washingtonpost.com/world/2024/07/09/russia-india-putin-modi-moscow/"
       ]
     },
     {
@@ -1085,6 +1178,7 @@
       "operator_verdict": "HIT",
       "outcome_o": 1,
       "lead": "268 days",
+      "announce_window_days": null,
       "base_rate_floor": 0.2,
       "base_rate_basis": "Partition floor ≈ 1 in 5 — calling an all-out bridge-strike campaign with a specific intent; graded on the campaign, not the unrealized end-state.",
       "named_vectors": {
@@ -1098,6 +1192,8 @@
       },
       "operator_named_vector_count": 5,
       "specificity_source": "claim (46/59); corpus outcome_summary; ops-board.ts anatomy/edge",
+      "improbability_one_in_n": 375,
+      "surprise_bits": 8.550746785383243,
       "evidence_sources": [
         "https://www.theguardian.com/world/2024/apr/03/crimea-kerch-bridge-ukraine-disabled-2024",
         "https://www.reuters.com/world/europe/ukraine-atacms-crimea-strike-2024-05-29/"
@@ -1117,6 +1213,7 @@
       "operator_verdict": "PARTIAL",
       "outcome_o": 0.5,
       "lead": "51 days",
+      "announce_window_days": null,
       "base_rate_floor": 0.0625,
       "base_rate_basis": "statDefense floor ≈ 1 in 16 — (1/2)^4 across four converging axes.",
       "named_vectors": {
@@ -1130,6 +1227,8 @@
       },
       "operator_named_vector_count": 5,
       "specificity_source": "claim; claimLong (attribution-honesty); outcomeLong (convergence timeline); consensusQuotes (SVR/Medvedev/Duma)",
+      "improbability_one_in_n": 1280,
+      "surprise_bits": 10.321928094887362,
       "evidence_sources": [
         "https://www.globalsecurity.org/wmd/library/news/ukraine/2026/02/ukraine-260225-sputnik01.htm",
         "https://kyivindependent.com/medvedev-threatens-nuclear-strikes-against-ukraine-uk-france/"
@@ -1149,6 +1248,7 @@
       "operator_verdict": "HIT",
       "outcome_o": 1,
       "lead": "28 days",
+      "announce_window_days": null,
       "base_rate_floor": 0.2,
       "base_rate_basis": "Partition floor ≈ 1 in 5 — a two-candidate contest, with the MP-leads / membership-carries split mechanism called correctly.",
       "named_vectors": {
@@ -1162,6 +1262,8 @@
       },
       "operator_named_vector_count": 6,
       "specificity_source": "claim; intel-advisory-ia-uk22-001-truss-sunak.ts claim/why/outcome (membership-vote mechanism named)",
+      "improbability_one_in_n": 30.00000000000001,
+      "surprise_bits": 4.906890595608519,
       "evidence_sources": [
         "https://en.wikipedia.org/wiki/July%E2%80%93September_2022_Conservative_Party_leadership_election",
         "https://www.npr.org/2022/09/06/1121266992/liz-truss-prime-minister-queen-elizabeth"
@@ -1181,6 +1283,7 @@
       "operator_verdict": "HIT",
       "outcome_o": 1,
       "lead": "61 days",
+      "announce_window_days": null,
       "base_rate_floor": 0.1,
       "base_rate_basis": "Partition floor ≈ 1 in 10 — no-red-wave AND narrow GOP House control AND McCarthy-as-Speaker, against the near-universal red-wave consensus.",
       "named_vectors": {
@@ -1194,6 +1297,8 @@
       },
       "operator_named_vector_count": 5,
       "specificity_source": "claim (2/3, 3/3); intel-advisory-ia-us22-001-midterms.ts claimLong/outcomeLong/why",
+      "improbability_one_in_n": 60,
+      "surprise_bits": 5.906890595608519,
       "evidence_sources": [
         "https://www.npr.org/2022/11/09/1135690671/house-senate-republican-democrat-midterm-election-results",
         "https://www.washingtonpost.com/politics/2022/11/16/republicans-win-house-majority/"
@@ -1213,6 +1318,7 @@
       "operator_verdict": "HIT",
       "outcome_o": 1,
       "lead": "68 days",
+      "announce_window_days": null,
       "base_rate_floor": 0.0317,
       "base_rate_basis": "statDefense floor ≈ 1 in 31 — 25.39% × 12.5% (winner × map).",
       "named_vectors": {
@@ -1226,6 +1332,8 @@
       },
       "operator_named_vector_count": 7,
       "specificity_source": "claim (Final Assessment 30 Aug 2024); outcome_summary",
+      "improbability_one_in_n": 1500,
+      "surprise_bits": 10.550746785383243,
       "evidence_sources": [
         "https://www.youtube.com/watch?v=1gy9AJa5kSw",
         "https://apnews.com/article/election-day-trump-harris-white-house-25cba5d680cb0e122ce0e9d8d2ad1bf1"
@@ -1245,6 +1353,7 @@
       "operator_verdict": "HIT",
       "outcome_o": 1,
       "lead": "82 days",
+      "announce_window_days": null,
       "base_rate_floor": 0.125,
       "base_rate_basis": "statDefense.floor.value 0.125 (AZ).",
       "named_vectors": {
@@ -1258,6 +1367,8 @@
       },
       "operator_named_vector_count": 7,
       "specificity_source": "claim/claimLong; rubric; outcomeLong; calibrationNotes",
+      "improbability_one_in_n": 384,
+      "surprise_bits": 8.584962500721156,
       "evidence_sources": [
         "https://apnews.com/projects/election-results-2024/arizona/",
         "https://elections.maricopa.gov/"
@@ -1277,6 +1388,7 @@
       "operator_verdict": "MISS",
       "outcome_o": 0,
       "lead": "77 days",
+      "announce_window_days": null,
       "base_rate_floor": 0.25,
       "base_rate_basis": "statDefense.floor.value 0.25 (GA).",
       "named_vectors": {
@@ -1290,6 +1402,8 @@
       },
       "operator_named_vector_count": 6,
       "specificity_source": "claimLong (sealed sub-claims); outcomeLong (sub-claim grading); why",
+      "improbability_one_in_n": 2,
+      "surprise_bits": 1,
       "evidence_sources": [
         "https://apnews.com/projects/election-results-2024/georgia/",
         "https://en.wikipedia.org/wiki/2024_United_States_presidential_election_in_Georgia"
@@ -1309,6 +1423,7 @@
       "operator_verdict": "HIT",
       "outcome_o": 1,
       "lead": "76 days",
+      "announce_window_days": null,
       "base_rate_floor": 0.0625,
       "base_rate_basis": "statDefense.floor.value 0.0625 (PA).",
       "named_vectors": {
@@ -1322,6 +1437,8 @@
       },
       "operator_named_vector_count": 6,
       "specificity_source": "claim (corpus.jsonl)",
+      "improbability_one_in_n": 457,
+      "surprise_bits": 8.83605035505807,
       "evidence_sources": [
         "https://apnews.com/projects/election-results-2024/pennsylvania/",
         "https://www.spotlightpa.org/news/2024/12/pennsylvania-election-2024-certification-donald-trump-presidential-winners/"
@@ -1341,6 +1458,7 @@
       "operator_verdict": "MISS",
       "outcome_o": 0,
       "lead": "75 days",
+      "announce_window_days": null,
       "base_rate_floor": 0.125,
       "base_rate_basis": "statDefense.floor.value 0.125 (MI).",
       "named_vectors": {
@@ -1354,6 +1472,8 @@
       },
       "operator_named_vector_count": 7,
       "specificity_source": "claim (sealed X post); intel-advisory-ia-us24-005-mi.ts claimLong/outcomeLong/mechanism; corpus outcome_summary",
+      "improbability_one_in_n": 4,
+      "surprise_bits": 2,
       "evidence_sources": [
         "https://apnews.com/projects/election-results-2024/michigan/",
         "https://www.detroitnews.com/story/news/politics/elections/2024/11/06/trump-won-dearborn-dearborn-heights-arab-american-muslim-voters-israel-gaza-lebanon-hamas-hamtramck/76088958007/"
@@ -1373,6 +1493,7 @@
       "operator_verdict": "HIT",
       "outcome_o": 1,
       "lead": "74 days",
+      "announce_window_days": null,
       "base_rate_floor": 0.0625,
       "base_rate_basis": "statDefense.floor.value 0.0625 (WI).",
       "named_vectors": {
@@ -1386,6 +1507,8 @@
       },
       "operator_named_vector_count": 7,
       "specificity_source": "claim; claimLong; outcomeLong; rubric; moat (intel-advisory-ia-us24-006-wi) — closest state of cycle; tabulator-door incident materialized",
+      "improbability_one_in_n": 512,
+      "surprise_bits": 9,
       "evidence_sources": [
         "https://apnews.com/projects/election-results-2024/wisconsin/",
         "https://en.wikipedia.org/wiki/2024_United_States_presidential_election_in_Wisconsin"
@@ -1405,6 +1528,7 @@
       "operator_verdict": "MISS",
       "outcome_o": 0,
       "lead": "71 days",
+      "announce_window_days": null,
       "base_rate_floor": 0.25,
       "base_rate_basis": "statDefense.floor.value 0.25 (NV).",
       "named_vectors": {
@@ -1418,6 +1542,8 @@
       },
       "operator_named_vector_count": 7,
       "specificity_source": "claim (full sealed text); corpus outcome_summary; ops-board.ts anatomy",
+      "improbability_one_in_n": 2,
+      "surprise_bits": 1,
       "evidence_sources": [
         "https://apnews.com/projects/election-results-2024/nevada/",
         "https://en.wikipedia.org/wiki/2024_United_States_presidential_election_in_Nevada"
@@ -1437,6 +1563,7 @@
       "operator_verdict": "HIT",
       "outcome_o": 1,
       "lead": "70 days",
+      "announce_window_days": null,
       "base_rate_floor": 0.0625,
       "base_rate_basis": "statDefense.floor.value 0.0625 (NC).",
       "named_vectors": {
@@ -1450,6 +1577,8 @@
       },
       "operator_named_vector_count": 7,
       "specificity_source": "claim (sealed X post); claimLong; outcomeLong; signature (Helene); smokingGun",
+      "improbability_one_in_n": 512,
+      "surprise_bits": 9,
       "evidence_sources": [
         "https://apnews.com/projects/election-results-2024/north-carolina/",
         "https://en.wikipedia.org/wiki/2024_United_States_presidential_election_in_North_Carolina"
@@ -1469,6 +1598,7 @@
       "operator_verdict": "HIT",
       "outcome_o": 1,
       "lead": "69 days",
+      "announce_window_days": null,
       "base_rate_floor": 0.0625,
       "base_rate_basis": "statDefense.floor.value 0.0625 (NE).",
       "named_vectors": {
@@ -1482,6 +1612,8 @@
       },
       "operator_named_vector_count": 7,
       "specificity_source": "claim; intel-advisory-ia-us24-009-ne.ts why (per-CD precision + blue-dot mechanism)",
+      "improbability_one_in_n": 32,
+      "surprise_bits": 5,
       "evidence_sources": [
         "https://apnews.com/projects/election-results-2024/nebraska/",
         "https://en.wikipedia.org/wiki/2024_United_States_presidential_election_in_Nebraska"
@@ -1501,6 +1633,7 @@
       "operator_verdict": "HIT",
       "outcome_o": 1,
       "lead": "68 days",
+      "announce_window_days": null,
       "base_rate_floor": 0.25,
       "base_rate_basis": "statDefense.floor.value 0.25 (MN).",
       "named_vectors": {
@@ -1514,6 +1647,8 @@
       },
       "operator_named_vector_count": 6,
       "specificity_source": "claim (sealed text); intel-advisory-ia-us24-010-mn.ts why/claimLong/outcomeLong",
+      "improbability_one_in_n": 4,
+      "surprise_bits": 2,
       "evidence_sources": [
         "https://apnews.com/projects/election-results-2024/minnesota/",
         "https://en.wikipedia.org/wiki/2024_United_States_presidential_election_in_Minnesota"
@@ -1533,6 +1668,7 @@
       "operator_verdict": "HIT",
       "outcome_o": 1,
       "lead": "~24 HRS",
+      "announce_window_days": 8,
       "base_rate_floor": 0.5,
       "base_rate_basis": "No partition stated (binary success/fail) — conservative coin-flip default.",
       "named_vectors": {
@@ -1546,6 +1682,8 @@
       },
       "operator_named_vector_count": 7,
       "specificity_source": "claim; advisory body; accuracy.criteria; outcome (Chandrayaan-2 vs Chandrayaan-3 contrast)",
+      "improbability_one_in_n": null,
+      "surprise_bits": 0,
       "evidence_sources": [
         "https://www.youtube.com/watch?v=q2ueCg9bvvQ",
         "https://en.wikipedia.org/wiki/Chandrayaan-3"
@@ -1565,6 +1703,7 @@
       "operator_verdict": "HIT",
       "outcome_o": 1,
       "lead": "24+ HRS",
+      "announce_window_days": 1,
       "base_rate_floor": 0.0222,
       "base_rate_basis": "Partition floor ≈ 1 in 45 — FAA/NASA new-vehicle test-flight outcome-space partition.",
       "named_vectors": {
@@ -1578,6 +1717,8 @@
       },
       "operator_named_vector_count": 5,
       "specificity_source": "claim; advisories.ts hero/subject + accuracy.criteria (the explosion/LOX-vent attribution is outcome-space matching, NOT a mechanism named in the sealed claim — HOW left null)",
+      "improbability_one_in_n": 5023.65715944197,
+      "surprise_bits": 12.294522295219247,
       "evidence_sources": [
         "https://youtu.be/NSOMrbXPIfE",
         "https://en.wikipedia.org/wiki/Starship_flight_test_2"
@@ -1597,6 +1738,7 @@
       "operator_verdict": "HIT",
       "outcome_o": 1,
       "lead": "24+ HRS",
+      "announce_window_days": null,
       "base_rate_floor": 0.0714,
       "base_rate_basis": "Partition floor ≈ 1 in 14 — FAA + Blue Origin scrub-cause partition.",
       "named_vectors": {
@@ -1610,6 +1752,8 @@
       },
       "operator_named_vector_count": 7,
       "specificity_source": "claim; advisories.ts hero/accuracy",
+      "improbability_one_in_n": 1396.891128115205,
+      "surprise_bits": 10.448003868008604,
       "evidence_sources": [
         "https://www.youtube.com/watch?v=QSzi1lHaqlQ",
         "https://spacenews.com/blue-origin-resumes-crewed-new-shepard-suborbital-flights/"
@@ -1629,6 +1773,7 @@
       "operator_verdict": "HIT",
       "outcome_o": 1,
       "lead": "4+ DAYS",
+      "announce_window_days": 1,
       "base_rate_floor": 0.0625,
       "base_rate_basis": "Partition floor ≈ 1 in 16 — CLPS + Aerospace Corp joint-mission partition.",
       "named_vectors": {
@@ -1642,6 +1787,8 @@
       },
       "operator_named_vector_count": 7,
       "specificity_source": "claim; advisories.ts LA-003 accuracy criteria (direction HIT, mechanism NEAR 0.80 outcomeSpace bins) + subject/operator",
+      "improbability_one_in_n": 1565.0684650088244,
+      "surprise_bits": 10.612010054898704,
       "evidence_sources": [
         "https://youtu.be/E1DW7nqiaNQ"
       ]
@@ -1660,6 +1807,7 @@
       "operator_verdict": "HIT",
       "outcome_o": 1,
       "lead": "24+ HRS",
+      "announce_window_days": 1,
       "base_rate_floor": 0.0385,
       "base_rate_basis": "Partition floor ≈ 1 in 26 — SpaceX/Commercial Crew primary-window partition.",
       "named_vectors": {
@@ -1673,6 +1821,8 @@
       },
       "operator_named_vector_count": 7,
       "specificity_source": "claim; advisories.ts accuracy criteria / outcomeSpace bins (direction: scrub primary, succeed on Jan 18 backup — HIT)",
+      "improbability_one_in_n": 2644.003624094436,
+      "surprise_bits": 11.368508438988586,
       "evidence_sources": [
         "https://youtu.be/bHKHhfUQkZU",
         "https://www.space.com/news/live/axiom-space-missions-updates"
@@ -1692,6 +1842,7 @@
       "operator_verdict": "HIT",
       "outcome_o": 1,
       "lead": "50+ HRS",
+      "announce_window_days": 9,
       "base_rate_floor": 0.3,
       "base_rate_basis": "Direction-bin priorWeight 0.30 (launch-goes-on-schedule).",
       "named_vectors": {
@@ -1705,6 +1856,8 @@
       },
       "operator_named_vector_count": 6,
       "specificity_source": "claim; advisories.ts LA-005 hero/accuracy (17-milestone forecast; contamination mechanism class named 2 days early)",
+      "improbability_one_in_n": 218576268.74556285,
+      "surprise_bits": 19.931568569324174,
       "evidence_sources": [
         "https://youtu.be/o3DjwL-MRd4",
         "https://en.wikipedia.org/wiki/Starship_flight_test_3"
@@ -1724,6 +1877,7 @@
       "operator_verdict": "HIT",
       "outcome_o": 1,
       "lead": "~32 HRS",
+      "announce_window_days": 5,
       "base_rate_floor": 0.0345,
       "base_rate_basis": "Partition floor ≈ 1 in 29 — Falcon 9 Block 5 commercial-comsat partition.",
       "named_vectors": {
@@ -1737,6 +1891,8 @@
       },
       "operator_named_vector_count": 6,
       "specificity_source": "claim; accuracy.headline; accuracy.criteria evidence (direction + mechanism bins)",
+      "improbability_one_in_n": 1960.1158923130652,
+      "surprise_bits": 10.936723241207902,
       "evidence_sources": [
         "https://youtu.be/Pp9-JIUzAck",
         "https://www.theweek.in/news/sci-tech/2024/11/18/isros-gsat-20-expanding-communication-horizons-with-spacexs-falcon-9-rocket.html"
@@ -1756,6 +1912,7 @@
       "operator_verdict": "HIT",
       "outcome_o": 1,
       "lead": "~44 HRS",
+      "announce_window_days": null,
       "base_rate_floor": 0.04,
       "base_rate_basis": "Direction-bin priorWeight 0.04 (static-fire propulsion scrub, crewed cohort).",
       "named_vectors": {
@@ -1769,6 +1926,8 @@
       },
       "operator_named_vector_count": 7,
       "specificity_source": "claim; advisories.ts LA-007 accuracy.headline + direction/mechanism criteria",
+      "improbability_one_in_n": 255456.6487499311,
+      "surprise_bits": 17.96271895957245,
       "evidence_sources": [
         "https://youtu.be/UdoDgg__6js",
         "https://x.com/SpaceX/status/1932621481115734383"
@@ -1788,6 +1947,7 @@
       "operator_verdict": "HIT",
       "outcome_o": 1,
       "lead": "PRE-T-0",
+      "announce_window_days": null,
       "base_rate_floor": 0.08,
       "base_rate_basis": "Direction-bin priorWeight 0.08 (slip-TBD, no recycle date).",
       "named_vectors": {
@@ -1801,6 +1961,8 @@
       },
       "operator_named_vector_count": 7,
       "specificity_source": "claim; advisories.ts subject/accuracy headline",
+      "improbability_one_in_n": 13177643.948210916,
+      "surprise_bits": 19.931568569324174,
       "evidence_sources": [
         "https://youtu.be/FXods3mP9yg",
         "https://www.nasa.gov/blogs/spacestation/2025/06/12/nasa-axiom-space-delay-axiom-mission-4-launch-to-space-station/"
@@ -1820,6 +1982,7 @@
       "operator_verdict": "HIT",
       "outcome_o": 1,
       "lead": "249 MIN",
+      "announce_window_days": null,
       "base_rate_floor": 0.06,
       "base_rate_basis": "Direction-bin priorWeight 0.06 (ISS-segment hold).",
       "named_vectors": {
@@ -1833,6 +1996,8 @@
       },
       "operator_named_vector_count": 7,
       "specificity_source": "claim (sealed risk-assessment); advisories.ts hero/accuracy headline",
+      "improbability_one_in_n": 91934650.38205524,
+      "surprise_bits": 19.931568569324174,
       "evidence_sources": [
         "https://youtu.be/KLgfhJS6vpU",
         "https://www.nasa.gov/blogs/spacestation/2025/06/19/nasa-provides-latest-axiom-mission-4-launch-station-operations-update/"
@@ -1852,6 +2017,7 @@
       "operator_verdict": "HIT",
       "outcome_o": 1,
       "lead": "~12 H",
+      "announce_window_days": null,
       "base_rate_floor": 0.42,
       "base_rate_basis": "Direction-bin priorWeight 0.42 (clean launch/ascent/recovery/injection — the GO call).",
       "named_vectors": {
@@ -1865,6 +2031,8 @@
       },
       "operator_named_vector_count": 7,
       "specificity_source": "claim; advisories.ts subject + accuracy.headline/criteria",
+      "improbability_one_in_n": 1395205.5237833646,
+      "surprise_bits": 19.931568569324174,
       "evidence_sources": [
         "https://youtu.be/EekcBrMoAgo",
         "https://www.axiomspace.com/mission-blog/ax4-18-highlights"
@@ -1884,6 +2052,7 @@
       "operator_verdict": "HIT",
       "outcome_o": 1,
       "lead": "~16 D",
+      "announce_window_days": null,
       "base_rate_floor": 0.3,
       "base_rate_basis": "Direction-bin priorWeight 0.30 (scrub-and-reschedule).",
       "named_vectors": {
@@ -1897,6 +2066,8 @@
       },
       "operator_named_vector_count": 7,
       "specificity_source": "claim; advisories.ts subject/hero/accuracy headline; smokingGun (five fault paths named ~16 days pre-T-0)",
+      "improbability_one_in_n": 1736111.111111112,
+      "surprise_bits": 19.931568569324174,
       "evidence_sources": [
         "https://youtu.be/n_hdzJsaYuk",
         "https://spacenews.com/nisar-launch-slips-to-2025/"
@@ -1916,6 +2087,7 @@
       "operator_verdict": "PARTIAL",
       "outcome_o": 0.5,
       "lead": "~18 D",
+      "announce_window_days": 9,
       "base_rate_floor": 0.12,
       "base_rate_basis": "Direction-bin priorWeight 0.12 (slip + on-orbit anomaly).",
       "named_vectors": {
@@ -1929,6 +2101,8 @@
       },
       "operator_named_vector_count": 7,
       "specificity_source": "claim; advisories.ts LA-012 verdict/bluf",
+      "improbability_one_in_n": 74004305.3652356,
+      "surprise_bits": 19.931568569324174,
       "evidence_sources": [
         "https://youtu.be/gXphm5G9Lu4",
         "https://www.etvbharat.com/en/!international/nisar-launch-among-world-most-precise-says-isro-chief-narayanan-enn25080101069"
@@ -1948,6 +2122,7 @@
       "operator_verdict": "HIT",
       "outcome_o": 1,
       "lead": "~8 D",
+      "announce_window_days": null,
       "base_rate_floor": 0.1,
       "base_rate_basis": "Direction-bin priorWeight 0.10 (weather-duress + propulsion anomaly).",
       "named_vectors": {
@@ -1961,6 +2136,8 @@
       },
       "operator_named_vector_count": 7,
       "specificity_source": "claim; advisories.ts LA-013 accuracy headline + criteria (direction/timing/mechanism dimensions; outcomeSpace called bin 'weather-duress-plus-propulsion-anomaly'); corpus outcome_summary",
+      "improbability_one_in_n": 7828841.475734589,
+      "surprise_bits": 19.931568569324174,
       "evidence_sources": [
         "https://youtu.be/82l4pBT-O0Y",
         "https://www.youtube.com/watch?v=yAR9fV48Hjw"
@@ -1980,6 +2157,7 @@
       "operator_verdict": "HIT",
       "outcome_o": 1,
       "lead": "11 D",
+      "announce_window_days": 480,
       "base_rate_floor": 0.3,
       "base_rate_basis": "Direction-bin priorWeight 0.30 (multi-day slip, integrated readiness).",
       "named_vectors": {
@@ -1993,6 +2171,8 @@
       },
       "operator_named_vector_count": 7,
       "specificity_source": "claim; advisories.ts subject/accuracy headline + outcomeSpace bins (called-bin weight ~0.30; NASA confirmed slip 4 days post-seal)",
+      "improbability_one_in_n": 193647.8805865118,
+      "surprise_bits": 17.56307618605837,
       "evidence_sources": [
         "https://youtu.be/h3R8gpF7C0E",
         "https://www.youtube.com/watch?v=WSdgSS8nq0U"
@@ -2012,6 +2192,7 @@
       "operator_verdict": "HIT",
       "outcome_o": 1,
       "lead": "7 D",
+      "announce_window_days": 480,
       "base_rate_floor": 0.1,
       "base_rate_basis": "Direction-bin priorWeight 0.10 (multi-week slip, cryo-driven WDR scrub).",
       "named_vectors": {
@@ -2025,6 +2206,8 @@
       },
       "operator_named_vector_count": 7,
       "specificity_source": "claim; advisories.ts LA-015 accuracy headline/subject/outcomeSpace (six of seven anomaly classes fired; cleanest mechanism HIT in Artemis II series)",
+      "improbability_one_in_n": 19409705.28568184,
+      "surprise_bits": 19.931568569324174,
       "evidence_sources": [
         "https://www.youtube.com/watch?v=O8_vFqs5Sy4",
         "https://www.youtube.com/watch?v=eLoWfOBAn5c"
@@ -2044,6 +2227,7 @@
       "operator_verdict": "HIT",
       "outcome_o": 1,
       "lead": "17 D",
+      "announce_window_days": 480,
       "base_rate_floor": 0.15,
       "base_rate_basis": "Direction-bin priorWeight 0.15 (multi-day slip, cumulative readiness).",
       "named_vectors": {
@@ -2057,6 +2241,8 @@
       },
       "operator_named_vector_count": 7,
       "specificity_source": "claim; accuracy.headline; accuracy.criteria (direction + mechanism evidence); subject",
+      "improbability_one_in_n": 11666984.186869513,
+      "surprise_bits": 19.931568569324174,
       "evidence_sources": [
         "https://www.youtube.com/watch?v=aQg4o4jQE60",
         "https://www.youtube.com/watch?v=Zm8iyl9xFLM"
@@ -2076,6 +2262,7 @@
       "operator_verdict": "HIT",
       "outcome_o": 1,
       "lead": "15 D",
+      "announce_window_days": 480,
       "base_rate_floor": 0.1,
       "base_rate_basis": "Direction-bin priorWeight 0.10 (March-window slip, cryo/helium).",
       "named_vectors": {
@@ -2089,6 +2276,8 @@
       },
       "operator_named_vector_count": 7,
       "specificity_source": "claim; advisories.ts LA-017 subject/hero/accuracy.headline + direction-bin evidence",
+      "improbability_one_in_n": 6373343.154867682,
+      "surprise_bits": 19.931568569324174,
       "evidence_sources": [
         "https://www.youtube.com/watch?v=bzK_cqkJe9Q",
         "https://www.nasa.gov/blogs/missions/2026/02/21/nasa-troubleshooting-artemis-ii-rocket-upper-stage-issue"
@@ -2108,6 +2297,7 @@
       "operator_verdict": "NEAR",
       "outcome_o": 0.5,
       "lead": "15 D",
+      "announce_window_days": 480,
       "base_rate_floor": 0.2,
       "base_rate_basis": "Direction-bin priorWeight 0.20 (near-scrub, Zone-2 — the bin that resolved).",
       "named_vectors": {
@@ -2121,6 +2311,8 @@
       },
       "operator_named_vector_count": 7,
       "specificity_source": "claim; advisories.ts subject/accuracy headline + outcomeSpace bins",
+      "improbability_one_in_n": 187083.00665057203,
+      "surprise_bits": 17.51331899434978,
       "evidence_sources": [
         "https://www.youtube.com/watch?v=xk6Y7Z2mslA",
         "https://www.youtube.com/watch?v=Tf_UjBMIzNo"
@@ -2140,6 +2332,7 @@
       "operator_verdict": "HIT",
       "outcome_o": 1,
       "lead": "9 D",
+      "announce_window_days": 3,
       "base_rate_floor": 0.25,
       "base_rate_basis": "Direction-bin priorWeight 0.25 (multi-day slip, propulsion/tank pressure).",
       "named_vectors": {
@@ -2153,6 +2346,8 @@
       },
       "operator_named_vector_count": 7,
       "specificity_source": "claim (sealed text); advisories.ts subject/bluf/accuracy",
+      "improbability_one_in_n": 274578.15580773854,
+      "surprise_bits": 18.066857330215377,
       "evidence_sources": [
         "https://www.youtube.com/watch?v=gpChZzM38iM",
         "https://www.floridatoday.com/story/news/local/2026/04/10/blue-origin-building-damaged-anomaly-merritt-island/"
@@ -2172,6 +2367,7 @@
       "operator_verdict": "HIT",
       "outcome_o": 1,
       "lead": "5 D",
+      "announce_window_days": 3,
       "base_rate_floor": 0.22,
       "base_rate_basis": "Direction-bin priorWeight 0.22 (multi-day slip, hidden internal degradation).",
       "named_vectors": {
@@ -2185,6 +2381,8 @@
       },
       "operator_named_vector_count": 6,
       "specificity_source": "claim; advisories.ts subject + accuracy.headline/criteria",
+      "improbability_one_in_n": 2582644.6280991784,
+      "surprise_bits": 19.931568569324174,
       "evidence_sources": [
         "https://youtu.be/v6FDLXg6WIo",
         "https://x.com/davill/status/2043785791894368479"
@@ -2194,16 +2392,17 @@
       "id": "LA-021",
       "title": "New Glenn NG-3 — 18 Apr Day-Wide No-Go & Hot-Fire Stand-Down",
       "claim": "Treat the entire 18 Apr 06:45–09:43 EDT NG-3 launch day as no-go. Eleven-window segmentation with firm no-go on Window 1 and overall scrub probability exceeding 70%.",
-      "outcome": "Within hours of seal on 17 Apr, Blue Origin officially stood down on the day's hot-fire test: 'Standing down on today's hotfire. Next attempt tomorrow, vehicle and payload are both healthy.' On 18 Apr the launch window was officially scrubbed with NET re-baselined to 19 Apr per Blue Origin, SpaceNowInfo, and NSF Forum. The day-wide no-go named at advisory le…",
-      "date_issued": "2026-04-17",
-      "seal_hash_sha256": "7505f29aaa3944b8a14213800efc58fa65d1d297443e48433a7a1f3037c75565",
+      "outcome": "Within hours of seal on 15 Apr, Blue Origin stood down on the day's hot-fire test: 'Standing down on today's hotfire. Next attempt tomorrow, vehicle and payload are both healthy.' The committed 18 Apr window then came off the board — Blue Origin re-targeted to NET 19 Apr (per Blue Origin, SpaceNowInfo, and NSF Forum) and 18 Apr saw no launch attempt; NG-3 fl…",
+      "date_issued": "2026-04-15",
+      "seal_hash_sha256": "55863d3a5605937e2e149395e9821420bdfef55753f7d4ed72fa39d2fd11f1c8",
       "sealed_post_url": "https://youtu.be/UwyEuxAukAU",
       "advisory_url": "https://jyotishintelligence.com/advisory/LA-021",
       "operator_p": 0.85,
       "operator_band": "Likely",
       "operator_verdict": "HIT",
       "outcome_o": 1,
-      "lead": "1 D",
+      "lead": "3 D",
+      "announce_window_days": 3,
       "base_rate_floor": 0.2,
       "base_rate_basis": "Direction-bin priorWeight 0.20 (day-wide scrub 18 Apr, short slip).",
       "named_vectors": {
@@ -2217,6 +2416,8 @@
       },
       "operator_named_vector_count": 6,
       "specificity_source": "claim (advisory-verdicts.ts LA-021); advisory-meta.ts subject (no astrological/causal WHY driver stated beyond the segmentation method — WHY left null)",
+      "improbability_one_in_n": 2790178.571428573,
+      "surprise_bits": 19.931568569324174,
       "evidence_sources": [
         "https://youtu.be/UwyEuxAukAU",
         "https://x.com/blueorigin/status/2044427117773889740"
@@ -2236,6 +2437,7 @@
       "operator_verdict": "HIT",
       "outcome_o": 1,
       "lead": "1 D",
+      "announce_window_days": 3,
       "base_rate_floor": 0.12,
       "base_rate_basis": "Direction-bin priorWeight 0.12 (ascent anomaly, booster ok / payload lost).",
       "named_vectors": {
@@ -2249,6 +2451,8 @@
       },
       "operator_named_vector_count": 6,
       "specificity_source": "claim; outcome_summary",
+      "improbability_one_in_n": 688478427.2233623,
+      "surprise_bits": 19.931568569324174,
       "evidence_sources": [
         "https://youtu.be/fiv8z4D14YI",
         "https://www.blueorigin.com/news/new-glenn-ng-3-mission"
