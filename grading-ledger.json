@@ -1,19 +1,19 @@
 {
   "$schema": "https://jyotishintelligence.com/schemas/grading-ledger-v1.json",
   "version": 1,
-  "generatedAt": "2026-06-17T00:46:53.049Z",
+  "generatedAt": "2026-07-03T14:54:46.652Z",
   "origin": "https://jyotishintelligence.com",
   "algorithm": "sha256",
   "ledgerHashInput": "sha256(JSON.stringify(entries)) — canonical JSON of the id-sorted entries array",
   "gradingRule": "outcomeValue: HIT=1 · NEAR=0.5 · PARTIAL=0.5 · MISS=0. brierTerm = (probAtSeal − outcomeValue)^2. brier = mean(brierTerm) over all entries. probAtSeal is read from each advisory's sealed confidence wording mapped onto the IPCC AR6 band ladder, applied identically to hits and misses; outcome is graded after the event against the claim sealed in seal-manifest.json.",
   "sealManifest": {
     "file": "https://jyotishintelligence.com/seal-manifest.json",
-    "note": "Claim-anteriority proof — separate artifact, separate OTS anchor (block 956011), never moved by a re-grade."
+    "note": "Claim-anteriority proof — separate artifact, separate OTS anchor (block (pending)), never moved by a re-grade."
   },
-  "count": 68,
-  "brier": 0.0717,
-  "brierFromLedger": 0.0717,
-  "ledgerHash": "ad86370537ab4ed11481cfecca34ec57f5877f3f1cd6a593477b8dcaf5601842",
+  "count": 79,
+  "brier": 0.0887,
+  "brierFromLedger": 0.0887,
+  "ledgerHash": "eb5d27b9e9afba1b504ae86ac228336ae947de82715e907230d3403e26d4ce52",
   "entries": [
     {
       "id": "IA-BR22-001",
@@ -311,6 +311,105 @@
       "outcome": "PARTIAL",
       "outcomeValue": 0.5,
       "brierTerm": 0.0784
+    },
+    {
+      "id": "IA-RU-021",
+      "probAtSeal": 0.78,
+      "ipccBand": "Likely",
+      "audited": true,
+      "outcome": "HIT",
+      "outcomeValue": 1,
+      "brierTerm": 0.0484
+    },
+    {
+      "id": "IA-RU-022",
+      "probAtSeal": 0.78,
+      "ipccBand": "Likely",
+      "audited": true,
+      "outcome": "MISS",
+      "outcomeValue": 0,
+      "brierTerm": 0.6084
+    },
+    {
+      "id": "IA-RU-023",
+      "probAtSeal": 0.9,
+      "ipccBand": "Very likely",
+      "audited": true,
+      "outcome": "HIT",
+      "outcomeValue": 1,
+      "brierTerm": 0.01
+    },
+    {
+      "id": "IA-RU-024",
+      "probAtSeal": 0.9,
+      "ipccBand": "Very likely",
+      "audited": true,
+      "outcome": "HIT",
+      "outcomeValue": 1,
+      "brierTerm": 0.01
+    },
+    {
+      "id": "IA-RU-026",
+      "probAtSeal": 0.9,
+      "ipccBand": "Very likely",
+      "audited": true,
+      "outcome": "NEAR",
+      "outcomeValue": 0.5,
+      "brierTerm": 0.16
+    },
+    {
+      "id": "IA-RU-027",
+      "probAtSeal": 0.9,
+      "ipccBand": "Very likely",
+      "audited": true,
+      "outcome": "HIT",
+      "outcomeValue": 1,
+      "brierTerm": 0.01
+    },
+    {
+      "id": "IA-RU-028",
+      "probAtSeal": 0.78,
+      "ipccBand": "Likely",
+      "audited": true,
+      "outcome": "MISS",
+      "outcomeValue": 0,
+      "brierTerm": 0.6084
+    },
+    {
+      "id": "IA-RU-029",
+      "probAtSeal": 0.78,
+      "ipccBand": "Likely",
+      "audited": true,
+      "outcome": "HIT",
+      "outcomeValue": 1,
+      "brierTerm": 0.0484
+    },
+    {
+      "id": "IA-RU-030",
+      "probAtSeal": 0.6,
+      "ipccBand": "More likely than not",
+      "audited": true,
+      "outcome": "PARTIAL",
+      "outcomeValue": 0.5,
+      "brierTerm": 0.01
+    },
+    {
+      "id": "IA-RU-031",
+      "probAtSeal": 0.9,
+      "ipccBand": "Very likely",
+      "audited": true,
+      "outcome": "HIT",
+      "outcomeValue": 1,
+      "brierTerm": 0.01
+    },
+    {
+      "id": "IA-RU-032",
+      "probAtSeal": 0.78,
+      "ipccBand": "Likely",
+      "audited": true,
+      "outcome": "MISS",
+      "outcomeValue": 0,
+      "brierTerm": 0.6084
     },
     {
       "id": "IA-UK22-001",
