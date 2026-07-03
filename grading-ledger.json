@@ -1,7 +1,7 @@
 {
   "$schema": "https://jyotishintelligence.com/schemas/grading-ledger-v1.json",
   "version": 1,
-  "generatedAt": "2026-07-03T14:54:46.652Z",
+  "generatedAt": "2026-07-03T18:57:50.270Z",
   "origin": "https://jyotishintelligence.com",
   "algorithm": "sha256",
   "ledgerHashInput": "sha256(JSON.stringify(entries)) — canonical JSON of the id-sorted entries array",
@@ -10,10 +10,10 @@
     "file": "https://jyotishintelligence.com/seal-manifest.json",
     "note": "Claim-anteriority proof — separate artifact, separate OTS anchor (block (pending)), never moved by a re-grade."
   },
-  "count": 79,
-  "brier": 0.0887,
-  "brierFromLedger": 0.0887,
-  "ledgerHash": "eb5d27b9e9afba1b504ae86ac228336ae947de82715e907230d3403e26d4ce52",
+  "count": 81,
+  "brier": 0.0946,
+  "brierFromLedger": 0.0946,
+  "ledgerHash": "e5c4b985f10c04c23277f8442cd24efe42423314b3eb34cf30da81f57b54e5c2",
   "entries": [
     {
       "id": "IA-BR22-001",
@@ -104,6 +104,24 @@
       "outcome": "HIT",
       "outcomeValue": 1,
       "brierTerm": 0.16
+    },
+    {
+      "id": "IA-IN24-009",
+      "probAtSeal": 0.78,
+      "ipccBand": "Likely",
+      "audited": true,
+      "outcome": "MISS",
+      "outcomeValue": 0,
+      "brierTerm": 0.6084
+    },
+    {
+      "id": "IA-INGEO-001",
+      "probAtSeal": 0.78,
+      "ipccBand": "Likely",
+      "audited": true,
+      "outcome": "HIT",
+      "outcomeValue": 1,
+      "brierTerm": 0.0484
     },
     {
       "id": "IA-MH24-001",

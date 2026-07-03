@@ -1,12 +1,12 @@
 {
   "$schema": "https://jyotishintelligence.com/schemas/seal-manifest-v1.json",
   "version": 1,
-  "generatedAt": "2026-07-03T14:54:46.490Z",
+  "generatedAt": "2026-07-03T18:57:50.059Z",
   "origin": "https://jyotishintelligence.com",
   "algorithm": "sha256",
   "hashInputTemplate": "objectId|dateIssued|title|claim",
-  "manifestHash": "b6ecf80b4bd903ac30f735b17dc12f795d79206662df8c81228d73b0e7b4bd2c",
-  "count": 89,
+  "manifestHash": "4ce699041cbba5e68bb4c8d79f42752507fa9bef0580626e58e0bddfb7b50562",
+  "count": 91,
   "records": [
     {
       "id": "IA-BR22-001",
@@ -153,6 +153,30 @@
       "claim": "38/55 The economy will take a thorough beating and slow down. Financial irregularities will come to the fore and this will lead to reforms. Serious financial fraud and scandals might also be revealed undermining confidence in the economy.\n\n39/55 However, the honorable PM Modi-ji and his team will be able to adjust and respond appropriately to these events. Investment is likely to increase in infrastructure, technology, space programs, CBDCs, manufacturing and construction as a response to revitalizing the economy. (Sealed 10 Aug 2023)",
       "hash": "7f026099da8dbcc395e043bc7791a0e13565b118005f1726fa53ee3e88069d3a",
       "url": "https://jyotishintelligence.com/intel/advisory/IA-IN24-008"
+    },
+    {
+      "id": "IA-IN24-009",
+      "title": "The economy call that missed — sealed in the same thread as eight hits, graded a clean MISS",
+      "dateIssued": "2023-08-10",
+      "videoUrl": "https://x.com/vijayjyotish/status/1689539665253068802",
+      "videoId": null,
+      "objectId": "1689539665253068802",
+      "objectType": "x",
+      "claim": "38/55 The economy will take a thorough beating and slow down. Financial irregularities will come to the fore and this will lead to reforms. Serious financial fraud and scandals might also be revealed undermining confidence in the economy. (Sealed 10 Aug 2023)",
+      "hash": "acd570bd55e124e12d2ffd418b3ed97ce3cebba2c965dc56f07c35a9d3274247",
+      "url": "https://jyotishintelligence.com/intel/advisory/IA-IN24-009"
+    },
+    {
+      "id": "IA-INGEO-001",
+      "title": "Death row in Doha — the eight naval veterans, read to walk free inside the window",
+      "dateIssued": "2023-10-26",
+      "videoUrl": "https://x.com/vijayjyotish/status/1717617022161625165",
+      "videoId": null,
+      "objectId": "1717617022161625165",
+      "objectType": "x",
+      "claim": "The goal for Bhārat should be to use diplomacy and all legal avenues to delay this process until the end of May 2024. In the interim, assets will be able to operate in Qatar and lay the groundwork for what is to come post-June 2024. (Sealed 26 Oct 2023)",
+      "hash": "c3f6cec12cd74ad790dd4193269fce71ce081f27f2c87e9dddb43b637701d852",
+      "url": "https://jyotishintelligence.com/intel/advisory/IA-INGEO-001"
     },
     {
       "id": "IA-MH24-001",

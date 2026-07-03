@@ -1,7 +1,7 @@
 {
   "$comment": "Grade-it-yourself + pull-the-evidence kit. Per closed call: the verbatim CLAIM (anteriorly sealed, the prediction — grade THIS, not the title), the verbatim OUTCOME, the operator's p and verdict (override them), the published base-rate floor, the 1-in-N prior + its surprise-in-bits, the operator's named 5W1H+recommendation vectors (re-count yourself), and the EVIDENCE — sealed_post_url + seal_hash_sha256 (anteriority) and evidence_sources (outcome corroboration). THREE axes are recomputable from these inputs under YOUR OWN verdicts: (1) the Brier (calibration) — `node verify-jyotint.mjs --regrade`; (2) named-mechanism SPECIFICITY — count matched 5W1H vectors from `claim` vs `outcome`; (3) INFORMATION YIELD — bits = surprise_bits, earned = surprise_bits × outcome_o (HIT 1 / NEAR|PARTIAL 0.5 / MISS 0). The base rate scores 0 on specificity AND 0 bits on IY by construction. SITA's two COMPUTED axes are here too (Specificity = the vectors; Improbability = improbability_one_in_n); its two rubric-judged axes (impacT, Actionability) are protected editorial opinion, not skeptic-overridable, and the full SITA distribution is at /api/v1/sita.json.",
   "generator": "scripts/gen-regrade-inputs.mjs",
-  "count": 79,
+  "count": 81,
   "hash_input_template": "objectId|dateIssued|title|claim",
   "recipes_usage": "One-step stress tests — no per-call entry. CLI: `node verify-jyotint.mjs --regrade --policy <name>` (reports the regraded Brier AND the recomputed Information Yield). In an LLM: apply a recipe's declarative ops to `rows`, then recompute Brier = mean((p-o)^2) and IY = median(surprise_bits) + %earned = Σ(surprise_bits×o)/Σ(surprise_bits). Conservative recipes lower the calibration Brier by design (conceded — calibration ties a base rate); what SURVIVES is named-mechanism specificity and the per-call bits of surprise — a base rate scores 0 on both.",
   "recipes": [
@@ -427,6 +427,76 @@
       "evidence_sources": [
         "https://www.aljazeera.com/news/2024/2/15/indias-supreme-court-scraps-electoral-bonds-calls-it-unconstitutional",
         "https://www.jurist.org/news/2024/02/india-supreme-court-strikes-down-electoral-bonds-scheme/"
+      ]
+    },
+    {
+      "id": "IA-IN24-009",
+      "title": "The economy call that missed — sealed in the same thread as eight hits, graded a clean MISS",
+      "claim": "38/55 The economy will take a thorough beating and slow down. Financial irregularities will come to the fore and this will lead to reforms. Serious financial fraud and scandals might also be revealed undermining confidence in the economy. (Sealed 10 Aug 2023)",
+      "outcome": "The macro-direction claim was wrong.",
+      "date_issued": "2023-08-10",
+      "seal_hash_sha256": "acd570bd55e124e12d2ffd418b3ed97ce3cebba2c965dc56f07c35a9d3274247",
+      "sealed_post_url": "https://x.com/vijayjyotish/status/1689539665253068802",
+      "advisory_url": "https://jyotishintelligence.com/intel/advisory/IA-IN24-009",
+      "operator_p": 0.78,
+      "operator_band": "Likely",
+      "operator_verdict": "MISS",
+      "outcome_o": 0,
+      "lead": "295 days",
+      "announce_window_days": null,
+      "base_rate_floor": 0.5,
+      "base_rate_basis": "No partition stated — conservative coin-flip default (a published MISS from the Bharat read; kept at full weight).",
+      "named_vectors": {
+        "who": null,
+        "what": null,
+        "where": null,
+        "when": null,
+        "why": null,
+        "how": null,
+        "recommendation": null
+      },
+      "operator_named_vector_count": 0,
+      "specificity_source": null,
+      "improbability_one_in_n": 12.000000000000002,
+      "surprise_bits": 3.5849625007211565,
+      "evidence_sources": [
+        "https://pib.gov.in/PressReleasePage.aspx?PRID=2021451",
+        "https://www.reuters.com/world/india/indias-economy-grows-82-2023-24-fastest-among-major-economies-2024-05-31/"
+      ]
+    },
+    {
+      "id": "IA-INGEO-001",
+      "title": "Death row in Doha — the eight naval veterans, read to walk free inside the window",
+      "claim": "The goal for Bhārat should be to use diplomacy and all legal avenues to delay this process until the end of May 2024. In the interim, assets will be able to operate in Qatar and lay the groundwork for what is to come post-June 2024. (Sealed 26 Oct 2023)",
+      "outcome": "On 26 Oct 2023, four days after a Qatari court sentenced eight former Indian Navy veterans to death, the sealed read called a favourable resolution reachable by end-May 2024. The death sentences were commuted that December and all eight were released by 12 February 2024 — months early. Sealed at the grimmest possible verdict; resolved to eight men home.",
+      "date_issued": "2023-10-26",
+      "seal_hash_sha256": "c3f6cec12cd74ad790dd4193269fce71ce081f27f2c87e9dddb43b637701d852",
+      "sealed_post_url": "https://x.com/vijayjyotish/status/1717617022161625165",
+      "advisory_url": "https://jyotishintelligence.com/intel/advisory/IA-INGEO-001",
+      "operator_p": 0.78,
+      "operator_band": "Likely",
+      "operator_verdict": "HIT",
+      "outcome_o": 1,
+      "lead": "109 days",
+      "announce_window_days": null,
+      "base_rate_floor": 0.333,
+      "base_rate_basis": "statDefense.floor.value 0.333 — 1-in-3 over {executions stand · long imprisonment · commuted-and-released in-window}; generous given the fresh death verdict at seal.",
+      "named_vectors": {
+        "who": null,
+        "what": null,
+        "where": null,
+        "when": null,
+        "why": null,
+        "how": null,
+        "recommendation": null
+      },
+      "operator_named_vector_count": 0,
+      "specificity_source": null,
+      "improbability_one_in_n": 6,
+      "surprise_bits": 2.584962500721156,
+      "evidence_sources": [
+        "https://www.aljazeera.com/news/2024/2/12/qatar-releases-eight-ex-indian-navy-officers-after-commuting-death-sentence",
+        "https://www.bloomberg.com/news/articles/2024-02-12/qatar-releases-eight-former-indian-navy-officials-on-death-row"
       ]
     },
     {
