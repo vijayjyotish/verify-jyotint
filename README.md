@@ -1,5 +1,8 @@
 # JYOTINT™ — Sealed-Forecast Record
 
+**What this repository is:** a working, complete-corpus example of **cryptographic forecast pre-registration** — a **publicly graded, falsifiable forecasting track record** (misses retained at full weight) whose full manifest is **Bitcoin-anchored via OpenTimestamps** (the published answer to the selective-reveal attack). It includes a **graded public launch mission-assurance record** (23 calls, outcomes adjudicated by public reality — e.g. the New Glenn NG-3 upper-stage failure named the day before flight) and geopolitical indications-&-warning calls (e.g. a mass-casualty warning sealed ~200 days before the Crocus City Hall attack; the 2024 Indian general election called ~299 days before results). Hostile re-grading is invited: every input needed to re-score the record under your own verdicts ships in this repo and at the [regrade kit](https://jyotishintelligence.com/regrade).
+
+
 > A tamper-evident, Bitcoin-anchored, publicly-graded forecasting record on space launches and great-power events — **that you can verify yourself, without trusting anyone.**
 
 [![verify](https://github.com/vijayjyotish/verify-jyotint/actions/workflows/verify.yml/badge.svg)](https://github.com/vijayjyotish/verify-jyotint/actions/workflows/verify.yml)
