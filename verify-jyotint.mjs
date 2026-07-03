@@ -56,10 +56,6 @@ const opts = {
   noOts: argv.includes("--no-ots"),
   id: argv.includes("--id") ? argv[argv.indexOf("--id") + 1] : null,
   json: argv.includes("--json"),
-  regrade: argv.includes("--regrade"),
-  regradeFile: argv.includes("--regrade") ? argv[argv.indexOf("--regrade") + 1] : null,
-  inputs: argv.includes("--inputs") ? argv[argv.indexOf("--inputs") + 1] : null,
-  policy: argv.includes("--policy") ? argv[argv.indexOf("--policy") + 1] : null,
 };
 
 function recompute({ objectId, videoId, dateIssued, title, claim }) {
@@ -168,110 +164,6 @@ function report(name, ok, detail) {
   return { name, ok, detail };
 }
 
-// ── --regrade: recompute the Brier from YOUR OWN values. "Self-graded" dies the
-// moment you become the grader. Baseline = the public regrade-inputs.json
-// (operator's p/o); overrides = an optional JSON { "ID": { "p", "o", "include" } }.
-if (opts.regrade) {
-  let kit;
-  try {
-    const path = opts.inputs || "regrade-inputs.json";
-    try { kit = JSON.parse(readFileSync(path, "utf8")); }
-    catch {
-      const res = await fetch("https://jyotishintelligence.com/dataset/jyotint-sealed-corpus/regrade-inputs.json");
-      kit = await res.json();
-    }
-  } catch (e) {
-    console.error("regrade: could not load regrade-inputs.json — pass --inputs <path> or run online.", e.message);
-    process.exit(3);
-  }
-  const rows = kit.rows || kit;
-  const recipes = kit.recipes || [];
-  let overrides = {};
-  let policyLabel = null;
-  if (opts.policy) {
-    if (opts.policy === "list") {
-      console.log("\nstress-test recipes (--policy <name>):");
-      for (const r of recipes) console.log(`  ${r.name.padEnd(22)} ${r.label}\n${" ".repeat(24)}${r.desc}`);
-      console.log("");
-      process.exit(0);
-    }
-    const recipe = recipes.find((r) => r.name === opts.policy);
-    if (!recipe) { console.error(`regrade: unknown --policy "${opts.policy}". Run --regrade --policy list.`); process.exit(3); }
-    policyLabel = recipe.label;
-    const hasExt = (r) => Array.isArray(r.evidence_sources) && r.evidence_sources.length > 0;
-    const included = (r) => recipe.include === "all" ? true
-      : recipe.include === "external" ? hasExt(r)
-      : recipe.include === "external-mechanism" ? (hasExt(r) && (r.operator_named_vector_count ?? 0) >= 4)
-      : recipe.include === "launch-external" ? (/^LA-/i.test(r.id) && hasExt(r))
-      : true;
-    // drop the N most-favorable (smallest Brier term) among the still-included rows
-    const dropIds = new Set();
-    if (recipe.drop > 0) {
-      [...rows].filter(included)
-        .sort((a, b) => ((a.operator_p - a.outcome_o) ** 2) - ((b.operator_p - b.outcome_o) ** 2))
-        .slice(0, recipe.drop).forEach((r) => dropIds.add(r.id));
-    }
-    for (const r of rows) {
-      const o = recipe.verdict === "harsh" && (r.operator_verdict === "NEAR" || r.operator_verdict === "PARTIAL") ? 0 : r.outcome_o;
-      const p = recipe.p === "base-rate" ? (r.base_rate_floor ?? r.operator_p)
-        : recipe.p === "coin" ? 0.5 : r.operator_p;
-      overrides[r.id] = { p, o, include: included(r) && !dropIds.has(r.id) };
-    }
-  } else if (opts.regradeFile && !opts.regradeFile.startsWith("--")) {
-    try { overrides = JSON.parse(readFileSync(opts.regradeFile, "utf8")); }
-    catch (e) { console.error("regrade: could not read overrides file.", e.message); process.exit(3); }
-  }
-  const mean = (a) => (a.length ? a.reduce((s, x) => s + x, 0) / a.length : 0);
-  const br = (a) => mean(a.map((x) => (x.p - x.o) ** 2));
-  const incl = rows.filter((r) => overrides[r.id]?.include !== false);
-  const yours = incl.map((r) => ({ p: overrides[r.id]?.p ?? r.operator_p, o: overrides[r.id]?.o ?? r.outcome_o }));
-  const ops = incl.map((r) => ({ p: r.operator_p, o: r.outcome_o }));
-  const oBar = mean(yours.map((x) => x.o));
-  const baseRate = mean(yours.map((x) => (oBar - x.o) ** 2));
-  const yb = br(yours);
-  console.log(`\nregrade · ${yours.length} calls included${policyLabel ? ` · policy: ${policyLabel}` : Object.keys(overrides).length ? ` · ${Object.keys(overrides).length} overrides applied` : " · operator's own values (override with a JSON file or --policy)"}`);
-  console.log(`  operator's Brier:        ${br(ops).toFixed(4)}`);
-  console.log(`  YOUR Brier:              ${yb.toFixed(4)}`);
-  console.log(`  base-rate baseline:      ${baseRate.toFixed(4)}   (predict the outcome frequency every time)`);
-  console.log(`  YOUR Brier-skill score:  ${baseRate > 0 ? (1 - yb / baseRate).toFixed(3) : "—"}   (>0 beats the base rate)`);
-  // ── SKILL axis under the SAME policy: a named, specific, pre-event mechanism
-  // that matched. Counted over the included+post-harsh rows; a base-rate
-  // forecaster names zero mechanisms by construction, so this is the axis a
-  // base rate cannot touch. Same recipe, both axes.
-  const inclRows = rows.filter((r) => overrides[r.id]?.include !== false);
-  const oOf = (r) => overrides[r.id]?.o ?? r.outcome_o;
-  const matchedHits = inclRows.filter((r) => oOf(r) === 1);
-  const namedMech = matchedHits.filter((r) => (r.operator_named_vector_count ?? 0) >= 4);
-  console.log(`\n  ── SKILL axis (same policy) ─────────────────────────────────`);
-  console.log(`  named-mechanism specificity: ${namedMech.length} of ${inclRows.length} included calls`);
-  console.log(`    named >=4 of the 5W1H+recommendation vectors AND verified a HIT under this policy.`);
-  console.log(`  a base-rate / coin-flip forecaster names ZERO specific mechanisms — so this`);
-  console.log(`  count is the skill a base rate cannot reach. Re-count any row yourself from`);
-  console.log(`  \`claim\` vs \`outcome\`. Calibration ties a base rate by design; specificity does not.`);
-  // ── INFORMATION YIELD axis under the SAME policy: bits of surprise-if-true,
-  // earned only against the (possibly regraded) verdict. surprise_bits is the
-  // per-call content (unchanged by verdict); earned = surprise_bits × outcome
-  // credit o. A base rate / consensus-follower scores 0 bits by construction.
-  const iyRows = inclRows.filter((r) => r.surprise_bits != null);
-  const median = (a) => {
-    if (!a.length) return 0;
-    const s = [...a].sort((x, y) => x - y);
-    const m = s.length >> 1;
-    return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2;
-  };
-  const medianBits = median(iyRows.map((r) => r.surprise_bits));
-  const earnedSum = iyRows.reduce((s, r) => s + r.surprise_bits * oOf(r), 0);
-  const totalSum = iyRows.reduce((s, r) => s + r.surprise_bits, 0);
-  const pctEarned = totalSum > 0 ? Math.round(100 * earnedSum / totalSum) : 0;
-  console.log(`\n  ── INFORMATION YIELD axis (same policy) ─────────────────────`);
-  console.log(`  median surprise_bits:        ${medianBits.toFixed(2)} bits   (per-call content, unchanged by verdict)`);
-  console.log(`  bits earned (× outcome o):   ${pctEarned}%   of ${totalSum.toFixed(1)} bits over ${iyRows.length} included calls`);
-  console.log(`  a base rate / consensus-follower scores 0 bits by construction — IY survives`);
-  console.log(`  the harsh regrade the Brier does not.`);
-  console.log(`  Grade it interactively: https://jyotishintelligence.com/regrade\n`);
-  process.exit(0);
-}
-
 try {
   const { raw: manifestRaw, json: manifest } = await loadManifest();
   const checks = [];
@@ -320,6 +212,41 @@ try {
       ok,
       ok ? r.hash.slice(0, 12) + "…" : `claimed=${r.hash.slice(0, 12)}… expected=${expected.slice(0, 12)}…`,
     ));
+  }
+
+  // Companion seals — corroborating operator posts sealed alongside each primary
+  // forecast. Kept OUT of `records` (so the headline sealed-forecast count and
+  // the DOI'd manifestHash never move), but they ARE bytes in this file, which
+  // the .ots stamps whole — so each is Bitcoin-anchored just the same. Recompute
+  // every companion hash with the identical recipe, then the companionsHash over
+  // the whole array. Absent = skip (older manifest). Drift = exit 7.
+  let companionsOk = null;
+  let compMismatched = 0;
+  if (Array.isArray(manifest.companions) && manifest.companions.length) {
+    const compSubset = opts.id
+      ? manifest.companions.filter((c) => c.parentId === opts.id || c.id === opts.id)
+      : manifest.companions;
+    for (const c of compSubset) {
+      const expected = recompute(c);
+      const ok = expected === c.hash;
+      if (!ok) compMismatched++;
+      checks.push(report(
+        `companion · ${c.id}`,
+        ok,
+        ok ? c.hash.slice(0, 12) + "…" : `claimed=${c.hash.slice(0, 12)}… expected=${expected.slice(0, 12)}…`,
+      ));
+    }
+    const chRecomputed = createHash("sha256").update(JSON.stringify(manifest.companions)).digest("hex");
+    const chOk = chRecomputed === manifest.companionsHash;
+    if (!chOk) compMismatched++;
+    companionsOk = compMismatched === 0;
+    checks.push(report(
+      "companions · array hash",
+      chOk,
+      chOk ? chRecomputed.slice(0, 12) + "…" : `claimed=${String(manifest.companionsHash).slice(0, 12)}… actual=${chRecomputed.slice(0, 12)}…`,
+    ));
+  } else if (!opts.json && !opts.id) {
+    console.log("[SKIP] companions · none on this manifest");
   }
 
   // Grading ledger — recompute its hash from the entries and the Brier from the
@@ -390,8 +317,11 @@ try {
       anchorOk, // true / false / null(skipped)
       ledgerOk, // true / false / null(skipped)
       merkleOk, // true / false / null(skipped)
+      companionsOk, // true / false / null(skipped)
       records: checks.filter((c) => c.name.startsWith("seal · ")).length,
+      companions: checks.filter((c) => c.name.startsWith("companion · ")).length,
       mismatched,
+      companionMismatched: compMismatched,
       checks,
     }, null, 2));
   } else {
@@ -402,6 +332,7 @@ try {
     console.log(`anchor:        ${anchorOk === null ? "skipped (no proof)" : anchorOk ? "proof commits to this manifest ✓" : "PROOF MISMATCH ✗"}`);
     console.log(`grading:       ${ledgerOk === null ? "skipped (no ledger)" : ledgerOk ? "Brier reproduced from frozen grades ✓" : "LEDGER DRIFT ✗"}`);
     console.log(`merkle:        ${merkleOk === null ? "skipped (no merkle)" : merkleOk ? "root + inclusion proofs verified ✓" : "MERKLE DRIFT ✗"}`);
+    console.log(`companions:    ${companionsOk === null ? "skipped (none)" : companionsOk ? `${manifest.companionCount ?? manifest.companions.length} corroborating seals verified ✓` : "COMPANION DRIFT ✗"}`);
     console.log(`mismatched:    ${mismatched}`);
   }
 
@@ -410,6 +341,7 @@ try {
   if (anchorOk === false) process.exit(4);
   if (ledgerOk === false) process.exit(5);
   if (merkleOk === false) process.exit(6);
+  if (companionsOk === false) process.exit(7);
   process.exit(0);
 } catch (err) {
   console.error("verify-jyotint error:", err.message);
