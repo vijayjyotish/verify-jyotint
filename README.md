@@ -40,7 +40,7 @@ The verifier recomputes the SHA-256 of every sealed advisory (`objectId|dateIssu
 | `calibration.json` | The Brier, log-loss, and reliability bins across the closed corpus. |
 | `dataset/corpus.jsonl` | The full record as JSON Lines — one sealed call per line. CC-BY-4.0. |
 
-**`corpus.jsonl` fields:** `id`, `title`, `claim` (verbatim sealed text), `accuracy` (HIT/NEAR/PARTIAL/MISS), `prob_at_seal`, `ipcc_band`, `outcome_summary`, `sealed_on`, `materialized_on`, `lead_days`, `url`, `sources`, `seal_hash_sha256`, `hash_input_template`, `operator`, `entity`. 68 graded records.
+**`corpus.jsonl` fields:** `id`, `title`, `claim` (verbatim sealed text), `accuracy` (HIT/NEAR/PARTIAL/MISS), `prob_at_seal`, `ipcc_band`, `outcome_summary`, `sealed_on`, `materialized_on`, `lead_days`, `url`, `sources`, `seal_hash_sha256`, `hash_input_template`, `operator`, `entity`. 92 graded records.
 
 ## How a seal works
 
@@ -49,7 +49,7 @@ Before each event, the exact forecast text is SHA-256-hashed and timestamped on 
 ## Read it honestly — the caveats are part of the record
 
 - The forecasting method is **Vedic astrology**, disclosed openly; **no causal mechanism is claimed.**
-- The published Brier (**0.0717** across 68 graded calls) is a **self-assigned, reproducible self-audit — not externally adjudicated** — and a base-rate baseline ties it. **So the edge is _specificity_, not the score:** 61 of 68 calls named a causal mechanism before the event — e.g. a Moscow mass-casualty warning sealed ~200 days before the 22 March 2024 Crocus City Hall attack, checkable to the day.
+- The published Brier (**0.0958** across 92 graded calls) is a **self-assigned, reproducible self-audit — not externally adjudicated** — and a base-rate baseline ties it. **So the edge is _specificity_, not the score:** 73 of the 88 calls named a causal mechanism before the event — e.g. a Moscow mass-casualty warning sealed ~200 days before the 22 March 2024 Crocus City Hall attack, checkable to the day.
 - Small, operator-selected sample (n = 68); no flown NSSL/NRO primary in the corpus.
 - **What this is:** a verifiable, falsifiable, pre-sealed forecasting record and early-warning signal — weighed as **one augmenting input.** **Not** a validated national-security go/no-go decision authority.
 
