@@ -1,20 +1,20 @@
 {
   "$schema": "https://jyotishintelligence.com/schemas/calibration-v1.json",
   "version": 1,
-  "generatedAt": "2026-07-04T00:42:36.227Z",
+  "generatedAt": "2026-07-04T14:57:36.645Z",
   "origin": "https://jyotishintelligence.com",
   "notes": "Full corpus — Launch Advisories (LA) + Intel Advisories (RU-UA, US-2024, IN-2024). Per the JYOTINT pledge advisories are locked at publish; calibration metadata lives outside the seal. Every closed call is per-advisory audited: probAtSeal is mapped from the advisory's own sealed wording (launch to the seal-time confidence, 0.72-0.99; intel via a linguistic ladder — flat 'will/cannot' 0.95, 'likely' 0.78, genuine 'could/might' hedge 0.60), applied identically to hits and misses. audited=true denotes this post-event reconciliation to the contemporaneous sealed text, not blind third-party verification. Scoring rules follow Brier 1950 and standard log-loss.",
   "auditRatio": 1,
-  "closed": 81,
+  "closed": 92,
   "verdicts": {
-    "HIT": 65,
-    "MISS": 8,
-    "NEAR": 4,
+    "HIT": 73,
+    "MISS": 9,
+    "NEAR": 6,
     "PARTIAL": 4,
     "OPEN": 0
   },
-  "brier": 0.0945817901234568,
-  "logLoss": 0.3833160029070886,
+  "brier": 0.09579918478260865,
+  "logLoss": 0.3947065645045678,
   "reference": {
     "alwaysFiftyFifty": 0.25,
     "uniformPriorOverPartition": 0.2,
@@ -57,9 +57,9 @@
         0.66,
         0.9
       ],
-      "count": 44,
-      "meanP": 0.794545454545455,
-      "meanO": 0.7613636363636364
+      "count": 55,
+      "meanP": 0.7916363636363642,
+      "meanO": 0.7727272727272727
     },
     {
       "band": "More likely than not",
@@ -198,6 +198,83 @@
       "accuracy": "MISS",
       "p": 0.78,
       "o": 0,
+      "audited": true
+    },
+    {
+      "id": "IA-IN24-NS01",
+      "accuracy": "HIT",
+      "p": 0.78,
+      "o": 1,
+      "audited": true
+    },
+    {
+      "id": "IA-IN24-NS02",
+      "accuracy": "HIT",
+      "p": 0.78,
+      "o": 1,
+      "audited": true
+    },
+    {
+      "id": "IA-IN24-NS03",
+      "accuracy": "HIT",
+      "p": 0.78,
+      "o": 1,
+      "audited": true
+    },
+    {
+      "id": "IA-IN24-NS04",
+      "accuracy": "HIT",
+      "p": 0.78,
+      "o": 1,
+      "audited": true
+    },
+    {
+      "id": "IA-IN24-NS05",
+      "accuracy": "NEAR",
+      "p": 0.78,
+      "o": 0.5,
+      "audited": true
+    },
+    {
+      "id": "IA-IN24-NS06",
+      "accuracy": "HIT",
+      "p": 0.78,
+      "o": 1,
+      "audited": true
+    },
+    {
+      "id": "IA-IN24-NS07",
+      "accuracy": "NEAR",
+      "p": 0.78,
+      "o": 0.5,
+      "audited": true
+    },
+    {
+      "id": "IA-IN24-NS08",
+      "accuracy": "HIT",
+      "p": 0.78,
+      "o": 1,
+      "audited": true
+    },
+    {
+      "id": "IA-IN24-NS09",
+      "accuracy": "MISS",
+      "p": 0.78,
+      "o": 0,
+      "audited": true
+    },
+    {
+      "id": "IA-IN24-NS10",
+      "accuracy": "HIT",
+      "p": 0.78,
+      "o": 1,
+      "audited": true
+    },
+    {
+      "id": "IA-IN24-NS11",
+      "accuracy": "HIT",
+      "p": 0.78,
+      "o": 1,
       "audited": true
     },
     {

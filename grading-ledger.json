@@ -1,7 +1,7 @@
 {
   "$schema": "https://jyotishintelligence.com/schemas/grading-ledger-v1.json",
   "version": 1,
-  "generatedAt": "2026-07-03T18:57:50.270Z",
+  "generatedAt": "2026-07-04T14:01:46.225Z",
   "origin": "https://jyotishintelligence.com",
   "algorithm": "sha256",
   "ledgerHashInput": "sha256(JSON.stringify(entries)) — canonical JSON of the id-sorted entries array",
@@ -10,10 +10,10 @@
     "file": "https://jyotishintelligence.com/seal-manifest.json",
     "note": "Claim-anteriority proof — separate artifact, separate OTS anchor (block (pending)), never moved by a re-grade."
   },
-  "count": 81,
-  "brier": 0.0946,
-  "brierFromLedger": 0.0946,
-  "ledgerHash": "e5c4b985f10c04c23277f8442cd24efe42423314b3eb34cf30da81f57b54e5c2",
+  "count": 92,
+  "brier": 0.0958,
+  "brierFromLedger": 0.0958,
+  "ledgerHash": "90b677e372d03f3241b4265f6909d19008adfe201984907b6625f130b10f32cf",
   "entries": [
     {
       "id": "IA-BR22-001",
@@ -113,6 +113,105 @@
       "outcome": "MISS",
       "outcomeValue": 0,
       "brierTerm": 0.6084
+    },
+    {
+      "id": "IA-IN24-NS01",
+      "probAtSeal": 0.78,
+      "ipccBand": "Likely",
+      "audited": true,
+      "outcome": "HIT",
+      "outcomeValue": 1,
+      "brierTerm": 0.0484
+    },
+    {
+      "id": "IA-IN24-NS02",
+      "probAtSeal": 0.78,
+      "ipccBand": "Likely",
+      "audited": true,
+      "outcome": "HIT",
+      "outcomeValue": 1,
+      "brierTerm": 0.0484
+    },
+    {
+      "id": "IA-IN24-NS03",
+      "probAtSeal": 0.78,
+      "ipccBand": "Likely",
+      "audited": true,
+      "outcome": "HIT",
+      "outcomeValue": 1,
+      "brierTerm": 0.0484
+    },
+    {
+      "id": "IA-IN24-NS04",
+      "probAtSeal": 0.78,
+      "ipccBand": "Likely",
+      "audited": true,
+      "outcome": "HIT",
+      "outcomeValue": 1,
+      "brierTerm": 0.0484
+    },
+    {
+      "id": "IA-IN24-NS05",
+      "probAtSeal": 0.78,
+      "ipccBand": "Likely",
+      "audited": true,
+      "outcome": "NEAR",
+      "outcomeValue": 0.5,
+      "brierTerm": 0.0784
+    },
+    {
+      "id": "IA-IN24-NS06",
+      "probAtSeal": 0.78,
+      "ipccBand": "Likely",
+      "audited": true,
+      "outcome": "HIT",
+      "outcomeValue": 1,
+      "brierTerm": 0.0484
+    },
+    {
+      "id": "IA-IN24-NS07",
+      "probAtSeal": 0.78,
+      "ipccBand": "Likely",
+      "audited": true,
+      "outcome": "NEAR",
+      "outcomeValue": 0.5,
+      "brierTerm": 0.0784
+    },
+    {
+      "id": "IA-IN24-NS08",
+      "probAtSeal": 0.78,
+      "ipccBand": "Likely",
+      "audited": true,
+      "outcome": "HIT",
+      "outcomeValue": 1,
+      "brierTerm": 0.0484
+    },
+    {
+      "id": "IA-IN24-NS09",
+      "probAtSeal": 0.78,
+      "ipccBand": "Likely",
+      "audited": true,
+      "outcome": "MISS",
+      "outcomeValue": 0,
+      "brierTerm": 0.6084
+    },
+    {
+      "id": "IA-IN24-NS10",
+      "probAtSeal": 0.78,
+      "ipccBand": "Likely",
+      "audited": true,
+      "outcome": "HIT",
+      "outcomeValue": 1,
+      "brierTerm": 0.0484
+    },
+    {
+      "id": "IA-IN24-NS11",
+      "probAtSeal": 0.78,
+      "ipccBand": "Likely",
+      "audited": true,
+      "outcome": "HIT",
+      "outcomeValue": 1,
+      "brierTerm": 0.0484
     },
     {
       "id": "IA-INGEO-001",
