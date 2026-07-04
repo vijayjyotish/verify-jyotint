@@ -1,7 +1,7 @@
 {
   "$schema": "https://jyotishintelligence.com/schemas/calibration-v1.json",
   "version": 1,
-  "generatedAt": "2026-07-04T14:57:36.645Z",
+  "generatedAt": "2026-07-04T16:14:49.733Z",
   "origin": "https://jyotishintelligence.com",
   "notes": "Full corpus — Launch Advisories (LA) + Intel Advisories (RU-UA, US-2024, IN-2024). Per the JYOTINT pledge advisories are locked at publish; calibration metadata lives outside the seal. Every closed call is per-advisory audited: probAtSeal is mapped from the advisory's own sealed wording (launch to the seal-time confidence, 0.72-0.99; intel via a linguistic ladder — flat 'will/cannot' 0.95, 'likely' 0.78, genuine 'could/might' hedge 0.60), applied identically to hits and misses. audited=true denotes this post-event reconciliation to the contemporaneous sealed text, not blind third-party verification. Scoring rules follow Brier 1950 and standard log-loss.",
   "auditRatio": 1,
