@@ -1,0 +1,204 @@
+{
+  "_doc": "The DELIVERY axis: every advisory's dated public outreach record (the `outreachLog`) as one flat, CORS-open table. Each 'delivered_post' row is a public post — open its `url` to read the verbatim text and confirm the recipient/thread from platform-native metadata; the post ID decodes to its own creation time (see /guide). This is the machine surface behind the paper's §4.3 delivery claim.",
+  "canonical": "https://jyotishintelligence.com/api/v1/delivery-log.json",
+  "source": "per-advisory outreachLog — ALREADY-PUBLIC posts only",
+  "note": "Only already-public posts are included; each delivery row links a live public post. Off-record or private-channel outreach is deliberately excluded and is not present in the source data. Delivery ≠ a claim any recipient responded — see each advisory's page and /terms.",
+  "ceiling": "A DELIVERY/provenance axis, never accuracy: it evidences that the dated forecast was published and (where a recipient is named in the post) addressed to them — not that it was read, actioned, or correct. Enters no score.",
+  "counts": {
+    "delivered_posts": 17,
+    "total_rows": 19,
+    "advisories_covered": 9
+  },
+  "entries": [
+    {
+      "advisoryId": "LA-000",
+      "advisoryTitle": "Chandrayaan-3 — Genesis Call, a Sealed POSITIVE Read on the Chosen Window",
+      "date": "Jul 14, 2023 · pre-launch",
+      "label": "Public advisory to ISRO",
+      "channel": "X",
+      "quote": "Congratulations ISRO! The chosen launch time indicates success from an astrological perspective! Nevertheless, as you surely know, there is no time that is free from astrological blemishes. It would be a good idea to pay close and extra attention to air pressure and oxidizers in the rocket components. Best wishes.",
+      "url": "https://x.com/vijayjyotish/status/1679655030964772864",
+      "kind": "delivered_post"
+    },
+    {
+      "advisoryId": "LA-001",
+      "advisoryTitle": "Starship IFT-2 — Loss-of-Vehicle, Sealed Pre-Flight",
+      "date": "Nov 13, 2023",
+      "label": "Initial outreach",
+      "channel": "X",
+      "quote": "Good evening Elon. What is the targeted launch time? It appears that the Starship might go down in flames. Thanks and have an auspicious evening.",
+      "url": "https://x.com/vijayjyotish/status/1724294070573420649",
+      "kind": "delivered_post"
+    },
+    {
+      "advisoryId": "LA-001",
+      "advisoryTitle": "Starship IFT-2 — Loss-of-Vehicle, Sealed Pre-Flight",
+      "date": "Nov 16, 2023",
+      "label": "On the schedule change",
+      "channel": "X",
+      "quote": "#Starship saved from certain explosion. Will share reading for Saturday Nov 18 launch soon.",
+      "url": "https://x.com/vijayjyotish/status/1725322720752423019",
+      "kind": "delivered_post"
+    },
+    {
+      "advisoryId": "LA-001",
+      "advisoryTitle": "Starship IFT-2 — Loss-of-Vehicle, Sealed Pre-Flight",
+      "date": "Nov 16, 2023",
+      "label": "The sealed forecast",
+      "channel": "X",
+      "quote": "Good evening Elon. Unfortunately, the chosen launch time of 7 AM CST on November 18 does not promote success for the #StarshipLaunch. It will most likely go down in flames. Thanks and have an auspicious day",
+      "url": "https://x.com/vijayjyotish/status/1725334169809784833",
+      "kind": "delivered_post"
+    },
+    {
+      "advisoryId": "LA-002",
+      "advisoryTitle": "New Shepard NS-24 — Pad-Day Scrub",
+      "date": "Dec 17, 2023",
+      "label": "Forecast to Blue Origin · CEO Jeff Bezos",
+      "channel": "X",
+      "quote": "Good morning @JeffBezos and @blueorigin. Unfortunately, the auspiciousness of the chosen launch time for the NS-24 is mixed. While it does not portend complete failure, it has significant blemishes that might lead to a second attempt being made. This could manifest as a rescheduled, delayed or postponed launch due to the discovery of one or more obstacles/anomalies. Any hasty remediation of anomalies (in order to launch as planned on December 18) is likely to be fallacious due to the high possibility of incorrect remediation of the anomalies. If the launch proceeds as planned, it carries immense risk and the odds are very high for a watery accident/demise. The chart shows that capable and wise leadership is guiding the launch. As such, near-term success is possible if unconventional approaches like Astrology are considered and the launch is postponed to a more auspicious time. This will allow for the proper redressal of discovered anomalies. Thanks and have an auspicious day. cc: @elonmusk @SpaceX @isro",
+      "url": "https://x.com/vijayjyotish/status/1736460105766592602",
+      "kind": "delivered_post"
+    },
+    {
+      "advisoryId": "LA-003",
+      "advisoryTitle": "Vulcan Cert-1 — Peregrine Lunar-Mission Loss",
+      "date": "Jan 3, 2024",
+      "label": "Forecast to ULA · Vulcan Cert-1 / Peregrine",
+      "channel": "X",
+      "quote": "Good evening @ulalaunch team. This is an astrological reading with a prediction of the outcome for the scheduled launch of #VulcanRocket #Cert1 mission. I'm a Vedic Astrologer who has recently made successful predictions for @isro, @SpaceX, @blueorigin and others. As for the #VulcanRocket mission, the auspiciousness of the chosen launch time of 2:18 AM on January 8, 2023 is mixed. While it does not deny success, it has significant blemishes that might manifest as impediments and/or anomalies leading to a delay or postponement of the launch. To make things clear, there is really NO way you will be able to launch at the currently planned time, try as you may. Everything will likely go as planned until the scheduled launch and the impediment will come unexpectedly in the final days/hours. It appears that this impediment might manifest as a sudden change in the weather (for example: incessant rain that comes out of nowhere, gusty winds with the risk of flying debris, etc.) which might put the launch countdown on hold. Anomalies might be also discovered with ground systems and/or rocket components leading to remediation and a subsequent delay in the launch. The chart shows that capable and wise leadership is guiding the launch. As such, the team would be well-advised to wait for the impediments to clear and for any discovered anomalies to be properly addressed. It might be best to scrub and reschedule the launch to a more auspicious time. This will ensure success in the mission. However, if there is hasty remediation of any anomalies and if the launch team proceeds with launching the rocket despite the delay/anomalies, then here are the likely consequences of this decision. Stage 1 of the #VulcanRocket will perform nominally. However, there is a risk to Stage 2 separation, trans-lunar trajectory injection and guided placement of the Peregrine lunar lander in the desired elliptical lunar orbit. Impediments and anomalies might manifest as a misfire of the Centaur Stage 2 thrusters and/or misguided placement of the Peregrine lunar lander in a less than desirable orbit which deviates from the planned lunar orbit, and/or a systems handicap might be discovered leading to a non-nominal flight in Stage 2. It is likely that any corrective actions/maneuvers will expend unplanned-for fuel/resources and jeopardize the possibility for even launching the Stage 3 of this mission. As such, caution would be well-advised. I hope this was helpful. If interested, you might benefit from reading my predictions for the @blueorigin New Shepard NS-24, @SpaceX Starship 2, and @isro Chandrayaan-3 launches. My best wishes to the @ulalaunch team. Thanks and have an auspicious day. I'm copying these folks who might be interested in this reading: @elonmusk @Gwynne_Shotwell @SpaceX @JeffBezos @blueorigin @fireflyspace @virgingalactic @nasa @isro @narendramodi @DrSJaishankar",
+      "url": "https://x.com/vijayjyotish/status/1742705351995322731",
+      "kind": "delivered_post"
+    },
+    {
+      "advisoryId": "LA-003",
+      "advisoryTitle": "Vulcan Cert-1 — Peregrine Lunar-Mission Loss",
+      "date": "Jan 8, 2024",
+      "label": "LAUNCH — Vulcan lifts off · Peregrine lost after separation",
+      "channel": "X",
+      "quote": null,
+      "url": null,
+      "kind": "event_milestone"
+    },
+    {
+      "advisoryId": "LA-003",
+      "advisoryTitle": "Vulcan Cert-1 — Peregrine Lunar-Mission Loss",
+      "date": "Jan 16, 2024",
+      "label": "one human answering another · days after the flight — a personal courtesy",
+      "channel": "X",
+      "quote": "The launch and flight were perfect. Unfortunately, Peregrine suffered an anomaly after separation",
+      "url": "https://x.com/torybruno/status/1747309559251951730",
+      "kind": "delivered_post"
+    },
+    {
+      "advisoryId": "LA-003",
+      "advisoryTitle": "Vulcan Cert-1 — Peregrine Lunar-Mission Loss",
+      "date": "Jan 16, 2024",
+      "label": "Reply to Tory Bruno · ULA / Astrobotic",
+      "channel": "X",
+      "quote": "Good afternoon Tory @torybruno. Thank you for your kind and gracious response! I would love to help you, @ulalaunch and @astrobotic achieve better outcomes with the use of Vedic Astrology. Please reach out if interested. That said, here's some more context and clarifying details about the astrological prediction. Since I'm only an Astrologer and not a Rocket Enthusiast/Scientist (who knows all the intricate details about the configuration of the Vulcan rocket), I saw this as one rocket which intends to take the great USA back to the Moon. I honestly did not know that Vulcan and Peregrine are from two different companies until after the prediction was made. My reading is clear that weather will be impediment. We all saw the unexpected Arctic blast that brought thunderstorms, snowstorms and tornadoes throughout the USA and to the vicinity. It was raining at the Launch Complex 41 as late as Sunday morning. In addition, there were high-altitude winds present at the time of launch which needed some steering corrections for the Vulcan rocket. The prediction is also clear that Stage 1 will be nominal if the launch proceeds as planned, and it was. The inauspicious outcomes are predicted for Stage 2, which in my view included the Peregrine lunar lander and its trip to the Moon. The propulsion issue was incorrectly attributed to the Centaur thrusters because of my lack of knowledge about the additional propulsion on-board the Peregrine lunar lander. In-fact, I even know these names only because of the visually stunning 2-minute preview animation video of the launch that was provided by @ulalaunch! We now know that Peregrine's thrusters experienced an anomaly as a result of the propellant leak and the systems handicap led to the incorrect orientation of the solar panels and improper orbit placement for a landing on the moon. You can see the remarkable accuracy here. In-fact, had I known that the Peregrine lunar lander had solar panels, I would have flagged this issue too! In summary, this is not my first prediction. I've done this before for @isro, @SpaceX, @blueorigin, and others. If the honorable @elonmusk, @Gwynne_Shotwell, @jeffbezos are also reading this, please know that I'd love to help you as well! The accuracy of my astrological predictions are unmatched. And the great USA can benefit from this. @isro is already using this and had a successful lunar landing with #Chandrayaan3! Thank you so much for your time. I'm certainly grateful for your attention. My best wishes to all of you. Thanks and have an auspicious day",
+      "url": "https://x.com/vijayjyotish/status/1747348296191127933",
+      "kind": "delivered_post"
+    },
+    {
+      "advisoryId": "LA-005",
+      "advisoryTitle": "Starship IFT-3 — Milestone Map & Root Cause, T-50h",
+      "date": "Mar 12, 2024",
+      "label": "The IFT-3 forecast (full per-milestone read in the attached image)",
+      "channel": "X",
+      "quote": "After the unfortunate explosion of @SpaceX Starship IFT-2, we can now celebrate some real success for Starship IFT-3! See prediction for details. Advance congratulations to all and Happy Birthday to @SpaceX! My best wishes for an auspicious launch! @elonmusk @NASA @Gwynne_Shotwell @SpaceXTrip @NASASpaceflight @torybruno @JeffBezos @blueorigin @ulalaunch @astrobotic @Axiom_Space @isro @DrSJaishankar @narendramodi",
+      "url": "https://x.com/vijayjyotish/status/1767588662693523608",
+      "kind": "delivered_post"
+    },
+    {
+      "advisoryId": "LA-005",
+      "advisoryTitle": "Starship IFT-3 — Milestone Map & Root Cause, T-50h",
+      "date": "Mar 13, 2024",
+      "label": "Why it's a GO — despite weather and a pending FAA license",
+      "channel": "X",
+      "quote": "When the chosen launch time is auspicious, everything will go to plan. @SpaceX chose a bad launch time for IFT-2 and there were unfortunate consequences. Now the chosen time for IFT-3 is significantly more auspicious, this is why it's a GO for launch, despite the threat for weather and pending FAA license! Advance congratulations to @SpaceX and @elonmusk! A successful launch will be the perfect birthday present for @SpaceX. And it will happen this time!",
+      "url": "https://x.com/vijayjyotish/status/1767966314784821544",
+      "kind": "delivered_post"
+    },
+    {
+      "advisoryId": "LA-005",
+      "advisoryTitle": "Starship IFT-3 — Milestone Map & Root Cause, T-50h",
+      "date": "Mar 13, 2024",
+      "label": "On the FAA-license timing",
+      "channel": "X",
+      "quote": "When the time is auspicious, the license will be given on time.",
+      "url": "https://x.com/vijayjyotish/status/1768029663593726377",
+      "kind": "delivered_post"
+    },
+    {
+      "advisoryId": "LA-005",
+      "advisoryTitle": "Starship IFT-3 — Milestone Map & Root Cause, T-50h",
+      "date": "Mar 13, 2024",
+      "label": "“Definitely tomorrow!” — to Musk's public “maybe tomorrow”",
+      "channel": "X",
+      "quote": "Definitely tomorrow!",
+      "url": "https://x.com/vijayjyotish/status/1768089021056753806",
+      "kind": "delivered_post"
+    },
+    {
+      "advisoryId": "LA-005",
+      "advisoryTitle": "Starship IFT-3 — Milestone Map & Root Cause, T-50h",
+      "date": "Mar 14, 2024",
+      "label": "LAUNCH — IFT-3 flies on schedule, as forecast",
+      "channel": "X",
+      "quote": null,
+      "url": null,
+      "kind": "event_milestone"
+    },
+    {
+      "advisoryId": "LA-007",
+      "advisoryTitle": "Falcon 9 Axiom-4 · Attempt 1 — LOX Leak & Engine Fault",
+      "date": "Jun 10, 2025",
+      "label": "Reaching out to ISRO and the Government of India",
+      "channel": "X",
+      "quote": "If I ever got even a cent for trying, I'd be a trillionaire now! 🎉😁",
+      "url": "https://x.com/vijayjyotishusa/status/1932425714281910476",
+      "kind": "delivered_post"
+    },
+    {
+      "advisoryId": "LA-008",
+      "advisoryTitle": "Falcon 9 Axiom-4 · Attempt 2 — Schedule Slip & Thermal Class",
+      "date": "Jul 7, 2025",
+      "label": "White House acknowledgment of standing outreach (not specific to this advisory)",
+      "channel": "X",
+      "quote": null,
+      "url": "https://x.com/vijayjyotishusa/status/1942275579006574671",
+      "kind": "public_link"
+    },
+    {
+      "advisoryId": "LA-014",
+      "advisoryTitle": "Artemis II — Slip & Six-Mode Spectrum, First Crewed Flyby",
+      "date": "Jan 26, 2026",
+      "label": "Extensive outreach to NASA and global political / space leadership teams",
+      "channel": "X",
+      "quote": "Artemis II NET Feb 6 ~9:41PM ET window is cosmically heated—not ideal for this historic crewed lunar flyby. High risk (85-90%) of anomalies: electrical glitches including potential cabin lighting loss during Orion Internal transition, cryo loading holds, telemetry ghosts. My Jyotish Intelligence advisories have proven accurate: flagged risks for prior NASA, SpaceX, Axiom Space, ULA Launch, Blue Origin, ISRO, and Astrobotic missions. Statistically significant pattern—unfavorable muhurthas correlate w/ significant anomalies including complete loss of mission (e.g. Peregrine Lunar Lander Mission). NASA: Let's align timing for success. Contact me @vijayjyotish for a confidential muhurtha consultation. U.S. Leadership: @realDonaldTrump @POTUS @JDVance @NASAAdmin @PressSec — NASA Artemis II Launch Team: @NASAArtemis @NASAKennedy @NASA @NASASpox — India Leadership: @narendramodi @AmitShah @DrSJaishankar @r_isro @DrJitendraSingh — U.S. Space Community: @SpaceX @blueorigin @ulalaunch @Axiom_Space @astrobotic",
+      "url": "https://x.com/vijayjyotish/status/2015787232633012611",
+      "kind": "delivered_post"
+    },
+    {
+      "advisoryId": "LA-022",
+      "advisoryTitle": "New Glenn NG-3 — 19 Apr Day-Wide No-Go · Window 2 Liftoff → Catastrophic-Class Payload Loss",
+      "date": "Apr 16, 2026 · pre-launch",
+      "label": "Pre-event caution — Blue Origin / AST",
+      "channel": "X",
+      "quote": "This would not be a wise launch decision. The rest of-course is up to you. Good luck.",
+      "url": "https://x.com/vijayjyotish/status/2044882952866431469",
+      "kind": "delivered_post"
+    },
+    {
+      "advisoryId": "LA-022",
+      "advisoryTitle": "New Glenn NG-3 — 19 Apr Day-Wide No-Go · Window 2 Liftoff → Catastrophic-Class Payload Loss",
+      "date": "Apr 19, 2026 · post-launch",
+      "label": "Public standing — unsolicited, before launch",
+      "channel": "X",
+      "quote": "To be clear: this was a public, unsolicited advisory issued well before launch. Blue Origin can confirm whether they saw it. The outcome — successful booster recovery but off-nominal orbit leading to deorbit — aligned with the specific risk we highlighted. We continue to share these analyses openly.",
+      "url": "https://x.com/vijayjyotish/status/2045943740930666809",
+      "kind": "delivered_post"
+    }
+  ]
+}
