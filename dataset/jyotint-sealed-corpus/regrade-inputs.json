@@ -377,16 +377,16 @@
       "base_rate_floor": 0.167,
       "base_rate_basis": "statDefense.floor.value 0.167.",
       "named_vectors": {
-        "who": "Adversaries / political opposition weaponizing scandal — materialized as Prajwal Revanna (JD(S) MP, NDA ally, grandson of former PM Deve Gowda); espionage layer = Pakistani ISI honey-trap operations",
-        "what": "Corruption and honey-traps used to tarnish the government's image — landed as the Prajwal Revanna personal-impropriety scandal engulfing an NDA-ally MP mid-election, plus a documented espionage honey-trap escalation",
+        "who": "Adversaries / political opposition weaponizing scandal — materialized as a JD(S) MP (NDA ally, grandson of former PM Deve Gowda); espionage layer = Pakistani ISI honey-trap operations",
+        "what": "Corruption and honey-traps used to tarnish the government's image — landed as a personal-impropriety scandal engulfing an NDA-ally MP mid-election, plus a documented espionage honey-trap escalation",
         "where": "India (national)",
         "when": "Sealed 10 Aug 2023; materialized 26 Apr 2024 (scandal breaks mid-election); arrest 31 May 2024",
-        "why": "Named as a key tool adversaries would deploy to tarnish the ruling alliance's image in the election run-up; the opposition weaponized the Revanna scandal against the NDA",
-        "how": "Scandals/sex-linked impropriety (Revanna: allegations of non-consensual intimate recordings) weaponized by the opposition; espionage honey-traps via new acquaintances regardless of gender (ISI Bharuch DRDO-drone case; Army AI countermeasure)",
+        "why": "Named as a key tool adversaries would deploy to tarnish the ruling alliance's image in the election run-up; the opposition weaponized the scandal against the NDA",
+        "how": "Scandals/sex-linked impropriety (allegations of non-consensual intimate recordings) weaponized by the opposition; espionage honey-traps via new acquaintances regardless of gender (ISI Bharuch DRDO-drone case; Army AI countermeasure)",
         "recommendation": "Government members must be very careful with new acquaintances, regardless of gender"
       },
       "operator_named_vector_count": 7,
-      "specificity_source": "claim (42/55); rubric.actor; outcomeLong; outcome_summary (Prajwal Revanna scandal; Bharuch ISI honey-trap)",
+      "specificity_source": "claim (42/55); rubric.actor; outcomeLong; outcome_summary (NDA-ally MP scandal; Bharuch ISI honey-trap)",
       "improbability_one_in_n": 36,
       "surprise_bits": 5.169925001442312,
       "evidence_sources": [
