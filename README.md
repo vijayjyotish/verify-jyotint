@@ -6,7 +6,7 @@
 > A tamper-evident, Bitcoin-anchored, publicly-graded forecasting record on space launches and great-power events — **that you can verify yourself, without trusting anyone.**
 
 [![verify](https://github.com/vijayjyotish/verify-jyotint/actions/workflows/verify.yml/badge.svg)](https://github.com/vijayjyotish/verify-jyotint/actions/workflows/verify.yml)
-[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
+[![Code: MIT](https://img.shields.io/badge/Code-MIT-green.svg)](LICENSE) [![Data: CC BY 4.0](https://img.shields.io/badge/Data-CC%20BY%204.0-lightgrey.svg)](LICENSE-DATA)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20630257.svg)](https://doi.org/10.5281/zenodo.20630257)
 
 This repository is the **independently verifiable core** of the JYOTINT record: a zero-dependency verifier, the Bitcoin-anchored seal manifest, the frozen grading ledger, the calibration data, and the full CC-BY corpus. Nothing here asks you to trust the operator — it asks you to **recompute**.
@@ -59,7 +59,7 @@ Before each event, the exact forecast text is SHA-256-hashed and timestamped on 
 
 ## License
 
-Corpus and record: **CC-BY-4.0** (see `LICENSE`). The verifier script may be reused freely.
+Dual-licensed. **Software** (the verifier `verify-jyotint.mjs`, `reproduce-paper.mjs`, the CI workflow): **MIT** (OSI-approved — see `LICENSE`). **Corpus and record artifacts** (seal manifest, grading ledger, Merkle proofs, calibration, `dataset/`): **CC-BY-4.0** (see `LICENSE-DATA`).
 
 ---
 
