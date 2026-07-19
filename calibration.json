@@ -1,23 +1,23 @@
 {
   "$schema": "https://jyotishintelligence.com/schemas/calibration-v1.json",
   "version": 1,
-  "generatedAt": "2026-07-18T15:01:51.355Z",
+  "generatedAt": "2026-07-19T22:58:23.854Z",
   "origin": "https://jyotishintelligence.com",
   "notes": "Full corpus — Launch Advisories (LA) + Intel Advisories (RU-UA, US-2024, IN-2024). Per the JYOTINT pledge advisories are locked at publish; calibration metadata lives outside the seal. Every closed call is per-advisory audited: probAtSeal is mapped from the advisory's own sealed wording (launch to the seal-time confidence, 0.72-0.99; intel via a linguistic ladder — flat 'will/cannot' 0.95, 'likely' 0.78, genuine 'could/might' hedge 0.60), applied identically to hits and misses. audited=true denotes this post-event reconciliation to the contemporaneous sealed text, not blind third-party verification. Scoring rules follow Brier 1950 and standard log-loss.",
   "auditRatio": 1,
-  "closed": 92,
+  "closed": 93,
   "verdicts": {
-    "HIT": 73,
+    "HIT": 74,
     "MISS": 9,
     "NEAR": 6,
     "PARTIAL": 4,
-    "OPEN": 1
+    "OPEN": 0
   },
-  "brier": 0.09579918478260865,
-  "logLoss": 0.3947065645045678,
+  "brier": 0.09487661290322578,
+  "logLoss": 0.3915953166675061,
   "launch": {
-    "closed": 23,
-    "brier": 0.03597934782608695,
+    "closed": 24,
+    "brier": 0.034896874999999994,
     "note": "LA-* subset of the same graded rows above — recompute by filtering records on id prefix."
   },
   "reference": {
@@ -52,9 +52,9 @@
         0.9,
         0.95
       ],
-      "count": 22,
-      "meanP": 0.9011363636363636,
-      "meanO": 0.9545454545454546
+      "count": 23,
+      "meanP": 0.9010869565217391,
+      "meanO": 0.9565217391304348
     },
     {
       "band": "Likely",
@@ -769,6 +769,13 @@
       "id": "LA-022",
       "accuracy": "HIT",
       "p": 0.85,
+      "o": 1,
+      "audited": true
+    },
+    {
+      "id": "LA-023",
+      "accuracy": "HIT",
+      "p": 0.9,
       "o": 1,
       "audited": true
     }

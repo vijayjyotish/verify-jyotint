@@ -1,19 +1,19 @@
 {
   "$schema": "https://jyotishintelligence.com/schemas/grading-ledger-v1.json",
   "version": 1,
-  "generatedAt": "2026-07-04T14:01:46.225Z",
+  "generatedAt": "2026-07-19T22:54:17.108Z",
   "origin": "https://jyotishintelligence.com",
   "algorithm": "sha256",
   "ledgerHashInput": "sha256(JSON.stringify(entries)) — canonical JSON of the id-sorted entries array",
   "gradingRule": "outcomeValue: HIT=1 · NEAR=0.5 · PARTIAL=0.5 · MISS=0. brierTerm = (probAtSeal − outcomeValue)^2. brier = mean(brierTerm) over all entries. probAtSeal is read from each advisory's sealed confidence wording mapped onto the IPCC AR6 band ladder, applied identically to hits and misses; outcome is graded after the event against the claim sealed in seal-manifest.json.",
   "sealManifest": {
     "file": "https://jyotishintelligence.com/seal-manifest.json",
-    "note": "Claim-anteriority proof — separate artifact, separate OTS anchor (block 958468), never moved by a re-grade."
+    "note": "Claim-anteriority proof — separate artifact, separate OTS anchor (block (pending)), never moved by a re-grade."
   },
-  "count": 92,
-  "brier": 0.0958,
-  "brierFromLedger": 0.0958,
-  "ledgerHash": "90b677e372d03f3241b4265f6909d19008adfe201984907b6625f130b10f32cf",
+  "count": 93,
+  "brier": 0.0949,
+  "brierFromLedger": 0.0949,
+  "ledgerHash": "6fc405b00e12c60190e12645402dbc5b11d2a5177a52e2d81fbb05acf911ec37",
   "entries": [
     {
       "id": "IA-BR22-001",
@@ -842,6 +842,15 @@
       "outcome": "HIT",
       "outcomeValue": 1,
       "brierTerm": 0.0225
+    },
+    {
+      "id": "LA-023",
+      "probAtSeal": 0.9,
+      "ipccBand": "Very Likely",
+      "audited": true,
+      "outcome": "HIT",
+      "outcomeValue": 1,
+      "brierTerm": 0.01
     }
   ]
 }

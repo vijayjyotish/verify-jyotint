@@ -1,7 +1,7 @@
 {
   "$comment": "Grade-it-yourself + pull-the-evidence kit. Per closed call: the verbatim CLAIM (anteriorly sealed, the prediction — grade THIS, not the title), the verbatim OUTCOME, the operator's p and verdict (override them), the published base-rate floor, the 1-in-N prior + its surprise-in-bits, the operator's named 5W1H+recommendation vectors (re-count yourself), and the EVIDENCE — sealed_post_url + seal_hash_sha256 (anteriority) and evidence_sources (outcome corroboration). THREE axes are recomputable from these inputs under YOUR OWN verdicts: (1) the Brier (calibration) — `node verify-jyotint.mjs --regrade`; (2) named-mechanism SPECIFICITY — count matched 5W1H vectors from `claim` vs `outcome`; (3) INFORMATION YIELD — bits = surprise_bits, earned = surprise_bits × outcome_o (HIT 1 / NEAR|PARTIAL 0.5 / MISS 0). The base rate scores 0 on specificity AND 0 bits on IY by construction. SITA's two COMPUTED axes are here too (Specificity = the vectors; Improbability = improbability_one_in_n); its two rubric-judged axes (impacT, Actionability) are protected editorial opinion, not skeptic-overridable, and the full SITA distribution is at /api/v1/sita.json.",
   "generator": "scripts/gen-regrade-inputs.mjs",
-  "count": 92,
+  "count": 93,
   "hash_input_template": "objectId|dateIssued|title|claim",
   "recipes_usage": "One-step stress tests — no per-call entry. CLI: `node verify-jyotint.mjs --regrade --policy <name>` (reports the regraded Brier AND the recomputed Information Yield). In an LLM: apply a recipe's declarative ops to `rows`, then recompute Brier = mean((p-o)^2) and IY = median(surprise_bits) + %earned = Σ(surprise_bits×o)/Σ(surprise_bits). Conservative recipes lower the calibration Brier by design (conceded — calibration ties a base rate); what SURVIVES is named-mechanism specificity and the per-call bits of surprise — a base rate scores 0 on both.",
   "recipes": [
@@ -3296,6 +3296,38 @@
         "https://youtu.be/fiv8z4D14YI",
         "https://www.blueorigin.com/news/new-glenn-ng-3-mission"
       ]
+    },
+    {
+      "id": "LA-023",
+      "title": "Starship Flight 13 — Twelve-Call Flight Review Sealed Before the Window · Scrub Recommendation · Starlink V3 Payload-Shortfall Headline",
+      "claim": "STARSHIP FLIGHT 13 — FLIGHT REVIEW & GO/NO-GO ASSESSMENT · SEALED BEFORE THE WINDOW Vehicles: Super Heavy Booster 20 + Ship 40 (V3 architecture, Raptor 3), Starbase Pad 2. Profile: suborbital, ~65 min — hot-stage separation, booster boostback + soft Gulf splashdown, Ship SECO → Starlink V3 deploy (20 operational satellites, 6 camera-equipped) → single-Raptor vacuum relight → entry interface → controlled Indian Ocean splashdown. This is the first Starship flight carrying functional Starlink V3 satellites rather than mass simulators. Cargo consequence and…",
+      "outcome": "GRADED AT THE WINDOW (19 JUL 2026): the sealed recommendation was SCRUB — and the 20 July launch never happened.",
+      "date_issued": "2026-07-17",
+      "seal_hash_sha256": "53b51f721cd492a15492937a1c69e02b423780e9c7a47c91a2f0fceb26959bd0",
+      "sealed_post_url": "https://www.youtube.com/watch?v=2Cgp27GCVrg",
+      "advisory_url": "https://jyotishintelligence.com/advisory/LA-023",
+      "operator_p": 0.9,
+      "operator_band": "Very Likely",
+      "operator_verdict": "HIT",
+      "outcome_o": 1,
+      "lead": "Sealed 17 Jul — 3 days before the NET 20 Jul window · 1 day after the T-0 abort",
+      "announce_window_days": 3,
+      "base_rate_floor": null,
+      "base_rate_basis": null,
+      "named_vectors": {
+        "who": null,
+        "what": null,
+        "where": null,
+        "when": null,
+        "why": null,
+        "how": null,
+        "recommendation": null
+      },
+      "operator_named_vector_count": 0,
+      "specificity_source": null,
+      "improbability_one_in_n": 46406.25000000005,
+      "surprise_bits": 15.502031500350217,
+      "evidence_sources": []
     }
   ]
 }
