@@ -184,10 +184,10 @@ try {
   if (proof) {
     anchorOk = proof.includes(fileSha);
     checks.push(report(
-      "anchor · .ots commits to this manifest",
+      "anchor · .ots proof commits to this file's bytes (digest-inclusion)",
       anchorOk,
       anchorOk
-        ? `sha256=${fileSha.toString("hex").slice(0, 12)}… present in proof`
+        ? `sha256=${fileSha.toString("hex").slice(0, 12)}… present in the .ots. NOTE: this proves the proof is FOR this exact file, not that it is Bitcoin-CONFIRMED — run \`ots verify\` for block confirmation; a freshly re-stamped proof is PENDING (unconfirmed) until it lands in a block (~hours)`
         : `sha256=${fileSha.toString("hex").slice(0, 12)}… NOT in proof — proof is for a different file`,
     ));
   } else if (!opts.json) {
@@ -329,7 +329,7 @@ try {
     console.log(`origin:        ${ORIGIN}`);
     console.log(`manifest:      ${manifest.count} records`);
     console.log(`file sha256:   ${fileSha.toString("hex")}`);
-    console.log(`anchor:        ${anchorOk === null ? "skipped (no proof)" : anchorOk ? "proof commits to this manifest ✓" : "PROOF MISMATCH ✗"}`);
+    console.log(`anchor:        ${anchorOk === null ? "skipped (no proof)" : anchorOk ? "digest committed in .ots ✓ (proves the proof is for THIS file; run `ots verify` for Bitcoin block confirmation — a fresh re-stamp is pending until it confirms)" : "PROOF MISMATCH ✗"}`);
     console.log(`grading:       ${ledgerOk === null ? "skipped (no ledger)" : ledgerOk ? "Brier reproduced from frozen grades ✓" : "LEDGER DRIFT ✗"}`);
     console.log(`merkle:        ${merkleOk === null ? "skipped (no merkle)" : merkleOk ? "root + inclusion proofs verified ✓" : "MERKLE DRIFT ✗"}`);
     console.log(`companions:    ${companionsOk === null ? "skipped (none)" : companionsOk ? `${manifest.companionCount ?? manifest.companions.length} corroborating seals verified ✓` : "COMPANION DRIFT ✗"}`);

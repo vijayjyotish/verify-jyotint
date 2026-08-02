@@ -1,20 +1,20 @@
 {
   "$schema": "https://jyotishintelligence.com/schemas/calibration-v1.json",
   "version": 1,
-  "generatedAt": "2026-07-19T22:58:23.854Z",
+  "generatedAt": "2026-08-02T19:18:50.740Z",
   "origin": "https://jyotishintelligence.com",
   "notes": "Full corpus — Launch Advisories (LA) + Intel Advisories (RU-UA, US-2024, IN-2024). Per the JYOTINT pledge advisories are locked at publish; calibration metadata lives outside the seal. Every closed call is per-advisory audited: probAtSeal is mapped from the advisory's own sealed wording (launch to the seal-time confidence, 0.72-0.99; intel via a linguistic ladder — flat 'will/cannot' 0.95, 'likely' 0.78, genuine 'could/might' hedge 0.60), applied identically to hits and misses. audited=true denotes this post-event reconciliation to the contemporaneous sealed text, not blind third-party verification. Scoring rules follow Brier 1950 and standard log-loss.",
   "auditRatio": 1,
-  "closed": 93,
+  "closed": 106,
   "verdicts": {
-    "HIT": 74,
+    "HIT": 82,
     "MISS": 9,
-    "NEAR": 6,
-    "PARTIAL": 4,
+    "NEAR": 10,
+    "PARTIAL": 5,
     "OPEN": 0
   },
-  "brier": 0.09487661290322578,
-  "logLoss": 0.3915953166675061,
+  "brier": 0.09027476415094335,
+  "logLoss": 0.4020844741823478,
   "launch": {
     "closed": 24,
     "brier": 0.034896874999999994,
@@ -52,9 +52,9 @@
         0.9,
         0.95
       ],
-      "count": 23,
-      "meanP": 0.9010869565217391,
-      "meanO": 0.9565217391304348
+      "count": 25,
+      "meanP": 0.9009999999999998,
+      "meanO": 0.96
     },
     {
       "band": "Likely",
@@ -62,9 +62,9 @@
         0.66,
         0.9
       ],
-      "count": 55,
-      "meanP": 0.7916363636363642,
-      "meanO": 0.7727272727272727
+      "count": 64,
+      "meanP": 0.7900000000000007,
+      "meanO": 0.7734375
     },
     {
       "band": "More likely than not",
@@ -72,9 +72,9 @@
         0.5,
         0.66
       ],
-      "count": 4,
+      "count": 6,
       "meanP": 0.6,
-      "meanO": 0.875
+      "meanO": 0.8333333333333334
     },
     {
       "band": "About as likely as not",
@@ -525,6 +525,97 @@
       "accuracy": "MISS",
       "p": 0.78,
       "o": 0,
+      "audited": true
+    },
+    {
+      "id": "IA-RU-033",
+      "accuracy": "NEAR",
+      "p": 0.78,
+      "o": 0.5,
+      "audited": true
+    },
+    {
+      "id": "IA-RU-034",
+      "accuracy": "PARTIAL",
+      "p": 0.78,
+      "o": 0.5,
+      "audited": true
+    },
+    {
+      "id": "IA-RU-035",
+      "accuracy": "HIT",
+      "p": 0.6,
+      "o": 1,
+      "audited": true
+    },
+    {
+      "id": "IA-RU-036",
+      "accuracy": "NEAR",
+      "p": 0.78,
+      "o": 0.5,
+      "audited": true
+    },
+    {
+      "id": "IA-RU-037",
+      "accuracy": "NEAR",
+      "p": 0.6,
+      "o": 0.5,
+      "audited": true
+    },
+    {
+      "id": "IA-RU-038",
+      "accuracy": "HIT",
+      "p": 0.78,
+      "o": 1,
+      "audited": true
+    },
+    {
+      "id": "IA-RU-039",
+      "accuracy": "HIT",
+      "p": 0.78,
+      "o": 1,
+      "audited": true
+    },
+    {
+      "id": "IA-RU-040",
+      "accuracy": "NEAR",
+      "p": 0.78,
+      "o": 0.5,
+      "audited": true
+    },
+    {
+      "id": "IA-RU-041",
+      "accuracy": "HIT",
+      "p": 0.78,
+      "o": 1,
+      "audited": true
+    },
+    {
+      "id": "IA-RU-042",
+      "accuracy": "HIT",
+      "p": 0.78,
+      "o": 1,
+      "audited": true
+    },
+    {
+      "id": "IA-RU-043",
+      "accuracy": "HIT",
+      "p": 0.9,
+      "o": 1,
+      "audited": true
+    },
+    {
+      "id": "IA-RU-044",
+      "accuracy": "HIT",
+      "p": 0.9,
+      "o": 1,
+      "audited": true
+    },
+    {
+      "id": "IA-RU-045",
+      "accuracy": "HIT",
+      "p": 0.78,
+      "o": 1,
       "audited": true
     },
     {
