@@ -530,8 +530,8 @@
       "improbability_one_in_n": null,
       "surprise_bits": 0,
       "evidence_sources": [
-        "https://www.indiatvnews.com/uttar-pradesh/kalindi-express-hits-lpg-cylinder-in-kanpur-police-say-attempt-made-to-derail-passenger-train-latest-updates-2024-09-09-951144",
-        "https://organiser.org/2024/09/09/255530/bharat/train-sabotage-kalindi-express-hits-gas-cylinder-on-railway-tracks-explosives-discovered-derailment-averted/"
+        "https://indianexpress.com/article/cities/lucknow/kalindi-express-derail-attempt-lpg-cylinder-track-kanpur-police-9557609/",
+        "https://newsable.asianetnews.com/india/pakistan-based-terrorist-rameshwaram-cafe-blast-planner-threatens-largescale-train-derailments-across-india-snt-siwto7"
       ]
     },
     {
@@ -601,7 +601,7 @@
       "surprise_bits": 0,
       "evidence_sources": [
         "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2052252",
-        "https://www.deccanherald.com/india/evolve-joint-military-vision-and-prepare-for-the-unexpected-says-rajnath-top-commanders-discuss-theaterisation-3178497"
+        "https://web.archive.org/web/20240910111818/https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/india-travel-advisory.html"
       ]
     },
     {
@@ -635,15 +635,15 @@
       "improbability_one_in_n": null,
       "surprise_bits": 0,
       "evidence_sources": [
-        "https://time.com/7022080/india-modi-new-york-rally/",
-        "https://www.cbsnews.com/newyork/news/india-prime-minister-visits-long-island/"
+        "https://www.deccanherald.com/world/new-york-police-arrest-khalistani-protester-thwarts-groups-plan-to-disrupt-pm-modis-community-event-3202284",
+        "https://economictimes.indiatimes.com/news/international/world-news/khalistani-bid-to-derail-pm-modis-new-york-event-at-nassau-coliseum-foiled-by-nypd-one-suspect-arrested/articleshow/113583024.cms"
       ]
     },
     {
       "id": "IA-IN24-NS06",
       "title": "A spate of industrial, chemical and environmental disasters",
       "claim": "There is an increased likelihood of significant industrial accidents and environmental disasters involving oil, chemicals and gases. It is imperative for all stakeholders in these industries to exercise heightened vigilance and adhere to stringent safety protocols to mitigate potential risks.",
-      "outcome": "A spate of ≥8 chemical/industrial/environmental disasters across four states.",
+      "outcome": "A spate of ≥8 chemical/industrial/environmental disasters across five states.",
       "date_issued": "2024-08-16",
       "seal_hash_sha256": "efa4bd565755c6f51c0fa161f1fe75063f9418be8ef6a2a5329c68536ad01f99",
       "sealed_post_url": "https://x.com/vijayjyotishusa/status/1824476504534945993",
@@ -671,7 +671,7 @@
       "surprise_bits": 0,
       "evidence_sources": [
         "https://en.wikipedia.org/wiki/Atchutapuram_pharmaceutical_factory_explosion",
-        "https://www.spglobal.com/commodity-insights/en/news-research/latest-news/metals/091824-indias-vedanta-confirms-lanjigarh-alumina-refinery-unaffected-by-water-storage-breach"
+        "https://www.hindustantimes.com/cities/others/2-killed-5-critically-injured-in-odisha-steel-plant-mishap-101726582262041.html"
       ]
     },
     {
@@ -705,8 +705,8 @@
       "improbability_one_in_n": null,
       "surprise_bits": 0,
       "evidence_sources": [
-        "https://en.wikipedia.org/wiki/Uniform_Civil_Code",
-        "https://en.wikipedia.org/wiki/2024_Indian_farmers%27_protest"
+        "https://www.livelaw.in/top-stories/shambhu-border-blockade-supreme-court-forms-committee-to-negotiate-with-protesting-farmers-says-issue-shouldnt-be-politicised-268319",
+        "https://en.wikipedia.org/wiki/Uniform_Civil_Code"
       ]
     },
     {
