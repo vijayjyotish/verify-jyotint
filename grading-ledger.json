@@ -1,7 +1,7 @@
 {
   "$schema": "https://jyotishintelligence.com/schemas/grading-ledger-v1.json",
   "version": 1,
-  "generatedAt": "2026-08-02T18:54:49.890Z",
+  "generatedAt": "2026-08-16T02:07:30.330Z",
   "origin": "https://jyotishintelligence.com",
   "algorithm": "sha256",
   "_about": "LIVE, APPEND-ONLY LEDGER. `count` and `brier` change as new advisories are sealed and graded. A figure quoted in a publication reflects the ledger state as of that paper's snapshot date; a larger `count` here means calls were sealed since — an expected difference, not an erratum. Every past state is versioned, dated, and retrievable as an immutable, hash-named snapshot: see `versions`. Reproduce any cited figure by recomputing against the dated snapshot whose ledgerHash the paper names.",
@@ -12,10 +12,10 @@
     "file": "https://jyotishintelligence.com/seal-manifest.json",
     "note": "Claim-anteriority proof — separate artifact, separate OTS anchor (block (pending)), never moved by a re-grade."
   },
-  "count": 106,
-  "brier": 0.0903,
-  "brierFromLedger": 0.0903,
-  "ledgerHash": "542e298e251a9cbc1e2a0dd8b1857bed3f29b301a21055269ff9797332206bb7",
+  "count": 107,
+  "brier": 0.0895,
+  "brierFromLedger": 0.0895,
+  "ledgerHash": "9baca902988022f0b83ff9464544b1a537cf920246ba7fa17412d75fce84f194",
   "entries": [
     {
       "id": "IA-BR22-001",
@@ -964,6 +964,15 @@
     },
     {
       "id": "LA-023",
+      "probAtSeal": 0.9,
+      "ipccBand": "Very Likely",
+      "audited": true,
+      "outcome": "HIT",
+      "outcomeValue": 1,
+      "brierTerm": 0.01
+    },
+    {
+      "id": "LA-024",
       "probAtSeal": 0.9,
       "ipccBand": "Very Likely",
       "audited": true,
