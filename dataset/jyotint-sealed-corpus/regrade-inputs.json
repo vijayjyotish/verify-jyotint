@@ -3812,8 +3812,8 @@
       },
       "operator_named_vector_count": 7,
       "specificity_source": "sealed claim (advisory-verdicts LA-024, verbatim): overall verdict; the ladder; §05 pre-launch actionables; §08 sixteen-window branch map; §09 final recommendations. Vectors extracted 2026-08-14 pre-window; sealed text and hashes untouched.",
-      "improbability_one_in_n": null,
-      "surprise_bits": 0,
+      "improbability_one_in_n": 300.2811084953577,
+      "surprise_bits": 8.23016990363956,
       "evidence_sources": []
     }
   ]
