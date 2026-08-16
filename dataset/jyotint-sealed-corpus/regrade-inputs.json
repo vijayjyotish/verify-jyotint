@@ -3788,7 +3788,7 @@
       "id": "LA-024",
       "title": "USSF-366 / Falcon 9 — 15 Aug Launch-Day Read Sealed Before the Window · Recommend Scrub & Reschedule · Sixteen-Window Branch Map · Payload-Contamination Call at Certainty",
       "claim": "USSF-366 / FALCON 9 — LAUNCH-DAY READ & GO/NO-GO ASSESSMENT · SEALED BEFORE THE WINDOW Mission: USSF-366 · Falcon 9 Block 5 · booster B1088 flight #18 · SLC-4E Vandenberg SFB, CA · Saturday 15 August 2026 · window opens 21:52:00 UTC (14:52 PDT) · 4-hour window (14:52–18:52 PDT) · trajectory southeast / LEO · droneship OCISLY (666th recovery attempt) · classified USSF payload (analysts: likely Starshield-class LEO batch). Prepared for: Lieutenant Colonel Kyle Rowland, Commander, 4th Space Launch Squadron, Vandenberg Space Force Base. OVERALL VERDICT — REC…",
-      "outcome": "GRADED AT THE WEBCAST (Tier 1) — the mission flew, and the ladder graded exactly as sealed.",
+      "outcome": "Flown at the window's edge: after the sealed 0.90 delay call, the nominal 14:52 PDT T-0 slipped to 16:47 and then 18:50 PDT — liftoff 18:50:07 PDT (01:50 UTC), two minutes before window close, activating W15 of the sealed sixteen-window branch map. Levels 1 and 2 graded HIT at the webcast; Level 3 (payload compromise, at certainty) rides its pre-committed cl…",
       "date_issued": "2026-08-14",
       "seal_hash_sha256": "177bda1e7259304fd94be1addb2b406f2ee2622e60de2e521ce07c0f989bbfe0",
       "sealed_post_url": null,
