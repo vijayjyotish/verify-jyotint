@@ -5,9 +5,9 @@
   "note": "Only already-public posts are included; each delivery row links a live public post. Off-record or private-channel outreach is deliberately excluded and is not present in the source data. Delivery ≠ a claim any recipient responded — see each advisory's page and /terms.",
   "ceiling": "A DELIVERY/provenance axis, never accuracy: it evidences that the dated forecast was published and (where a recipient is named in the post) addressed to them — not that it was read, actioned, or correct. Enters no score.",
   "counts": {
-    "delivered_posts": 17,
-    "total_rows": 19,
-    "advisories_covered": 9
+    "delivered_posts": 19,
+    "total_rows": 21,
+    "advisories_covered": 10
   },
   "entries": [
     {
@@ -199,6 +199,26 @@
       "quote": "To be clear: this was a public, unsolicited advisory issued well before launch. Blue Origin can confirm whether they saw it. The outcome — successful booster recovery but off-nominal orbit leading to deorbit — aligned with the specific risk we highlighted. We continue to share these analyses openly.",
       "url": "https://x.com/vijayjyotish/status/2045943740930666809",
       "kind": "delivered_post"
+    },
+    {
+      "advisoryId": "LA-025",
+      "advisoryTitle": "Roman Space Telescope / Falcon Heavy — Launch-Day Assessment & Mission Risk Advisory · Recommend Scrub & Reschedule · Five-Tier Compound Claim · Left-Side Optics Call · Sealed Before the Window",
+      "date": "Aug 25, 2026",
+      "label": "The delivery — public X announcement, addressees notified by mention",
+      "channel": "X",
+      "quote": "Kind attention: @NASA_LSP + Roman Program Office (@NASAGoddard / @NASARoman)\n\nLaunch Advisory: NASA Roman Space Telescope on the SpaceX Falcon Heavy (7:26 AM EDT, August 30, 2026)\n\nhttps://jyotishintelligence.com/advisory/LA-025",
+      "url": "https://x.com/vijayjyotish/status/2092301299895374226",
+      "kind": "delivered_post"
+    },
+    {
+      "advisoryId": "LA-025",
+      "advisoryTitle": "Roman Space Telescope / Falcon Heavy — Launch-Day Assessment & Mission Risk Advisory · Recommend Scrub & Reschedule · Five-Tier Compound Claim · Left-Side Optics Call · Sealed Before the Window",
+      "date": "Aug 25, 2026",
+      "label": "LinkedIn announcement — same text, same addressees",
+      "channel": "X",
+      "quote": null,
+      "url": "https://www.linkedin.com/posts/vijay-jyotish_kind-attention-nasalsp-roman-program-share-7498067230883135489-Y2kY",
+      "kind": "public_link"
     }
   ]
 }
