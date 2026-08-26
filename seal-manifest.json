@@ -1,14 +1,14 @@
 {
   "$schema": "https://jyotishintelligence.com/schemas/seal-manifest-v1.json",
   "version": 1,
-  "generatedAt": "2026-08-25T16:45:03.789Z",
+  "generatedAt": "2026-08-26T16:33:49.368Z",
   "origin": "https://jyotishintelligence.com",
   "algorithm": "sha256",
   "_about": "LIVE, APPEND-ONLY SEAL MANIFEST. `count` is the number of independently sealed forecasts and grows as new advisories are added; `manifestHash` is sha256 of the canonical `records` array (companions are a separate array, excluded from both `count` and `manifestHash`). A count quoted in a publication reflects the state as of that paper's date — if the live `count` is larger, forecasts were sealed after the paper, which is expected and not an erratum. Every past state is versioned and retrievable as an immutable, hash-named snapshot: see `versions` for the index, the dated snapshots, and how to recompute any figure a paper cites.",
   "versions": "https://jyotishintelligence.com/dataset/record-versions.json",
   "hashInputTemplate": "objectId|dateIssued|title|claim",
-  "manifestHash": "c1f6ad4af0250eb93dfa31910c1bc35e460922db56ab928da44f81662ed29e69",
-  "count": 120,
+  "manifestHash": "b58b04d9f7eb44ab52748128a2a48b79a3841af4f0bfdd267ae0896b048b349c",
+  "count": 121,
   "companionCount": 99,
   "companionsHash": "dcd811ae5c72318c246348993142e6ea732413931896dae05c7199be068d35ec",
   "records": [
@@ -916,6 +916,19 @@
       "claim": "#Agriculture and food supply will remain strong in #Russia. They might even export these to other countries for profit. (Re-sealed Sep 2023: …National assets such as oil, coal, forests, etc. will contribute handsomely to create liquidity in the coffers of the treasury.)",
       "hash": "b3428b29d0f94b1f80568754a061e8a24bd4b2ba2a3b3af30b81443c1f19889c",
       "url": "https://jyotishintelligence.com/intel/advisory/IA-RU-045"
+    },
+    {
+      "id": "IA-RU-046",
+      "title": "Ukraine-Zone Nuclear Flashpoint Window — 28 Oct–28 Nov 2026, peak 13 Nov (successor to IA-RU-020)",
+      "dateIssued": "2026-08-26",
+      "videoUrl": "IA-RU-046",
+      "videoId": null,
+      "objectId": "IA-RU-046",
+      "objectType": "other",
+      "claim": "Between 28 Oct and 28 Nov 2026, a nuclear-level escalation concentrates in the Ukraine theater — attribution held open. Pre-registered vectors: a PROVABLE (independently verifiable) nuclear-capability demonstration (underground sufficient, atmospheric self-defeating); a false-flag radiological/dirty-bomb event (registered for any side); threshold posturing / a declared capability / a long-range missile test reported nuclear-capable / nuclear-capable exercises; and a deterrence exercise (IA-RU-009-type). Assessed ceiling: a demonstrative TEST, not a wartime use. Probability maximum ~13 Nov; a deterrence/response event window opens ~28 Nov. Successor to IA-RU-020.",
+      "hash": "8e4e1a2e1c5873528b480b234ebc57ca3bf378277fd3a450ee2c40b09c4afa49",
+      "url": "https://jyotishintelligence.com/intel/showcase/IA-RU-046",
+      "ungraded": true
     },
     {
       "id": "IA-SX-001",
