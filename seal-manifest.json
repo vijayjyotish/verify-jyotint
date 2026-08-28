@@ -1,7 +1,7 @@
 {
   "$schema": "https://jyotishintelligence.com/schemas/seal-manifest-v1.json",
   "version": 1,
-  "generatedAt": "2026-08-28T14:36:16.670Z",
+  "generatedAt": "2026-08-28T15:18:27.357Z",
   "origin": "https://jyotishintelligence.com",
   "algorithm": "sha256",
   "_about": "LIVE, APPEND-ONLY SEAL MANIFEST. `count` is the number of independently sealed forecasts and grows as new advisories are added; `manifestHash` is sha256 of the canonical `records` array (companions are a separate array, excluded from both `count` and `manifestHash`). A count quoted in a publication reflects the state as of that paper's date — if the live `count` is larger, forecasts were sealed after the paper, which is expected and not an erratum. Every past state is versioned and retrievable as an immutable, hash-named snapshot: see `versions` for the index, the dated snapshots, and how to recompute any figure a paper cites.",
@@ -9,8 +9,8 @@
   "hashInputTemplate": "objectId|dateIssued|title|claim",
   "manifestHash": "5065a8741b828c6d403371caf7cedea17e8212e546fa252ce7dede36ec0ef074",
   "count": 122,
-  "companionCount": 103,
-  "companionsHash": "4cba45659813a5cba003b16508111b0c944359b76b9bcba6dbeae9882aa64503",
+  "companionCount": 104,
+  "companionsHash": "a8669a617f58a3cb8014fd5e513ee4d0a5d2f0d12f4cbbfa337757153933b757",
   "records": [
     {
       "id": "IA-BR22-001",
@@ -2609,6 +2609,19 @@
       "hash": "c7fd14a7327ea25362d314fda652d2685b80b9d8458a0a34e69b2155909e37cd",
       "url": "https://jyotishintelligence.com/intel/advisory/IA-US24-010#sealed-record",
       "label": "20 Oct 2024 · Minnesota as part of the astrological 'positive control group'"
+    },
+    {
+      "id": "IA-US26-001::2093356750728749511",
+      "parentId": "IA-US26-001",
+      "title": "U.S. mall-class mass shooting — a nationwide warning, named eleven weeks early · companion seal",
+      "dateIssued": "2026-08-28",
+      "videoUrl": "https://x.com/vijayjyotish/status/2093356750728749511",
+      "objectId": "2093356750728749511",
+      "objectType": "x",
+      "claim": "The fact of pre-window PUBLIC dissemination, sealed: the IA-US26-001 warning was announced publicly on X (post id 2093356750728749511 — the id self-timestamps to 2026-08-28 15:15:16 UTC) and on LinkedIn (https://lnkd.in/p/gsnFTCYk), each carrying the window (8–15 Nov 2026), the ranked venue classes, the toll-or-run signature, the falsifier, and the public advice — 72 days before the window opens. The announcements are the outreach layer; the sealed advisory page and manifest hash remain the record.",
+      "hash": "67413693eee5a93b80ebbf49cd8de446f54ee405be1113e2857fd350e394776e",
+      "url": "https://jyotishintelligence.com/intel/showcase/IA-US26-001#sealed-record",
+      "label": "PUBLIC DISSEMINATION ATTESTATION — THE WARNING ANNOUNCED, 72 DAYS PRE-WINDOW"
     },
     {
       "id": "IA-US26-001::https://jyotishintelligence.com/intel/showcase/IA-US26-001",
