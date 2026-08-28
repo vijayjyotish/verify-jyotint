@@ -1,16 +1,16 @@
 {
   "$schema": "https://jyotishintelligence.com/schemas/seal-manifest-v1.json",
   "version": 1,
-  "generatedAt": "2026-08-26T16:33:49.368Z",
+  "generatedAt": "2026-08-28T14:36:16.670Z",
   "origin": "https://jyotishintelligence.com",
   "algorithm": "sha256",
   "_about": "LIVE, APPEND-ONLY SEAL MANIFEST. `count` is the number of independently sealed forecasts and grows as new advisories are added; `manifestHash` is sha256 of the canonical `records` array (companions are a separate array, excluded from both `count` and `manifestHash`). A count quoted in a publication reflects the state as of that paper's date — if the live `count` is larger, forecasts were sealed after the paper, which is expected and not an erratum. Every past state is versioned and retrievable as an immutable, hash-named snapshot: see `versions` for the index, the dated snapshots, and how to recompute any figure a paper cites.",
   "versions": "https://jyotishintelligence.com/dataset/record-versions.json",
   "hashInputTemplate": "objectId|dateIssued|title|claim",
-  "manifestHash": "b58b04d9f7eb44ab52748128a2a48b79a3841af4f0bfdd267ae0896b048b349c",
-  "count": 121,
-  "companionCount": 99,
-  "companionsHash": "dcd811ae5c72318c246348993142e6ea732413931896dae05c7199be068d35ec",
+  "manifestHash": "5065a8741b828c6d403371caf7cedea17e8212e546fa252ce7dede36ec0ef074",
+  "count": 122,
+  "companionCount": 103,
+  "companionsHash": "4cba45659813a5cba003b16508111b0c944359b76b9bcba6dbeae9882aa64503",
   "records": [
     {
       "id": "IA-BR22-001",
@@ -1125,6 +1125,19 @@
       "claim": "Minnesota: Vice President Harris Predicted to Win\nVice President Kamala Harris is likely to secure victory in Minnesota, thereby gaining 10 electoral votes.\n\nKey Insights from the Forecast\nVice President Harris is projected to achieve a decisive victory in Minnesota, with no viable path for President Trump to secure a win in the state. Although this may seem widely acknowledged, my role as an astrologer involves examining states that could potentially swing between Democratic and Republican. However, Minnesota consistently leans Democratic, and there are no indications of a shift. It would be prudent for the Trump Campaign to refrain from allocating resources to this state, as the likelihood of altering its outcome is minimal.",
       "hash": "28cdde6d3b55e0d1c34f2cde6065646334f1b89e1dbf5174af2ae3aeddb09092",
       "url": "https://jyotishintelligence.com/intel/advisory/IA-US24-010"
+    },
+    {
+      "id": "IA-US26-001",
+      "title": "U.S. mall-class mass shooting — a nationwide warning, named eleven weeks early",
+      "dateIssued": "2026-08-28",
+      "videoUrl": "IA-US26-001",
+      "videoId": null,
+      "objectId": "IA-US26-001",
+      "objectType": "other",
+      "claim": "Sealed 28 August 2026, 72 days in advance. Within 8–15 November 2026 — the week before U.S. Thanksgiving shopping peaks — a mass-casualty shooting occurs in the United States at one of three ranked venue classes: shopping mall / enclosed retail (p=0.95, primary), school or university (p=0.90), or government facility (p=0.85). Nationwide; deliberately no city, state, or facility named. Qualifying signature (either grades it): a top-tier death toll, on the order of TWENTY OR MORE killed, however quickly the shooter is stopped — OR a shooter active or at large for more than one hour with mass casualties. Expected duration ~two hours IF this is not planned for; a run cut short by rapid response or armed-citizen intervention voids the duration layer, never the core. Precision layers: the attacker likely has a school or university connection (a student or teacher), and lawfully armed citizens present are expected to attempt intervention. Probability at seal 1.0; if no qualifying event occurs in the window, this grades a MISS at full weight. The advice: shop online that week, keep covert response inside 15 minutes, and hold an all-stakeholder readiness exercise inside the window.",
+      "hash": "fb826bd9668b015983b30c803fd7a9e6647af5b5e5e75e90216fce5018ff457f",
+      "url": "https://jyotishintelligence.com/intel/showcase/IA-US26-001",
+      "ungraded": true
     },
     {
       "id": "IA-USCV-001",
@@ -2403,6 +2416,45 @@
       "label": "T16/59 · attacks on Russian food reserves/storage/supplies"
     },
     {
+      "id": "IA-RU-046::https://jyotishintelligence.com/dossier/JYOTINT-IA-RU-046-ADDENDUM-1.pdf",
+      "parentId": "IA-RU-046",
+      "title": "Ukraine-Zone Nuclear Flashpoint Window — 28 Oct–28 Nov 2026, peak 13 Nov (successor to IA-RU-020) · companion seal",
+      "dateIssued": "2026-08-26",
+      "videoUrl": "https://jyotishintelligence.com/dossier/JYOTINT-IA-RU-046-ADDENDUM-1.pdf",
+      "objectId": "https://jyotishintelligence.com/dossier/JYOTINT-IA-RU-046-ADDENDUM-1.pdf",
+      "objectType": "other",
+      "claim": "One page, sealed separately on 26 August 2026 — 63 days before the window opens — expanding IA-RU-046 and modifying nothing: it pre-registers two named, publicly observable airborne indicators as corroboration channels for the sealed window (WC-135R Constant Phoenix radionuclide-sampling sorties over the candidate geographies, JAKE-series callsigns; E-6B Mercury NC3/deterrence-posture activity), with the discipline volunteered that neither cue can grade a kinetic vector — only independent seismic/radionuclide/IAEA-CTBTO confirmation does. Its own SHA-256 (a9a97bdcf0ee7b0883fe9fad64e0beffdb344da720bf83bcb17108e8c52d0d6a) is published beside it and OpenTimestamps-anchored pre-window; deliberately NOT a manifest companion — the original record's entry and hash stand untouched.",
+      "hash": "9c3ac6194ea0c1b4ae5d9027a9a2899c3b778f25a1570eb2fc2bc7018f44ad8e",
+      "url": "https://jyotishintelligence.com/intel/showcase/IA-RU-046#sealed-record",
+      "label": "ADDENDUM 1 — PRE-REGISTERED AIRBORNE CUES (WC-135R CONSTANT PHOENIX · E-6B MERCURY), SEALED SEPARATELY 26 AUG, 63 DAYS PRE-WINDOW"
+    },
+    {
+      "id": "IA-RU-046::https://jyotishintelligence.com/dossier/JYOTINT-IA-RU-046-ADDENDUM-2.pdf",
+      "parentId": "IA-RU-046",
+      "title": "Ukraine-Zone Nuclear Flashpoint Window — 28 Oct–28 Nov 2026, peak 13 Nov (successor to IA-RU-020) · companion seal",
+      "dateIssued": "2026-08-27",
+      "videoUrl": "https://jyotishintelligence.com/dossier/JYOTINT-IA-RU-046-ADDENDUM-2.pdf",
+      "objectId": "https://jyotishintelligence.com/dossier/JYOTINT-IA-RU-046-ADDENDUM-2.pdf",
+      "objectType": "other",
+      "claim": "One page, sealed separately 27 Aug 2026 (62 days pre-window; its own SHA-256 f379a1307559b868224f139ef0e6fed723d7e587368285b5aaed1355b9fea0f7, OpenTimestamps-anchored to four Bitcoin calendars; deliberately not a manifest companion): pins a POSEIDON-ASSOCIATED EVENT — a trial launch, test, or deterrence demonstration involving the 2M39 Poseidon system or its carriers (Khabarovsk Pr. 09851, at sea for first trials since 17 Aug; Belgorod Pr. 09852) — as a NAMED CANDIDATE CHANNEL inside the already-sealed event family (capability-demonstration and deterrence-exercise vectors; the nuclear-capable-delivery class), AT PARITY with the sealed vectors: no new probability, no re-weighting. THE ONE-CHANNEL RULE, made binding: the family resolves on ANY single channel — the vectors are alternatives, never cumulative requirements; non-realization of this instrument counts nothing against the grade if the family resolves through another channel, exactly as its realization claims nothing beyond the dated fact it was named before it moved. Observables fixed: White Sea/Barents/Kara NAVWARNs, Northern Fleet range closures, Belushya Guba, Krasheninnikov Bay, carrier movements; Addendum 1 airborne cues apply unchanged. Full text: /dossier/JYOTINT-IA-RU-046-ADDENDUM-2.pdf.",
+      "hash": "b0eb62bb9888e0d27d1f62f6bdee4919b352151b840e57bc908ddc2ce7a9fd01",
+      "url": "https://jyotishintelligence.com/intel/showcase/IA-RU-046#sealed-record",
+      "label": "ADDENDUM 2 — THE SEA-BASED CHANNEL PINNED (POSEIDON 2M39 · KHABAROVSK / BELGOROD), SEALED SEPARATELY 27 AUG, 62 DAYS PRE-WINDOW"
+    },
+    {
+      "id": "IA-RU-046::https://jyotishintelligence.com/intel/showcase/IA-RU-046#announcement",
+      "parentId": "IA-RU-046",
+      "title": "Ukraine-Zone Nuclear Flashpoint Window — 28 Oct–28 Nov 2026, peak 13 Nov (successor to IA-RU-020) · companion seal",
+      "dateIssued": "2026-08-26",
+      "videoUrl": "https://jyotishintelligence.com/intel/showcase/IA-RU-046#announcement",
+      "objectId": "https://jyotishintelligence.com/intel/showcase/IA-RU-046#announcement",
+      "objectType": "other",
+      "claim": "On 26 August 2026 — 63 days before this forecast's window opens (28 October 2026) — JYOTINT publicly disseminated the sealed advisory IA-RU-046 on X (https://x.com/vijayjyotish/status/2092662631941435800) and on LinkedIn (https://www.linkedin.com/posts/vijay-jyotish_russia-ukraine-nuclear-flashpoint-window-share-7498428454044905472-X3cd), each post linking to this sealed page. Both platforms carry their own independent post timestamps, corroborating that the forecast was on the public record before its window. This attestation records the fact of pre-window public dissemination; the forecast text itself is sealed in the manifest and OpenTimestamps-anchored, and is held off the Brier until the window resolves.",
+      "hash": "f4291d87ec139f25cda3e8b2bd1a4b4e510eef4754ae05720f1842203154dc52",
+      "url": "https://jyotishintelligence.com/intel/showcase/IA-RU-046#sealed-record",
+      "label": "SEALED PUBLIC-ANNOUNCEMENT ATTESTATION (26 AUG) — PUBLICLY DISSEMINATED 63 DAYS BEFORE THE WINDOW OPENS"
+    },
+    {
       "id": "IA-US22-001::1589666616916250625",
       "parentId": "IA-US22-001",
       "title": "No 2022 'red wave' + Kevin McCarthy as Speaker · companion seal",
@@ -2557,6 +2609,19 @@
       "hash": "c7fd14a7327ea25362d314fda652d2685b80b9d8458a0a34e69b2155909e37cd",
       "url": "https://jyotishintelligence.com/intel/advisory/IA-US24-010#sealed-record",
       "label": "20 Oct 2024 · Minnesota as part of the astrological 'positive control group'"
+    },
+    {
+      "id": "IA-US26-001::https://jyotishintelligence.com/intel/showcase/IA-US26-001",
+      "parentId": "IA-US26-001",
+      "title": "U.S. mall-class mass shooting — a nationwide warning, named eleven weeks early · companion seal",
+      "dateIssued": "2026-08-28",
+      "videoUrl": "https://jyotishintelligence.com/intel/showcase/IA-US26-001",
+      "objectId": "https://jyotishintelligence.com/intel/showcase/IA-US26-001",
+      "objectType": "other",
+      "claim": "Sealed 28 Aug 2026, 72 days before the 8–15 Nov 2026 window: a forward, defensive warning of a U.S. mass-casualty shooting — a top-tier toll (~20+ killed, however quickly the shooter is stopped) or an extended run (>1 hour active-or-at-large, expected ~two absent planning) with mass casualties — on a ranked three-branch venue map (mall 0.95 · school/university 0.90 · government facility 0.85); nationwide, no city named; core probability at seal 1.0. Full text is hashed into the seal manifest and OpenTimestamps-anchored into Bitcoin before the window; held off the Brier until it resolves.",
+      "hash": "e724e3628e5061fa6dd4090fd10e5daa3a3c23da38500ba501db3fd883940111",
+      "url": "https://jyotishintelligence.com/intel/showcase/IA-US26-001#sealed-record",
+      "label": "SEALED FORWARD WARNING (28 AUG) — PUBLICLY ON THE RECORD 72 DAYS BEFORE THE WINDOW OPENS"
     },
     {
       "id": "LA-023::2078230611287015582",
