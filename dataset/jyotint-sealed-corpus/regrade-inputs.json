@@ -1,7 +1,7 @@
 {
   "$comment": "Grade-it-yourself + pull-the-evidence kit. Per closed call: the verbatim CLAIM (anteriorly sealed, the prediction — grade THIS, not the title), the verbatim OUTCOME, the operator's p and verdict (override them), the published base-rate floor, the 1-in-N prior + its surprise-in-bits, the operator's named 5W1H+recommendation vectors (re-count yourself), and the EVIDENCE — sealed_post_url + seal_hash_sha256 (anteriority) and evidence_sources (outcome corroboration). THREE axes are recomputable from these inputs under YOUR OWN verdicts: (1) the Brier (calibration) — `node verify-jyotint.mjs --regrade`; (2) named-mechanism SPECIFICITY — count matched 5W1H vectors from `claim` vs `outcome`; (3) INFORMATION YIELD — bits = surprise_bits, earned = surprise_bits × outcome_o (HIT 1 / NEAR|PARTIAL 0.5 / MISS 0). The base rate scores 0 on specificity AND 0 bits on IY by construction. SITA's two COMPUTED axes are here too (Specificity = the vectors; Improbability = improbability_one_in_n); its two rubric-judged axes (impacT, Actionability) are protected editorial opinion, not skeptic-overridable, and the full SITA distribution is at /api/v1/sita.json.",
   "generator": "scripts/gen-regrade-inputs.mjs",
-  "count": 107,
+  "count": 108,
   "hash_input_template": "objectId|dateIssued|title|claim",
   "recipes_usage": "One-step stress tests — no per-call entry. CLI: `node verify-jyotint.mjs --regrade --policy <name>` (reports the regraded Brier AND the recomputed Information Yield). In an LLM: apply a recipe's declarative ops to `rows`, then recompute Brier = mean((p-o)^2) and IY = median(surprise_bits) + %earned = Σ(surprise_bits×o)/Σ(surprise_bits). Conservative recipes lower the calibration Brier by design (conceded — calibration ties a base rate); what SURVIVES is named-mechanism specificity and the per-call bits of surprise — a base rate scores 0 on both.",
   "recipes": [
@@ -3814,6 +3814,38 @@
       "specificity_source": "sealed claim (advisory-verdicts LA-024, verbatim): overall verdict; the ladder; §05 pre-launch actionables; §08 sixteen-window branch map; §09 final recommendations. Vectors extracted 2026-08-14 pre-window; sealed text and hashes untouched.",
       "improbability_one_in_n": 300.2811084953577,
       "surprise_bits": 8.23016990363956,
+      "evidence_sources": []
+    },
+    {
+      "id": "LA-026",
+      "title": "EOS-05 / GISAT-1A · GSLV-F17 — Launch-Day Risk Assessment Sealed Before the Window · Two-Level Conditional Ladder · Eighteen-Window Branch Map · Cryogenic Upper-Stage Anomaly Call up to Loss of Mission",
+      "claim": "LA-026 — EOS-05 / GISAT-1A · GSLV-F17 (GSLV Mk II) · LAUNCH-DAY RISK ASSESSMENT · A TWO-LEVEL CONDITIONAL LADDER + AN EIGHTEEN-WINDOW BRANCH MAP · SEALED 28 AUGUST 2026, BEFORE THE WINDOW SEALED 28 AUGUST 2026 — six days before the window opens. probAtSeal 0.90 (operator-set, both levels). EXECUTIVE SUMMARY — LA-026 · EOS-05 / GISAT-1A · GSLV-F17 WINDOW NET FRIDAY 4 SEP 2026 IST · 02:30–06:30 IST (opens 3 SEP 21:00 UTC — the night of 3/4 Sep) · SECOND LAUNCH PAD, SATISH DHAWAN SPACE CENTRE, SRIHARIKOTA · GTO INJECTION OVERALL VERDICT: NOT A CLEAN FLIGHT.…",
+      "outcome": "GRADED HIT (T+1d, 4 Sep) — liftoff 02:55:00 IST, a 25-minute slip off the sealed 02:30 anchor (Level 1 HIT, per the pre-window worked example); W3 activated and its survivable rating graded HIT on a clean flight to a USSF-cataloged 154×30,963 km transfer orbit; seventeen windows VOID; the caution line rides as an unclaimed annotation.",
+      "date_issued": "2026-08-28",
+      "seal_hash_sha256": "886dea385fb3e80ad11d4ad210792a2a7324fbff577d4e8f47abfee6112846ec",
+      "sealed_post_url": null,
+      "advisory_url": "https://jyotishintelligence.com/advisory/LA-026",
+      "operator_p": 0.9,
+      "operator_band": "Very Likely",
+      "operator_verdict": "HIT",
+      "outcome_o": 1,
+      "lead": "Sealed 28 Aug 2026 · six days before the window (opens 3 Sep 21:00Z = 02:30 IST Fri 4 Sep)",
+      "announce_window_days": null,
+      "base_rate_floor": null,
+      "base_rate_basis": null,
+      "named_vectors": {
+        "who": "ISRO EOS-05 / GISAT-1A — GEO imaging satellite (rapid disaster-imaging from geostationary orbit; ≈2.2-tonne class; the GISAT line's 4th attempt, 0-for-3 across a decade) · GSLV Mk II flight F17 (19th GSLV), CUS15 cryogenic third stage — the named locus of the GSLV-F10/EOS-03 2021 loss · addressed to the launch authority",
+        "what": "Two-level conditional ladder — L1 P=0.90 no clean on-time success (scrub is scrub, any attribution) · L2 P=0.90 given launch: a serious cryogenic-upper-stage ascent anomaly at the ~T+4.6 min chill-down/ignition event (the exact GSLV-F10/EOS-03 2021 mode), severity up to loss of mission — PLUS an eighteen-window branch map tiling all 240 minutes, each window with its own verdict and launch-here consequence (realized T-0 activates exactly one; seventeen grade VOID) · payload/vehicle split: the satellite assessed sound in every branch · falsifier sealed: a clean, nominal, on-time success grades both levels MISS at full weight",
+        "where": "Second Launch Pad, Satish Dhawan Space Centre, Sriharikota → Sub-GTO per ISRO's own published target (170 × 28,934 km · AOP 178±0.5° · inclination 19.28±0.1°), the satellite buying GEO on its own propulsion",
+        "when": "Window 02:30–06:30 IST Friday 4 September 2026 (3 Sep 21:00–01:00 UTC); sealed 28 Aug 2026, six days pre-window, BEFORE any official T-0 existed (seal-day consensus: NET 21:00Z = 02:30 IST — the on-time anchor, fixed at seal); W1 commit-at-open = the sealed NO-GO; the core = 03:26–03:46 IST; L1 grades T+1 day, L2 within days on converged public elements",
+        "why": "The named locus is the cryogenic third stage at the F10 failure point — chill-down/ignition under a night thermal environment — on a vehicle class with a ~67% historical success rate and a 7-month return-to-flight cadence; the window's minute-structure is itself the risk topology (open = NO-GO, the core two-thirds through), and the mission-life coupling makes every vehicle shortfall payable in satellite propellant, i.e. mission years",
+        "how": "Opacity-proof grading, sealed §10: PUBLIC SOURCES ONLY — NOTAMs/range closures and public reporting for liftoff; SATCAT/TLE public catalogs for the achieved orbit against ISRO's own published bands; agency statements corroborate but never arbitrate; data governs on conflict; unresolved attribution grades conservatively, never toward the call; a curtailed or absent telecast changes nothing",
+        "recommendation": "Do not commit at window open (W1 = NO-GO); the sealed core is 03:26–03:46 IST. Pre-launch actionables (§05, usable only while the vehicle can be touched): CE-7.5 igniter-chain and pyrogen verification · full chill-down rehearsal and thermal-conditioning review · LH2 tank pressurization integrity on the vent-and-relief path the F10 Failure Analysis Committee named · loading-density margins re-derived for the night thermal environment · thrust-buildup monitoring thresholds and abort/hold criteria at the ~T+4.6 min event · separation-system pyro continuity for the late-window branches"
+      },
+      "operator_named_vector_count": 7,
+      "specificity_source": "sealed claim (advisory-verdicts LA-026, verbatim): subject + two-level ladder + eighteen-window branch map + §05 actionables + §10 opacity-proof grading protocol + the falsifier. Vectors extracted 2026-08-30 from the sealed text; seal-day anchor evidence per CONSENSUS (frozen 28 Aug); sealed text and hashes untouched.",
+      "improbability_one_in_n": 75.00000000000001,
+      "surprise_bits": 6.228818690495881,
       "evidence_sources": []
     }
   ]
