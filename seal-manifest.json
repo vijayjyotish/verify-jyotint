@@ -1,7 +1,7 @@
 {
   "$schema": "https://jyotishintelligence.com/schemas/seal-manifest-v1.json",
   "version": 1,
-  "generatedAt": "2026-08-28T22:53:32.655Z",
+  "generatedAt": "2026-09-13T15:40:15.397Z",
   "origin": "https://jyotishintelligence.com",
   "algorithm": "sha256",
   "_about": "LIVE, APPEND-ONLY SEAL MANIFEST. `count` is the number of independently sealed forecasts and grows as new advisories are added; `manifestHash` is sha256 of the canonical `records` array (companions are a separate array, excluded from both `count` and `manifestHash`). A count quoted in a publication reflects the state as of that paper's date — if the live `count` is larger, forecasts were sealed after the paper, which is expected and not an erratum. Every past state is versioned and retrievable as an immutable, hash-named snapshot: see `versions` for the index, the dated snapshots, and how to recompute any figure a paper cites.",
@@ -9,8 +9,8 @@
   "hashInputTemplate": "objectId|dateIssued|title|claim",
   "manifestHash": "8a3f1994009b04d48fde481a25cd72d604e1bf95cd59aac099b41ce392945603",
   "count": 123,
-  "companionCount": 106,
-  "companionsHash": "0fbb286364832e153479a2ac2fed2d8f9564cdf0c79d4c5251bceb502d6cebd3",
+  "companionCount": 107,
+  "companionsHash": "55addec8143ac136ecb2c9c3708b9f7f2c30ed4c2bb9beed53995bf03cd0855d",
   "records": [
     {
       "id": "IA-BR22-001",
@@ -2634,6 +2634,19 @@
       "hash": "67413693eee5a93b80ebbf49cd8de446f54ee405be1113e2857fd350e394776e",
       "url": "https://jyotishintelligence.com/intel/showcase/IA-US26-001#sealed-record",
       "label": "PUBLIC DISSEMINATION ATTESTATION — THE WARNING ANNOUNCED, 72 DAYS PRE-WINDOW"
+    },
+    {
+      "id": "IA-US26-001::https://jyotishintelligence.com/dossier/JYOTINT-IA-US26-001-REVISION-1.pdf",
+      "parentId": "IA-US26-001",
+      "title": "U.S. mall-class mass shooting — a nationwide warning, named eleven weeks early · companion seal",
+      "dateIssued": "2026-09-13",
+      "videoUrl": "https://jyotishintelligence.com/dossier/JYOTINT-IA-US26-001-REVISION-1.pdf",
+      "objectId": "https://jyotishintelligence.com/dossier/JYOTINT-IA-US26-001-REVISION-1.pdf",
+      "objectType": "other",
+      "claim": "Revision 1 to IA-US26-001, sealed 13 September 2026, 56 days before the 8–15 November 2026 window. Sixteen days after the original seal, the desk's reading updated and a FOURTH ranked venue class is added at per-branch weight 0.85: a CHRISTIAN church or an organised CHRISTIAN gathering — a service at a church or chapel of any denomination; or a denominational convention or convocation, a conference of Christian scholars, a revival or faith tour stop, a Christian rally, a campus-ministry or Christian-university assembly — wherever held. The class is Christian by definition: a qualifying event at a non-Christian house of worship falls outside all four branches and grades a venue MISS. Precision layer, scored on top and never the falsifier: more likely a large assembly than a single parish; a single church service is the floor of the class. The three original classes (mall 0.95, school/university 0.90, government facility 0.85) stand as sealed on 28 August with their 72-day lead; this branch carries its own 56-day lead. Window, toll-or-run signature, conditional duration, both precision layers, probability 1.0 and the miss rule are unchanged. The warning is graded as it stands at window open — four branches — with lead time stated per branch. The map freezes at 00:00 UTC on 8 November; this is the only revision. Blind floor repriced against the call: about 1 in 27 (was 1 in 32).",
+      "hash": "bee3ba3ec5a3f35bcc0e8791e7472a3703d63f2129e22a3328c5a59592421bca",
+      "url": "https://jyotishintelligence.com/intel/showcase/IA-US26-001#sealed-record",
+      "label": "REVISION 1 — A FOURTH RANKED VENUE CLASS ADDED ON NEW INFORMATION: CHRISTIAN CHURCH OR ORGANISED CHRISTIAN GATHERING (p=0.85), SEALED 13 SEP, 56 DAYS PRE-WINDOW"
     },
     {
       "id": "IA-US26-001::https://jyotishintelligence.com/intel/showcase/IA-US26-001",
