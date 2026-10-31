@@ -6,7 +6,7 @@
   "algorithm": "sha256",
   "_about": "LIVE, APPEND-ONLY SEAL MANIFEST. `count` is the number of independently sealed forecasts and grows as new advisories are added; `manifestHash` is sha256 of the canonical `records` array (companions are a separate array, excluded from both `count` and `manifestHash`). A count quoted in a publication reflects the state as of that paper's date — if the live `count` is larger, forecasts were sealed after the paper, which is expected and not an erratum. Every past state is versioned and retrievable as an immutable, hash-named snapshot: see `versions` for the index, the dated snapshots, and how to recompute any figure a paper cites.",
   "versions": "https://jyotishintelligence.com/dataset/record-versions.json",
-  "hashInputTemplate": "objectId|dateIssued|title|claim",
+  "hashInputTemplate": "objectId|dateIssued|title|claim[|nonce]",
   "manifestHash": "8a3f1994009b04d48fde481a25cd72d604e1bf95cd59aac099b41ce392945603",
   "count": 123,
   "companionCount": 107,
