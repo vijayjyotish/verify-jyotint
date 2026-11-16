@@ -1,11 +1,11 @@
 {
   "$schema": "https://jyotishintelligence.com/seal-merkle.schema.json",
   "version": 1,
-  "generatedAt": "2026-09-13T15:40:15.397Z",
+  "generatedAt": "2026-11-16T21:16:42.403Z",
   "origin": "https://jyotishintelligence.com",
   "algorithm": "SHA-256",
   "construction": "leaf = record.hash (lowercase hex), records sorted by id; parent = SHA256(utf8(leftHex+rightHex)); odd row duplicates its last node.",
-  "derivedFromManifestHash": "8a3f1994009b04d48fde481a25cd72d604e1bf95cd59aac099b41ce392945603",
+  "derivedFromManifestHash": "26a29f3484537f9df94cd10927e6532bcb58254db615dd442c8d20566d486c2a",
   "note": "Derived from the Bitcoin-anchored seal-manifest.json — NOT separately stamped. The merkleRoot is a deterministic function of the record hashes already committed by manifestHash, so it is transitively Bitcoin-anchored. Verify: recompute merkleRoot from the manifest's record hashes, then check any proof against it.",
   "count": 123,
   "merkleRoot": "e1aeec1303da72745eee81f22091e216337998c53bf9dc5f6da6cdade82e4522",

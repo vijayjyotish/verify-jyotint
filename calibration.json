@@ -1,20 +1,20 @@
 {
   "$schema": "https://jyotishintelligence.com/schemas/calibration-v1.json",
   "version": 1,
-  "generatedAt": "2026-11-13T18:02:46.262Z",
+  "generatedAt": "2026-11-16T21:25:54.445Z",
   "origin": "https://jyotishintelligence.com",
   "notes": "Full corpus — Launch Advisories (LA) + Intel Advisories (RU-UA, US-2024, IN-2024). Per the JYOTINT pledge advisories are locked at publish; calibration metadata lives outside the seal. Every closed call is per-advisory audited: probAtSeal is mapped from the advisory's own sealed wording (launch to the seal-time confidence, 0.72-0.99; intel via a linguistic ladder — flat 'will/cannot' 0.95, 'likely' 0.78, genuine 'could/might' hedge 0.60), applied identically to hits and misses. audited=true denotes this post-event reconciliation to the contemporaneous sealed text, not blind third-party verification. Scoring rules follow Brier 1950 and standard log-loss.",
   "auditRatio": 1,
-  "closed": 108,
+  "closed": 109,
   "verdicts": {
     "HIT": 84,
-    "MISS": 9,
+    "MISS": 10,
     "NEAR": 10,
     "PARTIAL": 5,
     "OPEN": 1
   },
-  "brier": 0.08878819444444438,
-  "logLoss": 0.3965895860615233,
+  "brier": 0.09714793577981645,
+  "logLoss": 0.5196989527759636,
   "launch": {
     "closed": 26,
     "brier": 0.03298173076923076,
@@ -22,14 +22,14 @@
   },
   "auto": {
     "sealed": 6,
-    "closed": 3,
-    "graded": 3,
-    "hit": 3,
+    "closed": 4,
+    "graded": 4,
+    "hit": 4,
     "near": 0,
     "miss": 0,
     "void": 0,
     "brier": 0.04839999999999999,
-    "lawVersion": "0.6.12",
+    "lawVersion": "0.6.17",
     "readable": false,
     "note": "Reads the Chrome extension produced for house-run launches, sealed before T-0 and graded on /launch/automated. Own ledger, own Brier; under 5 graded the number is printed, not read. Source: /auto-advisories/auto-grading-ledger.json."
   },
@@ -713,6 +713,13 @@
       "accuracy": "HIT",
       "p": 0.78,
       "o": 1,
+      "audited": true
+    },
+    {
+      "id": "IA-US26-001",
+      "accuracy": "MISS",
+      "p": 1,
+      "o": 0,
       "audited": true
     },
     {

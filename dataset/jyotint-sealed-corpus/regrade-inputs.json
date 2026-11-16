@@ -1,7 +1,7 @@
 {
   "$comment": "Grade-it-yourself + pull-the-evidence kit. Per closed call: the verbatim CLAIM (anteriorly sealed, the prediction — grade THIS, not the title), the verbatim OUTCOME, the operator's p and verdict (override them), the published base-rate floor, the 1-in-N prior + its surprise-in-bits, the operator's named 5W1H+recommendation vectors (re-count yourself), and the EVIDENCE — sealed_post_url + seal_hash_sha256 (anteriority) and evidence_sources (outcome corroboration). THREE axes are recomputable from these inputs under YOUR OWN verdicts: (1) the Brier (calibration) — `node verify-jyotint.mjs --regrade`; (2) named-mechanism SPECIFICITY — count matched 5W1H vectors from `claim` vs `outcome`; (3) INFORMATION YIELD — bits = surprise_bits, earned = surprise_bits × outcome_o (HIT 1 / NEAR|PARTIAL 0.5 / MISS 0). The base rate scores 0 on specificity AND 0 bits on IY by construction. SITA's two COMPUTED axes are here too (Specificity = the vectors; Improbability = improbability_one_in_n); its two rubric-judged axes (impacT, Actionability) are protected editorial opinion, not skeptic-overridable, and the full SITA distribution is at /api/v1/sita.json.",
   "generator": "scripts/gen-regrade-inputs.mjs",
-  "count": 108,
+  "count": 109,
   "hash_input_template": "objectId|dateIssued|title|claim",
   "recipes_usage": "One-step stress tests — no per-call entry. CLI: `node verify-jyotint.mjs --regrade --policy <name>` (reports the regraded Brier AND the recomputed Information Yield). In an LLM: apply a recipe's declarative ops to `rows`, then recompute Brier = mean((p-o)^2) and IY = median(surprise_bits) + %earned = Σ(surprise_bits×o)/Σ(surprise_bits). Conservative recipes lower the calibration Brier by design (conceded — calibration ties a base rate); what SURVIVES is named-mechanism specificity and the per-call bits of surprise — a base rate scores 0 on both.",
   "recipes": [
@@ -2946,6 +2946,41 @@
       "evidence_sources": [
         "https://apnews.com/projects/election-results-2024/minnesota/",
         "https://en.wikipedia.org/wiki/2024_United_States_presidential_election_in_Minnesota"
+      ]
+    },
+    {
+      "id": "IA-US26-001",
+      "title": "U.S. mall-class mass shooting — a nationwide warning, named eleven weeks early",
+      "claim": "Sealed 28 August 2026, 72 days in advance. Within 8–15 November 2026 — the week before U.S. Thanksgiving shopping peaks — a mass-casualty shooting occurs in the United States at one of three ranked venue classes: shopping mall / enclosed retail (p=0.95, primary), school or university (p=0.90), or government facility (p=0.85). Nationwide; deliberately no city, state, or facility named. Qualifying signature (either grades it): a top-tier death toll, on the order of TWENTY OR MORE killed, however quickly the shooter is stopped — OR a shooter active or at la…",
+      "outcome": "The read is a MECHANISM, not just an event: unplanned, the shooter gets a one-to-two-hour run and a top-tier toll; planned — ≤15-minute covert response, thinned crowds, and the armed citizens the desk expects to intervene — the run dies early. The claim grades either way: a top-tier toll however fast it ends, or an extended run with mass casualties. Named 72…",
+      "date_issued": "2026-08-28",
+      "seal_hash_sha256": "fb826bd9668b015983b30c803fd7a9e6647af5b5e5e75e90216fce5018ff457f",
+      "sealed_post_url": "IA-US26-001",
+      "advisory_url": "https://jyotishintelligence.com/intel/advisory/IA-US26-001",
+      "operator_p": 1,
+      "operator_band": "Virtually certain",
+      "operator_verdict": "MISS",
+      "outcome_o": 0,
+      "lead": "72 days",
+      "announce_window_days": null,
+      "base_rate_floor": 0.0313,
+      "base_rate_basis": "Partition floor ≈ 1 in 32 as sealed 28 Aug 2026 — 7-day window (1/8) × three-class venue set (1/2) × toll-or-run signature (1/2); Revision 1 reprices it at about 1 in 27. Graded MISS at full weight.",
+      "named_vectors": {
+        "who": "Expected perpetrator (precision layer): an attacker with a school or university connection — most likely a student or a teacher, read as an individual in mental-health crisis; lawfully armed citizens present are expected to attempt intervention before the incident ends",
+        "what": "A mass-casualty shooting carrying the pre-registered toll-or-run signature: a top-tier death toll (~20 or more killed, however quickly the shooter is stopped) OR a shooter active-or-at-large for more than one hour (expected ~two absent planning) with mass casualties",
+        "where": "United States, NATIONWIDE — no city, state, or facility named (deliberate); venue ranked across three classes with sealed probabilities: mall / enclosed retail p=0.95 (primary) · school / university p=0.90 · government facility p=0.85",
+        "when": "8–15 November 2026 (a seven-day corridor, the week before Thanksgiving shopping peaks); sealed 28 Aug 2026, 72 days pre-window; explicit stand-down date 15 Nov 2026",
+        "why": "The harm driver is the extended run — 'if this is not planned for, the shooter gets the extended run,' and the toll follows the run; the mall is ranked strongest because an armed public is present in numbers there, unlike gun-free campuses and access-controlled government facilities",
+        "how": "Sustained active-shooter attack, law enforcement initially unable to end it quickly absent a planned rapid response; duration sealed as a conditional on the response posture",
+        "recommendation": "Demand-shift (online-only holiday shopping incentives to thin mall crowds); covert readiness — plainclothes officers in major malls + SWAT/sniper overwatch staged for ≤15-minute response, with reserve forces pre-briefed for the campus and government branches; an annual all-stakeholder readiness exercise scheduled into the window; NO visible hardening; public advised to shop online and avoid malls during the window"
+      },
+      "operator_named_vector_count": 7,
+      "specificity_source": "sealed claimLong (28 Aug 2026, hash in seal manifest) — vectors hand-extracted verbatim the day it sealed",
+      "improbability_one_in_n": 32,
+      "surprise_bits": 5,
+      "evidence_sources": [
+        "https://www.gunviolencearchive.org/",
+        "https://thehill.com/homenews/ap/ap-international/ap-duty-to-warn-guided-us-advance-warning-of-the-moscow-attack-adversaries-dont-always-listen/"
       ]
     },
     {
