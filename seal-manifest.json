@@ -1,7 +1,7 @@
 {
   "$schema": "https://jyotishintelligence.com/schemas/seal-manifest-v1.json",
   "version": 1,
-  "generatedAt": "2026-11-23T16:16:30.646Z",
+  "generatedAt": "2026-11-23T16:35:18.270Z",
   "origin": "https://jyotishintelligence.com",
   "algorithm": "sha256",
   "_about": "LIVE, APPEND-ONLY SEAL MANIFEST. `count` is the number of independently sealed forecasts and grows as new advisories are added; `manifestHash` is sha256 of the canonical `records` array (companions are a separate array, excluded from both `count` and `manifestHash`). A count quoted in a publication reflects the state as of that paper's date — if the live `count` is larger, forecasts were sealed after the paper, which is expected and not an erratum. Every past state is versioned and retrievable as an immutable, hash-named snapshot: see `versions` for the index, the dated snapshots, and how to recompute any figure a paper cites.",
@@ -10,7 +10,7 @@
   "manifestHash": "4244f262c04538f3c862e261867588f388d3634354a9f5f18a81593f93adb945",
   "count": 123,
   "companionCount": 107,
-  "companionsHash": "626f05b3a7ae41e3fdf2f0a01d89f5120b20b245a1f8b7120ebdab1777ad3cd2",
+  "companionsHash": "dbffce20e5634efcc04c0593c39bb9cb5ba4c54047620985c63f67ef159d621c",
   "records": [
     {
       "id": "IA-BR22-001",
@@ -2452,15 +2452,15 @@
       "label": "ADDENDUM 2 — THE SEA-BASED CHANNEL PINNED (POSEIDON 2M39 · KHABAROVSK / BELGOROD), SEALED SEPARATELY 27 AUG, 62 DAYS PRE-WINDOW"
     },
     {
-      "id": "IA-RU-046::https://jyotishintelligence.com/intel/showcase/IA-RU-046#announcement",
+      "id": "IA-RU-046::https://jyotishintelligence.com/intel/advisory/IA-RU-046#announcement",
       "parentId": "IA-RU-046",
       "title": "Ukraine-Zone Nuclear Flashpoint Window — 28 Oct–28 Nov 2026, peak 13 Nov (successor to IA-RU-020) · companion seal",
       "dateIssued": "2026-08-26",
-      "videoUrl": "https://jyotishintelligence.com/intel/showcase/IA-RU-046#announcement",
-      "objectId": "https://jyotishintelligence.com/intel/showcase/IA-RU-046#announcement",
+      "videoUrl": "https://jyotishintelligence.com/intel/advisory/IA-RU-046#announcement",
+      "objectId": "https://jyotishintelligence.com/intel/advisory/IA-RU-046#announcement",
       "objectType": "other",
       "claim": "On 26 August 2026 — 63 days before this forecast's window opens (28 October 2026) — JYOTINT publicly disseminated the sealed advisory IA-RU-046 on X (https://x.com/vijayjyotish/status/2092662631941435800) and on LinkedIn (https://www.linkedin.com/posts/vijay-jyotish_russia-ukraine-nuclear-flashpoint-window-share-7498428454044905472-X3cd), each post linking to this sealed page. Both platforms carry their own independent post timestamps, corroborating that the forecast was on the public record before its window. This attestation records the fact of pre-window public dissemination; the forecast text itself is sealed in the manifest and OpenTimestamps-anchored, and was held off the Brier until it was graded on 23 November 2026.",
-      "hash": "ccd6531886706297d56f36d83a6793ef964ebe476bec66ff7f6a3c8faf74c408",
+      "hash": "a7596338c5709fca07b646a8c84d58d0913ab17f3c139a3b809bcb4476527801",
       "url": "https://jyotishintelligence.com/intel/advisory/IA-RU-046#sealed-record",
       "label": "SEALED PUBLIC-ANNOUNCEMENT ATTESTATION (26 AUG) — PUBLICLY DISSEMINATED 63 DAYS BEFORE THE WINDOW OPENS"
     },
