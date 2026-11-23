@@ -1,7 +1,7 @@
 {
   "$comment": "Grade-it-yourself + pull-the-evidence kit. Per closed call: the verbatim CLAIM (anteriorly sealed, the prediction — grade THIS, not the title), the verbatim OUTCOME, the operator's p and verdict (override them), the published base-rate floor, the 1-in-N prior + its surprise-in-bits, the operator's named 5W1H+recommendation vectors (re-count yourself), and the EVIDENCE — sealed_post_url + seal_hash_sha256 (anteriority) and evidence_sources (outcome corroboration). THREE axes are recomputable from these inputs under YOUR OWN verdicts: (1) the Brier (calibration) — `node verify-jyotint.mjs --regrade`; (2) named-mechanism SPECIFICITY — count matched 5W1H vectors from `claim` vs `outcome`; (3) INFORMATION YIELD — bits = surprise_bits, earned = surprise_bits × outcome_o (HIT 1 / NEAR|PARTIAL 0.5 / MISS 0). The base rate scores 0 on specificity AND 0 bits on IY by construction. SITA's two COMPUTED axes are here too (Specificity = the vectors; Improbability = improbability_one_in_n); its two rubric-judged axes (impacT, Actionability) are protected editorial opinion, not skeptic-overridable, and the full SITA distribution is at /api/v1/sita.json.",
   "generator": "scripts/gen-regrade-inputs.mjs",
-  "count": 109,
+  "count": 110,
   "hash_input_template": "objectId|dateIssued|title|claim",
   "recipes_usage": "One-step stress tests — no per-call entry. CLI: `node verify-jyotint.mjs --regrade --policy <name>` (reports the regraded Brier AND the recomputed Information Yield). In an LLM: apply a recipe's declarative ops to `rows`, then recompute Brier = mean((p-o)^2) and IY = median(surprise_bits) + %earned = Σ(surprise_bits×o)/Σ(surprise_bits). Conservative recipes lower the calibration Brier by design (conceded — calibration ties a base rate); what SURVIVES is named-mechanism specificity and the per-call bits of surprise — a base rate scores 0 on both.",
   "recipes": [
@@ -2526,6 +2526,41 @@
       "evidence_sources": [
         "https://www.apk-inform.com/en/news/1532688",
         "https://tass.com/economy/1749021"
+      ]
+    },
+    {
+      "id": "IA-RU-046",
+      "title": "Ukraine-Zone Nuclear Flashpoint Window — 28 Oct–28 Nov 2026, peak 13 Nov (successor to IA-RU-020)",
+      "claim": "Between 28 Oct and 28 Nov 2026, a nuclear-level escalation concentrates in the Ukraine theater — attribution held open. Pre-registered vectors: a PROVABLE (independently verifiable) nuclear-capability demonstration (underground sufficient, atmospheric self-defeating); a false-flag radiological/dirty-bomb event (registered for any side); threshold posturing / a declared capability / a long-range missile test reported nuclear-capable / nuclear-capable exercises; and a deterrence exercise (IA-RU-009-type). Assessed ceiling: a demonstrative TEST, not a warti…",
+      "outcome": "GRADED HIT. Bulava test on window day 1, Yars silo loading on 12 Nov, and on 23 Nov Medvedev's statement that situations in which Russia considers a nuclear strike have already been created. No nuclear test or release detected.",
+      "date_issued": "2026-08-26",
+      "seal_hash_sha256": "8e4e1a2e1c5873528b480b234ebc57ca3bf378277fd3a450ee2c40b09c4afa49",
+      "sealed_post_url": "IA-RU-046",
+      "advisory_url": "https://jyotishintelligence.com/intel/advisory/IA-RU-046",
+      "operator_p": 0.95,
+      "operator_band": "Extremely likely",
+      "operator_verdict": "HIT",
+      "outcome_o": 1,
+      "lead": "63 days",
+      "announce_window_days": null,
+      "base_rate_floor": 0.0313,
+      "base_rate_basis": "statDefense floor ≈ 1 in 32 as published pre-window: named month (1/8) × event class above the rhetorical floor (1/4). Graded HIT 23 Nov 2026.",
+      "named_vectors": {
+        "who": "Actor held open — a party proving capability under battlefield pressure, OR a deterrence signal by a threatened party (IA-RU-009-type), OR a false-flag pre-registered for ALL sides (not asserted against any); underlying Ukraine-nuclear axis carried from IA-RU-020 (Russian SVR TN-75/M51.1 statement, Duma appeals, Medvedev)",
+        "what": "A nuclear-level escalation — a PROVABLE nuclear-capability demonstration (underground sufficient, atmospheric self-defeating), OR a false-flag radiological/dirty-bomb event, OR threshold posturing / declared capability / a long-range missile test reported nuclear-capable / nuclear-capable exercises, OR a deterrence exercise. Assessed ceiling: a demonstrative TEST, not a wartime use. PENDING — held off the Brier until it resolves",
+        "where": "Ukraine theater / Ukraine-zone (successor to IA-RU-020's sealed Ukraine site); candidate locations disclosed only on the advisory map (Chernobyl Exclusion Zone, Kyiv-region, Zaporizhzhia, Novaya Zemlya)",
+        "when": "Sealed 26 Aug 2026 (pre-window); named window 28 Oct – 28 Nov 2026; probability peak ~13 Nov; deterrence/response window opens ~28 Nov → Dec",
+        "why": "Scenario-based: battlefield pressure to prove capability and/or a deterrence signal by a threatened party; the false-flag pathway is pre-registered as standard warning tradecraft (the US IC publicly flagged false-flag risk in 2022), registered for all sides",
+        "how": "Adds a timing corridor + a pre-registered indicators-and-warnings set to IA-RU-020's identified Ukraine-nuclear axis; each vector pre-registered to be graded on its own evidence channel when the window resolves",
+        "recommendation": "A dated warning for decision-makers — track the pre-registered indicators through 28 Oct–28 Nov for lead-time on a nuclear flashpoint, whichever way it breaks"
+      },
+      "operator_named_vector_count": 7,
+      "specificity_source": "claim; claimLong (attribution held open); whyNotScored (off-Brier rationale); consensusQuotes (SVR/Medvedev/MFA); backgroundBrief (pre-registered pathways + indicators)",
+      "improbability_one_in_n": 64,
+      "surprise_bits": 6,
+      "evidence_sources": [
+        "https://www.globalsecurity.org/wmd/library/news/ukraine/2026/02/ukraine-260225-sputnik01.htm",
+        "https://tass.com/politics/2092087"
       ]
     },
     {

@@ -1,20 +1,20 @@
 {
   "$schema": "https://jyotishintelligence.com/schemas/calibration-v1.json",
   "version": 1,
-  "generatedAt": "2026-11-23T12:48:49.724Z",
+  "generatedAt": "2026-11-23T16:26:48.006Z",
   "origin": "https://jyotishintelligence.com",
   "notes": "Full corpus — Launch Advisories (LA) + Intel Advisories (RU-UA, US-2024, IN-2024). Per the JYOTINT pledge advisories are locked at publish; calibration metadata lives outside the seal. Every closed call is per-advisory audited: probAtSeal is mapped from the advisory's own sealed wording (launch to the seal-time confidence, 0.72-0.99; intel via a linguistic ladder — flat 'will/cannot' 0.95, 'likely' 0.78, genuine 'could/might' hedge 0.60), applied identically to hits and misses. audited=true denotes this post-event reconciliation to the contemporaneous sealed text, not blind third-party verification. Scoring rules follow Brier 1950 and standard log-loss.",
   "auditRatio": 1,
-  "closed": 109,
+  "closed": 110,
   "verdicts": {
-    "HIT": 84,
+    "HIT": 85,
     "MISS": 10,
     "NEAR": 10,
     "PARTIAL": 5,
     "OPEN": 1
   },
-  "brier": 0.09714793577981645,
-  "logLoss": 0.5196989527759636,
+  "brier": 0.09628749999999996,
+  "logLoss": 0.5154407195178871,
   "launch": {
     "closed": 26,
     "brier": 0.03298173076923076,
@@ -55,7 +55,7 @@
         0.95,
         0.99
       ],
-      "count": 8,
+      "count": 9,
       "meanP": 0.9500000000000001,
       "meanO": 1
     },
@@ -628,6 +628,13 @@
       "id": "IA-RU-045",
       "accuracy": "HIT",
       "p": 0.78,
+      "o": 1,
+      "audited": true
+    },
+    {
+      "id": "IA-RU-046",
+      "accuracy": "HIT",
+      "p": 0.95,
       "o": 1,
       "audited": true
     },

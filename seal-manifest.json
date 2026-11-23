@@ -1,16 +1,16 @@
 {
   "$schema": "https://jyotishintelligence.com/schemas/seal-manifest-v1.json",
   "version": 1,
-  "generatedAt": "2026-11-16T21:16:42.403Z",
+  "generatedAt": "2026-11-23T16:16:30.646Z",
   "origin": "https://jyotishintelligence.com",
   "algorithm": "sha256",
   "_about": "LIVE, APPEND-ONLY SEAL MANIFEST. `count` is the number of independently sealed forecasts and grows as new advisories are added; `manifestHash` is sha256 of the canonical `records` array (companions are a separate array, excluded from both `count` and `manifestHash`). A count quoted in a publication reflects the state as of that paper's date — if the live `count` is larger, forecasts were sealed after the paper, which is expected and not an erratum. Every past state is versioned and retrievable as an immutable, hash-named snapshot: see `versions` for the index, the dated snapshots, and how to recompute any figure a paper cites.",
   "versions": "https://jyotishintelligence.com/dataset/record-versions.json",
   "hashInputTemplate": "objectId|dateIssued|title|claim[|nonce]",
-  "manifestHash": "26a29f3484537f9df94cd10927e6532bcb58254db615dd442c8d20566d486c2a",
+  "manifestHash": "4244f262c04538f3c862e261867588f388d3634354a9f5f18a81593f93adb945",
   "count": 123,
   "companionCount": 107,
-  "companionsHash": "479b4c7475eef02ca8217e63ca2dee128b838650b2039866125a616b094b4268",
+  "companionsHash": "626f05b3a7ae41e3fdf2f0a01d89f5120b20b245a1f8b7120ebdab1777ad3cd2",
   "records": [
     {
       "id": "IA-BR22-001",
@@ -927,8 +927,7 @@
       "objectType": "other",
       "claim": "Between 28 Oct and 28 Nov 2026, a nuclear-level escalation concentrates in the Ukraine theater — attribution held open. Pre-registered vectors: a PROVABLE (independently verifiable) nuclear-capability demonstration (underground sufficient, atmospheric self-defeating); a false-flag radiological/dirty-bomb event (registered for any side); threshold posturing / a declared capability / a long-range missile test reported nuclear-capable / nuclear-capable exercises; and a deterrence exercise (IA-RU-009-type). Assessed ceiling: a demonstrative TEST, not a wartime use. Probability maximum ~13 Nov; a deterrence/response event window opens ~28 Nov. Successor to IA-RU-020.",
       "hash": "8e4e1a2e1c5873528b480b234ebc57ca3bf378277fd3a450ee2c40b09c4afa49",
-      "url": "https://jyotishintelligence.com/intel/showcase/IA-RU-046",
-      "ungraded": true
+      "url": "https://jyotishintelligence.com/intel/advisory/IA-RU-046"
     },
     {
       "id": "IA-SX-001",
@@ -2436,7 +2435,7 @@
       "objectType": "other",
       "claim": "One page, sealed separately on 26 August 2026 — 63 days before the window opens — expanding IA-RU-046 and modifying nothing: it pre-registers two named, publicly observable airborne indicators as corroboration channels for the sealed window (WC-135R Constant Phoenix radionuclide-sampling sorties over the candidate geographies, JAKE-series callsigns; E-6B Mercury NC3/deterrence-posture activity), with the discipline volunteered that neither cue can grade a kinetic vector — only independent seismic/radionuclide/IAEA-CTBTO confirmation does. Its own SHA-256 (a9a97bdcf0ee7b0883fe9fad64e0beffdb344da720bf83bcb17108e8c52d0d6a) is published beside it and OpenTimestamps-anchored pre-window; deliberately NOT a manifest companion — the original record's entry and hash stand untouched.",
       "hash": "9c3ac6194ea0c1b4ae5d9027a9a2899c3b778f25a1570eb2fc2bc7018f44ad8e",
-      "url": "https://jyotishintelligence.com/intel/showcase/IA-RU-046#sealed-record",
+      "url": "https://jyotishintelligence.com/intel/advisory/IA-RU-046#sealed-record",
       "label": "ADDENDUM 1 — PRE-REGISTERED AIRBORNE CUES (WC-135R CONSTANT PHOENIX · E-6B MERCURY), SEALED SEPARATELY 26 AUG, 63 DAYS PRE-WINDOW"
     },
     {
@@ -2449,7 +2448,7 @@
       "objectType": "other",
       "claim": "One page, sealed separately 27 Aug 2026 (62 days pre-window; its own SHA-256 f379a1307559b868224f139ef0e6fed723d7e587368285b5aaed1355b9fea0f7, OpenTimestamps-anchored to four Bitcoin calendars; deliberately not a manifest companion): pins a POSEIDON-ASSOCIATED EVENT — a trial launch, test, or deterrence demonstration involving the 2M39 Poseidon system or its carriers (Khabarovsk Pr. 09851, at sea for first trials since 17 Aug; Belgorod Pr. 09852) — as a NAMED CANDIDATE CHANNEL inside the already-sealed event family (capability-demonstration and deterrence-exercise vectors; the nuclear-capable-delivery class), AT PARITY with the sealed vectors: no new probability, no re-weighting. THE ONE-CHANNEL RULE, made binding: the family resolves on ANY single channel — the vectors are alternatives, never cumulative requirements; non-realization of this instrument counts nothing against the grade if the family resolves through another channel, exactly as its realization claims nothing beyond the dated fact it was named before it moved. Observables fixed: White Sea/Barents/Kara NAVWARNs, Northern Fleet range closures, Belushya Guba, Krasheninnikov Bay, carrier movements; Addendum 1 airborne cues apply unchanged. Full text: /dossier/JYOTINT-IA-RU-046-ADDENDUM-2.pdf.",
       "hash": "b0eb62bb9888e0d27d1f62f6bdee4919b352151b840e57bc908ddc2ce7a9fd01",
-      "url": "https://jyotishintelligence.com/intel/showcase/IA-RU-046#sealed-record",
+      "url": "https://jyotishintelligence.com/intel/advisory/IA-RU-046#sealed-record",
       "label": "ADDENDUM 2 — THE SEA-BASED CHANNEL PINNED (POSEIDON 2M39 · KHABAROVSK / BELGOROD), SEALED SEPARATELY 27 AUG, 62 DAYS PRE-WINDOW"
     },
     {
@@ -2460,9 +2459,9 @@
       "videoUrl": "https://jyotishintelligence.com/intel/showcase/IA-RU-046#announcement",
       "objectId": "https://jyotishintelligence.com/intel/showcase/IA-RU-046#announcement",
       "objectType": "other",
-      "claim": "On 26 August 2026 — 63 days before this forecast's window opens (28 October 2026) — JYOTINT publicly disseminated the sealed advisory IA-RU-046 on X (https://x.com/vijayjyotish/status/2092662631941435800) and on LinkedIn (https://www.linkedin.com/posts/vijay-jyotish_russia-ukraine-nuclear-flashpoint-window-share-7498428454044905472-X3cd), each post linking to this sealed page. Both platforms carry their own independent post timestamps, corroborating that the forecast was on the public record before its window. This attestation records the fact of pre-window public dissemination; the forecast text itself is sealed in the manifest and OpenTimestamps-anchored, and is held off the Brier until the window resolves.",
-      "hash": "f4291d87ec139f25cda3e8b2bd1a4b4e510eef4754ae05720f1842203154dc52",
-      "url": "https://jyotishintelligence.com/intel/showcase/IA-RU-046#sealed-record",
+      "claim": "On 26 August 2026 — 63 days before this forecast's window opens (28 October 2026) — JYOTINT publicly disseminated the sealed advisory IA-RU-046 on X (https://x.com/vijayjyotish/status/2092662631941435800) and on LinkedIn (https://www.linkedin.com/posts/vijay-jyotish_russia-ukraine-nuclear-flashpoint-window-share-7498428454044905472-X3cd), each post linking to this sealed page. Both platforms carry their own independent post timestamps, corroborating that the forecast was on the public record before its window. This attestation records the fact of pre-window public dissemination; the forecast text itself is sealed in the manifest and OpenTimestamps-anchored, and was held off the Brier until it was graded on 23 November 2026.",
+      "hash": "ccd6531886706297d56f36d83a6793ef964ebe476bec66ff7f6a3c8faf74c408",
+      "url": "https://jyotishintelligence.com/intel/advisory/IA-RU-046#sealed-record",
       "label": "SEALED PUBLIC-ANNOUNCEMENT ATTESTATION (26 AUG) — PUBLICLY DISSEMINATED 63 DAYS BEFORE THE WINDOW OPENS"
     },
     {

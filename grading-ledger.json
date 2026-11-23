@@ -1,7 +1,7 @@
 {
   "$schema": "https://jyotishintelligence.com/schemas/grading-ledger-v1.json",
   "version": 1,
-  "generatedAt": "2026-11-16T21:16:42.661Z",
+  "generatedAt": "2026-11-23T16:06:15.102Z",
   "origin": "https://jyotishintelligence.com",
   "algorithm": "sha256",
   "_about": "LIVE, APPEND-ONLY LEDGER. `count` and `brier` change as new advisories are sealed and graded. A figure quoted in a publication reflects the ledger state as of that paper's snapshot date; a larger `count` here means calls were sealed since — an expected difference, not an erratum. Every past state is versioned, dated, and retrievable as an immutable, hash-named snapshot: see `versions`. Reproduce any cited figure by recomputing against the dated snapshot whose ledgerHash the paper names.",
@@ -13,10 +13,10 @@
     "proof": "https://jyotishintelligence.com/seal-manifest.json.ots",
     "note": "Claim-anteriority proof — separate artifact, separate OTS anchor (see `proof`; block state at /api/v1/ots-proof.json), never moved by a re-grade."
   },
-  "count": 109,
-  "brier": 0.0971,
-  "brierFromLedger": 0.0971,
-  "ledgerHash": "efec4437dad0f1c0b2efa1b55ca59a3af9eef86f4eb7ff50abc1532eaedd2c31",
+  "count": 110,
+  "brier": 0.0963,
+  "brierFromLedger": 0.0963,
+  "ledgerHash": "2153059fdde5119bc609ba6543c38083e3ebf8c4e059e337e3f59181f01e63c7",
   "entries": [
     {
       "id": "IA-BR22-001",
@@ -647,6 +647,15 @@
       "outcome": "HIT",
       "outcomeValue": 1,
       "brierTerm": 0.0484
+    },
+    {
+      "id": "IA-RU-046",
+      "probAtSeal": 0.95,
+      "ipccBand": "Extremely likely",
+      "audited": true,
+      "outcome": "HIT",
+      "outcomeValue": 1,
+      "brierTerm": 0.0025
     },
     {
       "id": "IA-UK22-001",
